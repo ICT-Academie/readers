@@ -17,7 +17,14 @@ validate_reader:
 
 build: validate_reader
 	cd $(reader); \
-	pandoc $(reader).md -s -o ../dist/$(reader).pdf --pdf-engine=xelatex --highlight-style espresso -H ../headers.tex
+	pandoc $(reader).md \
+		--toc \
+		-s \
+		-o ../dist/$(reader).pdf \
+		--pdf-engine=xelatex \
+		--highlight-style espresso \
+		-H ../headers.tex \
+		--include-before-body cover.tex
 
 buildopen: build
 	open dist/$(reader).pdf

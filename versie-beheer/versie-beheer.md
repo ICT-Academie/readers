@@ -2,6 +2,7 @@
 geometry: margin=1cm
 mainfont: Open Sans
 ---
+\pagebreak
 # Versie beheer
 Zodra je een tijd bezig bent met programmeren, kan het zijn dat je iets meer wensen hebt voor het opslaan van je code.
 
@@ -79,11 +80,6 @@ Maar hoe werkt dat? Git heeft zijn eigen informatie, zoals welke branches er zij
 Dat ziet er zo uit:
 
 ![](images/empty-git-repository.png){ width=50% }
-
-- main branch
-- Maak een bestand met tekst erin, maak commit
-- Maak een nieuwe branch, kijk naar branch lijst, switch heen en terug
-- Maak wijziging in nieuwe branch en merge terug
 
 ## Opdracht 2: Maak een commit
 Maak een bestand aan (in de repository), en zet daar wat code of tekst in. Dat kan van alles zijn, voor het voorbeeld hou ik `test-bestand.php` aan. Nu kan je de status van de repository bekijken met:
@@ -172,6 +168,19 @@ Als voorbeeld heb ik hieronder de `commit ID` van mijn eigen Git repository:
 git checkout 1479d14e28ea6b67585a7319b87e5026ec7ab3f3
 ```
 
+Kijk nu naar je bestand. Het is nu de vorige versie.
+
+
+## Opdracht 6: Spring weer naar de nieuwe versie
+Je kan kijken hoe het hele project er toen uit zag, maar gelukkig kan je ook weer terug. Er is niets veranderd in je branch - het is echt een kijkje in het verleden wat je gedaan hebt. Terug naar de nieuwe versie van je bestand doe je door de branch `main` uit te checken. Dan krijg je de nieuwste bestanden die daarin zijn ge-commit.
+
+Naar een branch wisselen, of naar de nieuwste versie van je huidige branch, doe je zo:
+
+```{.bash .number-lines}
+git checkout main
+```
+
+Het doet dezelfde checkout als je deed met de `commit ID`, maar dan met de naam van je branch. In dit geval is dat `main`, de standaard branch.
 
 
 # Opdrachten GitHub
