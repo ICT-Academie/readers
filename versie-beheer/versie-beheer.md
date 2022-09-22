@@ -1,5 +1,7 @@
 ---
-geometry: margin=1cm
+title: "Versie Beheer"
+author: "Tim Quax (tquax@novacollege.nl)"
+geometry: margin=1.5cm
 mainfont: Open Sans
 ---
 \pagebreak
@@ -43,20 +45,6 @@ In een branch sla je dus alle code op. Zodra je iets werkend hebt op je laptop, 
 Een commit is dus alle wijzigingen vanaf de vorige opgeslagen versie van de code. Daarbij kan je een naam en een omschrijving toevoegen. Zo kan je makkelijk de vorige versies van code terug vinden.
 
 Al je code tot nu toe is dus niets meer dan een lijst van commits; een serie van wijzigingen op wijzigingen op wijzigingen. Zo kan je heel flexibel terug springen naar de vorige versie van je code, in welk bestand dan ook, en raak je nooit meer iets kwijt.
-
-\pagebreak
-
-# GitHub
-GitHub is het social media platform voor programmeurs. Je hebt een profiel, kan andere programmeurs volgen, je hebt een timeline, etc.
-
-Maar GitHub gaat ook om _samenwerken_. Je mag daar gratis je Git repositories opslaan. Die kan je publiek toegankelijk maken, en dan staan ze op je profiel, maar dat kan ook privé en dan zie je ze alleen zelf.
-
-Je kan je Git repository van je laptop naar GitHub wilt sturen, en ook de laatste wijzigingen van GitHub ophalen richting je laptop. Zo kan je dus heel makkelijk samenwerken met anderen: Je hebt allebei dezelfde repository op je laptop, maar je stuurt je wijzigingen naar GitHub en haalt ze daar ook weer op.
-
-## Pull request (of merge request)
-Het is niet altijd even handig om iedereen in je project zomaar alle code aan te laten passen. Voordat iemands code dus in de main branch wordt samengevoegd, kan je dat laten controleren door andere projectleden; dat noem je een pull request of merge request.
-
-Je maakt een pull request aan op GitHub, om een branch te laten samenvoegen naar een andere branch (de `main`, doorgaans). Alle teamleden kunnen de code controleren, en goedkeuren of comments plaatsen. Daarna kan je met een druk op de knop de code samenvoegen (of _mergen_).
 
 \pagebreak
 
@@ -182,9 +170,75 @@ git checkout main
 
 Het doet dezelfde checkout als je deed met de `commit ID`, maar dan met de naam van je branch. In dit geval is dat `main`, de standaard branch.
 
+\pagebreak
 
-# Opdrachten GitHub
+# GitHub
+GitHub is het social media platform voor programmeurs. Je hebt een profiel, kan andere programmeurs volgen, je hebt een timeline, etc.
 
-- Maak een account op GitHub
-- Maak een repository
-- Koppel de repository op je laptop met die van GitHub
+Maar GitHub gaat ook om _samenwerken_. Je mag daar gratis je Git repositories opslaan. Die kan je publiek toegankelijk maken, en dan staan ze op je profiel, maar dat kan ook privé en dan zie je ze alleen zelf.
+
+Je kan je Git repository van je laptop naar GitHub wilt sturen, en ook de laatste wijzigingen van GitHub ophalen richting je laptop. Zo kan je dus heel makkelijk samenwerken met anderen: Je hebt allebei dezelfde repository op je laptop, maar je stuurt je wijzigingen naar GitHub en haalt ze daar ook weer op.
+
+## Pull request (of merge request)
+Het is niet altijd even handig om iedereen in je project zomaar alle code aan te laten passen. Voordat iemands code dus in de main branch wordt samengevoegd, kan je dat laten controleren door andere projectleden; dat noem je een pull request of merge request.
+
+Je maakt een pull request aan op GitHub, om een branch te laten samenvoegen naar een andere branch (de `main`, doorgaans). Alle teamleden kunnen de code controleren, en goedkeuren of comments plaatsen. Daarna kan je met een druk op de knop de code samenvoegen (of _mergen_).
+
+\pagebreak
+
+## Opdracht 1: Maak een account op GitHub
+Ga naar [GitHub.com](https://github.com/) en maak een account aan. Heb je er al een, dan kan je daarop inloggen.
+
+
+## Opdracht 2: Maak een lege repository aan
+
+
+Ga naar de repositories pagina op GitHub. Daar kan je een nieuwe repository aanmaken.
+
+![](images/github-account-submenu.png){ width=30% }
+
+![](images/github-create-repo-button.png){ width=50% }
+
+Een paar details voor het aanmaken:
+
+- Verzin een mooie naam.
+- Zet het op `public` (iedereen op het internet kan het zien) of `private` (alleen jij kan het zien).
+- Verander niets aan de instellingen eronder (over README files e.d.)
+
+## Opdracht 3: Zet de repository op je laptop op GitHub
+Zodra je repository is aangemaakt, krijg je een hele lijst met mogelijke commands om te doen. We hebben al een repository, dus we concentreren nu op het koppelen van de repository op je laptop met de repository op GitHub. De repository op je laptop noem je de lokale repository.
+
+Dat doe je met een `remote`. Je kan alle gemaakte commits en branches op je lokale repository naar de `remote` sturen (een `push`). Andere mensen kunnen dan weer alle nieuwe commits en branches binnenhalen (een `pull`).
+
+Bij het kopje "bestaande repository aan GitHub toevoegen" staat een lijst van drie commands. Die moet je gaan uitvoeren.
+
+De drie commands zijn deze:
+
+Stel de `remote` in op je repository:
+```{.bash .number-lines}
+git remote add origin <url van de GitHub repository>
+```
+
+Verhuis de hoofd-branch naar `main` (dat hoeft niet, want dat is het al):
+```{.bash .number-lines}
+git branch -M main
+```
+
+Stuur alle commits in de `main` branch naar de repository op GitHub:
+```{.bash .number-lines}
+git push -u origin main
+```
+
+Als je nu de GitHub pagina ververst zie je jouw bestand staan. Als je erop klikt zie je de inhoud van het bestand.
+
+## Opdracht 4: Push en pull
+De commits (en branches) die je aanmaakt op je laptop stuur je naar GitHub via `git push`. Als je commits (en branches) van andere mensen wilt binnenhalen, doe je een `git pull`.
+
+De `pull` is pas van toepassing als je met meerdere mensen in één repository werkt. Maar de `push` is wel heel handig. Het zorgt er ook voor dat al je code, en al je opdrachten, niet alleen op je laptop staan. Als je laptop stuk is ben je geen enkele opdracht kwijt.
+
+De opdracht:
+
+- Verander de tekst (weer) in het bestand
+- Maak een commit
+- Stuur de commit naar GitHub
+- Kijk op GitHub bij de repository, en zie de verandering.
