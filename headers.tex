@@ -10,3 +10,13 @@
 \renewcommand{\texttt}[1]{
   \colorbox{bgcolor}{\oldtexttt{#1}}
   }
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{gray}}
+\newcommand{\hideFromPandoc}[1]{#1}
+\hideFromPandoc{
+  \let\Begin\begin
+  \let\End\end
+}

@@ -26,7 +26,7 @@ Daar hebben we versie beheer voor. Daarmee kan je:
 # Git
 Om dat allemaal voor je te regelen, heb je software nodig. Git is de populairste applicatie voor versie beheer. Je installeert het op je laptop (of via je code editor) en je kan het meteen gebruiken. Git kan alles wat hierboven vermeld is, en nog veel (veel) meer.
 
-Stap 1 is dus Git installeren.
+Stap 1 is dus Git installeren. Als je Git wilt gebruiken via de JetBrains editor kan je deze stap overslaan. Als je Git wilt leren via de terminal, moet je Git via onderstaande manier installeren.
 
 ### Git installeren op Windows
 Installeer het via de Git download pagina voor Windows:
@@ -35,7 +35,7 @@ Installeer het via de Git download pagina voor Windows:
 
 
 ### Git installeren op Mac OS
-Installeer Git met `Homebrew`:
+Open een terminal (Terminal, iTerm, of alt+F12 / option+F12 in JetBrains), installeer Git met `Homebrew`:
 
 ```{.bash .number-lines}
 brew install git
@@ -43,7 +43,7 @@ brew install git
 
 
 ### Git installeren op Debian-based distro's
-Apt (en alle andere package managers) hebben git erin staan:
+Apt (en alle andere package managers) hebben git erin staan. Open een terminal (Terminal, iTerm, of alt+F12 / option+F12 in JetBrains) en doe:
 
 ```{.bash .number-lines}
 sudo apt install git-all
@@ -61,15 +61,25 @@ Een repository is een opslagplaats. In een repository stop je doorgaans één pr
 De repository maak je aan in een map (directory), en alles wat daarin staat (ook alle andere mappen!) horen bij het domein van Git.
 
 ### Opdracht 1: Maak een repository
-Maak van een bestaande map een Git repository (dat noem je initialiseren):
+We gaan van een bestaande map een Git repository maken (dat noem je initialiseren). Begin door een nieuw project in je code editor aan te maken (het maakt niet uit wat voor project). Vervolgens maken we er een Git repository van:
 
-Maak een nieuw project in je code editor (het maakt niet uit wat voor project).
+\Begin{multicols}{2}
+`Terminal`
 
-Open de terminal (alt+F12 / option+F12) en typ in:
-
-```{.bash .number-lines}
+Open de terminal (alt+F12 / option+F12) en zet het dit command erin:
+```{.bash}
 git init
 ```
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+Zet VCS aan via het menu en selecteer Git:
+
+![](images/editor-enable-version-control.png){ width=45% }
+![](images/editor-set-vcs-to-git.png){ width=45% }
+\End{multicols}
 
 Nu heb je een Git repository aangemaakt. Alles in deze map (alle bestanden én mappen) vallen nu onder de repository.
 
@@ -87,11 +97,23 @@ In een repository wordt alle code opgeslagen in een `branch`. Vrij vertaald is h
 Waarom in een branch? Om makkelijker te kunnen werken. Als je alles in je project wilt aanpassen kan je ervoor kiezen om een nieuwe branch maken. Dat is een aftakking, een kopie van de `main` branch. Zodra alles werkt kan alle gemaakte veranderingen terug sturen (oftewel `mergen`) naar de `main` branch. Gaat het niet goed met je veranderingen, en is alles kapot, dan is de `main` branch nog intact en hoef je niets te repareren.
 
 ### Opdracht 2: Kijk op welke branch je nu zit
+Je kan heel makkelijk wisselen van branch, dus het is heel belangrijk om regelmatig te kijken op welke branch je nu zit.
 
-Bekijk de status van Git. Je ziet op de bovenste regel op welke branch je nu zit:
+\Begin{multicols}{2}
+`Terminal`
+
+In de terminal bekijk je de status van Git. Je ziet dan op de bovenste regel op welke branch je nu zit.
 ```{.bash .number-lines}
 git status
 ```
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+In de editor zie je dit ten alle tijde rechts onderin staan, in de zogenaamde `gutter`, naast het slotje.
+![](images/editor-which-branch.png){ width=45% }
+\End{multicols}
 
 ## Commit
 In een branch sla je dus alle code op. Zodra je iets werkend hebt op je laptop, waar je blij mee bent, kan je je wijzigingen in 1x opslaan in Git. Alle wijzigingen in welk bestand dan ook, zolang ze in dezelfde git map staan. Dat doe je met een `commit`. 
@@ -100,68 +122,65 @@ Een commit is dus alle wijzigingen vanaf de vorige opgeslagen versie van de code
 
 Al je bestanden zijn dan eigenlijk niets meer dan een lijst van commits; een serie van wijzigingen op wijzigingen op wijzigingen. Zo kan je heel flexibel terug springen naar de vorige versie van je code, in welk bestand dan ook, en raak je nooit meer iets kwijt.
 
+![](images/repo-branch-commit-explanation.png){ width=50% }
+
+\pagebreak
+
 ### Opdracht 3: Maak een commit
 Maak een bestand aan (in de repository), en zet daar wat code of tekst in. Dat kan van alles zijn, als voorbeeld hou ik `test-bestand.php` aan.
 
-Bekijk de status van de repository met:
+Een commit is een bundel van veranderingen, het maakt voor Git niet uit wat je er in stopt. Een verandering dat compleet af is, en werkt, kan meteen een commit zijn. Of een opdracht die je maakt, en af is. In dit geval is het 1 bestand die we aanmaken, dus moeten we dat tegen Git zeggen.
 
-```{.bash .number-lines}
-git status
-```
+Voeg je bestand aan Git toe en maak een commit met een mooie naam:
 
-Als je dat in de terminal typt ziet het resultaat er ongeveer zo uit:
+\Begin{multicols}{2}
+`Terminal`
 
-```{.bash .number-lines}
-On branch main
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        test-bestand.php
-```
-
-Zoals je ziet is het bestand `untracked`, oftewel het is nog niet aan Git toegevoegd. Git weet dus nog niet dat het bestand bestaat.
-
-Voeg je bestand aan Git toe:
-
+Voeg je bestand toe:
 ```{.bash .number-lines}
 git add test-bestand.php
 ```
 
-Als je nu `git status` doet, zie je heel wat anders:
+Maak een commit, de naam staat in de quotes (`"`) achter `-m`:
 ```{.bash .number-lines}
-On branch main
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-	new file:   test-bestand.php
+git commit -m "Dit is een mooi bericht"
 ```
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
 
-Git ziet een nieuw bestand genaamd `test-bestand.php`, klaar om ge-commit te worden. Een `commit` is 1 of meer veranderingen in je code die je in Git wilt opslaan. Dat kan één bestand zijn of veertig, dat maakt niet uit. De commit kan je een naam geven om makkelijk de geschiedenis van je code terug te kunnen zien.
+Selecteer `Commit` uit het menu en de aangevinkte bestanden zullen toegevoegd worden. Onder in het scherm kan je de naam van je commit neerzetten.
 
-Maak een commit en zet er een mooie naam bij, in de quotes (`"`) achter `-m`:
+![](images/editor-commit-menu.png){ width=45% }
+![](images/editor-commit-screen.png){ width=45% }
+\End{multicols}
 
-```{.bash .number-lines}
-git commit -m "Dit is een mooi bericht voor bij mijn commit"
-```
+Het bestand is nu ge-commit. Wat je ook doet met het bestand vanaf hier, of je het nou verwijderd of aanpast, je kan altijd teruggaan naar het bestand zoals het er nu staat.
 
-Het bestand is nu ge-commit. Wat je ook doet met het bestand vanaf hier, of je het nou verwijderd of aanpast, je kan altijd teruggaan naar het bestand zoals het er nu staat. Als je nu `git status` doet zal het zeggen dat er niets te doen is.
+\pagebreak
 
 ### Opdracht 4: Maak nóg een commit
-Verander de tekst in het bestand dat je hebt aangemaakt. Nu kan je de veranderingen weer toevoegen met `git add` en een nieuwe commit ervan maken:
-
-```{.bash .number-lines}
-git add test-bestand.php
-git commit -m "Nu is het bestand NOG mooier"
-```
+Verander de tekst in het bestand dat je hebt aangemaakt. Nu kan je de veranderingen weer toevoegen met en een nieuwe commit maken. Verzin een mooie naam voor de commit, die beduidend anders is dan de vorige.
 
 ### Opdracht 5: Bekijk de gemaakte commits
-Je kan alle commits in een repository terugzien door dit in je terminal te typen:
+Je kan alle commits in een repository bekijken met `git log`.
+
+\Begin{multicols}{2}
+`Terminal`
 
 ```{.bash .number-lines}
 git log
 ```
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+Selecteer `Git Log` in het `Git` menu:
+
+![](images/editor-log-menu.png){ width=45% }
+\End{multicols}
 
 Dan ziet het er ongeveer zo uit:
 
@@ -179,18 +198,41 @@ Date:   Thu Sep 15 17:50:47 2022 +0200
     Dit is een mooi bericht voor bij mijn commit
 ```
 
-Het meeste spreekt voor zich, de auteur en datum en het bericht die we bij de commit hebben gezet. Maar er staat ook een lang brok tekst bij `commit`. Dat is de `commit ID`, en die zal je nodig hebben als je terug moet zoeken in de geschiedenis van je code.
+Of het ziet er zo uit:
+
+![](images/editor-log-output.png)
+
+Het meeste spreekt voor zich, de auteur en datum en het bericht die we bij de commit hebben gezet. Maar er staat ook een onleesbaar brok tekst bij `commit`. In de terminal is dat een lange tekst, in de editor een korte (naast de naam). Dat is de `commit ID`, en die zal je nodig hebben als je terug moet zoeken in de geschiedenis van je code. De lengte maakt niet uit, ze betekenen hetzelfde.
 
 ### Opdracht 6: Ga terug naar de oude versie
-Laten we tijdelijk even teruggaan in de tijd, om te kijken naar de vorige versie van het bestand. Dat doen we door een specifieke commit uit te checken. Pak daarvoor de `commit ID` van de onderste commit in de lijst hierboven (van `git log`).
+Laten we tijdelijk even teruggaan in de tijd, om te kijken naar de vorige versie van het bestand. Dat doen we door een specifieke commit uit te checken.
+
+
+\Begin{multicols}{2}
+`Terminal`
+
+Pak de `commit ID` van de oudste commit in de lijst hierboven (`git log`).
 
 Als voorbeeld heb ik hieronder de `commit ID` van mijn eigen Git repository:
 
 ```{.bash .number-lines}
-git checkout 1479d14e28ea6b67585a7319b87e5026ec7ab3f3
+git checkout 1479d14e28ea6b67585a7319b87e50
 ```
 
-Kijk nu naar je bestand. Het is nu de vorige versie.
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+Rechtermuisklik op de oudste commit, en kies `checkout`.
+
+Ter confirmatie zie je daar de `commit ID` staan.
+
+![](images/editor-checkout-menu.png){ width=45% }
+\End{multicols}
+
+
+Kijk naar de inhoud van je bestand. Het is nu de vorige versie.
 
 
 ### Opdracht 7: Spring weer naar de nieuwste versie
@@ -198,11 +240,24 @@ Je kan kijken hoe het hele project er toen uit zag, maar gelukkig kan je ook wee
 
 Naar een branch wisselen, of naar de nieuwste versie van je huidige branch, doe je zo:
 
+\Begin{multicols}{2}
+`Terminal`
+
 ```{.bash .number-lines}
 git checkout main
 ```
 
-Het doet dezelfde checkout als je deed met de `commit ID`, maar dan met de naam van je branch. In dit geval is dat `main`, de standaard branch.
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+Rechtermuisklik op de branch, in de lijst links:
+![](images/editor-checkout-main-menu.png){ width=45% }
+
+\End{multicols}
+
+Het doet dezelfde checkout als je deed met de specifieke commit maar dan met de naam van je branch. In dit geval is dat `main`, de standaard branch.
 
 \pagebreak
 
@@ -226,9 +281,13 @@ Je kan het ook gebruiken simpelweg als backup; als je laptop sterft heeft GitHub
 ### Opdracht 2: Maak een lege repository aan
 Ga naar de repositories pagina op GitHub. Daar kan je een nieuwe repository aanmaken.
 
-![](images/github-account-submenu.png){ width=30% }
+\Begin{multicols}{2}
+![](images/github-account-submenu.png){ width=20% }
+
+\columnbreak
 
 ![](images/github-create-repo-button.png){ width=50% }
+\End{multicols}
 
 Een paar details voor het aanmaken:
 
@@ -239,27 +298,46 @@ Een paar details voor het aanmaken:
 ## Verbind de twee repositories
 Zodra je repository is aangemaakt krijg je een hele lijst met mogelijke commands om te doen. We hebben al een repository, dus we concentreren nu op het koppelen van de repository op je laptop met de repository op GitHub. De repository op je laptop noem je de lokale repository. De repository op GitHub noem je een `remote` repository.
 
-Samen worden ze een geheel. De commits (en branches) die je aanmaakt op je laptop stuur je naar GitHub via `git push`. Als je commits (en branches) van andere mensen wilt binnenhalen, doe je een `git pull`.
+Samen worden ze een geheel. De commits (en branches) die je aanmaakt op je laptop stuur je naar GitHub via `git push`. Als je commits (en branches) van andere mensen wilt binnenhalen, doe je een `git pull`
 
 ### Opdracht 3: Zet je repository op GitHub
-Bij het kopje "bestaande repository aan GitHub toevoegen" staat een lijst van drie commands. Die moet je gaan uitvoeren.
+Direct na het aanmaken van de repository staan er wat nuttige zaken op het scherm. Waaronder de repository link:
 
-De drie commands zijn deze:
+![](images/github-url-new-repo.png){ width=50% }
+
+Die heb je nodig om je lokale repository te verbinden met die van GitHub:
+
+\Begin{multicols}{2}
+`Terminal`
+
+Bij het kopje "bestaande repository aan GitHub toevoegen" staat een lijst van commands. Die moet je gaan uitvoeren:
 
 Stel de `remote` in op je repository:
 ```{.bash .number-lines}
-git remote add origin <url van de GitHub repository>
+git remote add origin <GitHub repo url>
 ```
 
-Verhuis de hoofd-branch naar `main` (dat hoeft niet, want dat is het al):
-```{.bash .number-lines}
-git branch -M main
-```
-
-Stuur alle commits in de `main` branch naar de repository op GitHub:
+Stuur (push) alle commits in de `main` branch naar de repository op GitHub:
 ```{.bash .number-lines}
 git push -u origin main
 ```
+
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+Ga naar het `Git` menu en dan `manage remote`.
+![](images/editor-manage-remote-menu.png){ width=30% }
+
+Voeg een nieuwe remote toe, en vul daar de url van de GitHub repository in. Dan kan je naar `Git` -> `Push` om alle commits naar GitHub te sturen (pushen).
+
+![](images/editor-manage-remote-screen.png){ width=25% }
+![](images/editor-push-screen.png){ width=25% }
+
+\End{multicols}
+
+
 
 Als je nu de GitHub pagina ververst zie je jouw bestand staan. Als je erop klikt zie je de inhoud van het bestand.
 
@@ -281,25 +359,55 @@ Als je gaat samenwerken op 1 project werkt iedereen in een __kopie__ van de code
 
 Zo'n branch noem je een `feature branch`. 
 
-Als je klaar bent, en alles werkt, ga je jouw aanpassingen weer samenvoegen in de `main` branch en de feature branch (`opdracht-samenwerken`) wordt verwijderd. De aftakking gaat dus weer terug naar waar hij vandaan kwam.
+Als je klaar bent, en alles werkt, ga je jouw aanpassingen weer samenvoegen in de `main` branch en de feature branch (`opdracht-samenwerken`) wordt verwijderd.
 
-TODO: afbeelding van branch aftakken / mergen
+![](images/feature-branch-explanation.png)
+
+\pagebreak
 
 ### Opdracht 1: Maak een feature branch
-Maak een branch aan. Na de `-b` staat de branch naam in quotes (`"`), daar kan je een mooie naam neerzetten. Let erop dat je geen spaties gebruikt:
+Maak een branch aan. Verzin er een mooie naam voor. Let erop dat je geen spaties gebruikt:
+
+
+\Begin{multicols}{2}
+`Terminal`
+
+Na de `-b` staat de branch naam in quotes (`"`):
 ```{.bash .number-lines}
 git checkout -b "opdracht-samenwerken"
 ```
 
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+Rechtermuisklik op de `main` branch en kies `new branch`:
+
+![](images/editor-create-new-branch.png){ width=45% }
+
+\End{multicols}
+
 ### Opdracht 2: Maak een commit en push
 Verander het testbestand opnieuw en maak er een commit van.
 
-Nu hebben we een hele nieuwe branch aangemaakt, met een commit erin, maar GitHub's repository heeft de hele branch nog niet. Daarom gaat de allereerste push iets anders - om aan te geven dat deze branch aangemaakt moet worden. Zet daar dus dezelfde branch naam in:
+Nu hebben we een nieuwe branch aangemaakt maar GitHub heeft die nog niet. Voor de terminal gaat de allereerste push dan iets anders - om de branch aan te maken.
+
+
+\Begin{multicols}{2}
+`Terminal`
+
 ```{.bash .number-lines}
 git push -u origin "opdracht-samenwerken"
 ```
 
-Alle verdere commits kan je gewoon met `git push` doen.
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+![](images/editor-push-new-branch.png){ width=45% }
+\End{multicols}
 
 \pagebreak
 
@@ -307,19 +415,45 @@ Alle verdere commits kan je gewoon met `git push` doen.
 Met `git checkout` wissel je van branch. Met `-b "branch-naam"` erachter maak je meteen ook een branch aan, zoals je gedaan hebt in opdracht 1. Zonder de `-b` kan je dus heen en weer springen tussen branches, zonder dat er iets gebeurt of veranderd.
 
 Ga naar de `main` branch:
+
+\Begin{multicols}{2}
+`Terminal`
+
 ```{.bash .number-lines}
 git checkout main
 ```
 
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+![](images/editor-checkout-main-branch.png){ width=30% }
+\End{multicols}
+
 En bekijk je testbestand. Het is nu de vorige versie.
 
 Ga nu weer terug naar je eigen branch:
+
+\Begin{multicols}{2}
+`Terminal`
+
 ```{.bash .number-lines}
 git checkout opdracht-samenwerken
 ```
 
+\vspace*{\fill}
+\vfill
+\columnbreak
+`Editor`
+
+![](images/editor-checkout-feature-branch.png){ width=30% }
+\End{multicols}
+
+
 En je wijzigingen in het testbestand staan er weer.
 
+\pagebreak
 
 ## Pull request (of merge request)
 Het is niet altijd even handig om iedereen in een project zomaar alle code aan te laten passen. Voordat iemands code in de `main` branch wordt samengevoegd kan je alle veranderingen laten controleren door andere projectleden. Dat noem je een __Pull Request__ of __PR__.
