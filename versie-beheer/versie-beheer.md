@@ -25,7 +25,28 @@ Daar hebben we versie beheer voor. Daarmee kan je:
 # Git
 Om dat allemaal voor je te regelen, heb je software nodig. Git is de populairste applicatie voor versie beheer. Je installeert het op je laptop (of via je code editor) en je kan het meteen gebruiken. Git kan alles wat hierboven vermeld is, en nog veel (veel) meer.
 
-Er komen wel wat nieuwe concepten bij kijken
+Stap 1 is dus Git installeren.
+
+## Git installeren op Windows
+Installeer het via de Git download pagina voor Windows:
+
+[https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+
+## Git installeren op Mac OS
+Installeer Git met `Homebrew`:
+
+```{.bash .number-lines}
+brew install git
+```
+
+
+## Git installeren op Debian-based distro's
+Apt (en alle andere package managers) hebben git erin staan:
+
+```{.bash .number-lines}
+sudo apt install git-all
+```
 
 ## Repository
 Een repository is een opslagplaats. In een repository stop je doorgaans één project - denk b.v. aan alle Java opdrachten, of een repository voor al je HTML opdrachten.
