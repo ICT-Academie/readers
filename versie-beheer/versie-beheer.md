@@ -41,8 +41,10 @@ Open een terminal (Terminal, iTerm, of alt+F12 / option+F12 in JetBrains), insta
 brew install git
 ```
 
+Als je nog geen Homebrew hebt, kan je die installeren op [https://brew.sh/](https://brew.sh/).
 
-### Git installeren op Debian-based distro's
+
+### Git installeren op Linux (gebaseerd op Debian)
 Apt (en alle andere package managers) hebben git erin staan. Open een terminal (Terminal, iTerm, of alt+F12 / option+F12 in JetBrains) en doe:
 
 ```{.bash .number-lines}
