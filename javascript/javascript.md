@@ -106,6 +106,102 @@ Laten we dat even ontleden. JavaScript is een taal waarin je een heleboel aan el
 - `.querySelector('#box1')` is een functie in `document` om HTML elementen te selecteren. Wat we dan gaan pakken (of *queryen*) is een `selector` - exact hetzelfde als je in CSS gebruikt. In dit geval het ID `box1`.
 - `.style` pakt alle stijlen op het element die we pakken (of *queryen*).
 - `.backgroundColor` is specifiek de stijl voor de achtergrondkleur. Die kan je bekijken of aanpassen.
-- ` = "green";` maakt de achtergrondkleur groen (net zoals in CSS `#box1 { background-color: green; }` dat zou doen).
+- ` = "green";` maakt de achtergrondkleur groen (net zoals in CSS `#box1 { background-color: "green"; }` dat zou doen). Hier kan je ook *hexadecimale kleuren* zetten, zoals `#00FF00`.
 
 Als je nu de website bekijkt, zie je dat doos nummer 1 groen is geworden. Het werkt!
+
+## 1.3 Developer tools
+Fijn dat het nu goed gaat, maar wat moeten we doen als er iets mis gaat? Hoe controleer je dat? *Developer Tools* is je redding. Druk op F12 en er verschijnt een balk onderin:
+
+![](images/developer-tools.png){ width=100% }
+
+Alle HTML van de hele pagina staat aan de linkerkant. Als je iets aanklikt zie je de styling staan in het vak helemaal rechts. Daar kan je ook zien welke stijlen worden overgeschreven. In ons geval door JavaScript, en dat ziet er zo uit:
+
+![](images/developer-tools-css.png){ width=30% }
+
+Dat kan je lezen als: op het element zelf is een stijl neergezet (door JavaScript). Dat overschrijft de `background-color` stijl die het element krijgt vanaf `#box1` (daar staat ook een streep door). Helemaal rechts staat waar de stijl vandaan komt, in dit geval `website.css` op regel 1.
+
+\pagebreak
+
+Alle foutmeldingen van JavaScript komen in de tab `Console`. Als je `console.log("test")` in JavaScript zet ergens, komt dat ook hier terecht (dat is de echo / Console.WriteLine van JavaScript). Als we bijvoorbeeld een typfout hebben gemaakt in onze code, dan zie je dit staan:
+
+![](images/developer-tools-js-error.png){ width=50% }
+
+## 1.4 Eindopdracht hoofdstuk 1
+Box1 is inmiddels aangepast, probeer nu zelf de kleur van box2 aan te passen naar *oranje* met een *hexadecimale kleurcode*. Gelukt? Voeg dan nog twee divs toe in de HTML en pas daar de kleur van aan met JavaScript.
+
+# Hoofdstuk 2: Nog meer JavaScript
+Laten we nog wat meer aspecten van JavaScript doorlopen
+
+## 2.1 Event listener: on load
+Het kan voorkomen dat je JavaScript iets wilt laten doen zodra de pagina voor het eerst verschijnt. Of als je ergens op klikt. Of als je op enter drukt. Al deze voorbeelden (en meer) noem je *events*. Op elk HTML element (en zelfs de hele pagina) kan je aandachtig luisteren tot een specifiek *event* aan de orde is.
+
+Bijvoorbeeld om te kijken of de hele pagina geladen is:
+```js
+window.addEventListener("load", function () {
+    console.log("De pagina is geladen!");
+});
+```
+
+Als het JavaScript bestand bijvoorbeeld wordt ingeladen in de `<head>` van je HTML document, dan draait het voordat alle HTML werkelijk in de pagina is neergezet. Dan zou je dus een foutmelding krijgen bij het wijzigen van de achtergrondkleur van `#box1`, want die bestaat nog niet. De `console.log` hierboven verschijnt pas als de hele pagina compleet geladen is.
+
+Laten we het ontleden:
+
+- `window` is het browser scherm
+- `addEventListener(` is de functie die dan gaat luisteren op `window` voor een specifiek *event*.
+- `"load"` is de naam van het *event*. Dus zodra het geladen is.
+- `function () {` is een *naamloze functie*, die wordt uitgevoerd door `addEventListener` zodra het klaar is met luisteren. Daarom heb je ook geen naam nodig - de hele functie geef je mee aan de event listener. Een korte versie van een naamloze functie is `() => {`.
+- `console.log()` toont een bericht in de *Developer Tools console*.
+
+## 2.2 Event listener: on click
+Een ander voorbeeld is iets uitvoeren als je klikt op de `<div>` met ID `box1`:
+```js
+document.querySelector('#box1').addEventListener('click', function() {
+    console.log("Ooooh je mag niet klikken!");
+});
+```
+
+Laten we het toch weer even ontleden:
+
+- `document`, bevat de hele website, html en css.
+- `.querySelector('#box1')` selecteert een HTML element adhv een `selector` - dezelfde manier als CSS. `#box1` is dus het HTML element met ID `box1`.
+- `addEventListener(` is de functie die dan gaat luisteren op `#box1` voor een specifiek *event*.
+- `"click"` is de naam van het *event*. Dus het klikken op het element.
+- `function () {` is een *naamloze functie* die dan wordt uitgevoerd door `addEventListener`.
+- `console.log()` toont een bericht in de *Developer Tools console*.
+
+## 2.2 Event listener: on submit
+Je kan ook een handeling uitvoeren als je een formulier invult en verstuurd. Dat doe je door op een submit knop te drukken of op enter drukken in een tekst vak, oftewel:
+```js
+document.querySelector('#search_form').addEventListener('submit', function() {
+    console.log("Laten we dan nu het hele formulier naar PHP sturen.");
+});
+```
+
+## 2.3 Tekst of HTML toevoegen
+Je kan meer doen dan alleen de stijl van een HTML element aanpassen. Laten we eens wat tekst, en daarna HTML, toevoegen. Aan `box2` dit keer, `box1` heeft genoeg actie gezien.
+
+Een stuk tekst in de `<div>` met ID `box2` zetten doe je zo:
+```js
+document.querySelector('#box2').innerText = "Dit is nu de tekst in Box Twee.";
+```
+
+Het lijkt heel erg op de stijl-verandering. In plaats van de `style` veranderen we nu de `innerText` variabel, en dat wordt meteen in de HTML doorgevoerd.
+
+Een stuk HTML in `#box2` zetten doe je zo:
+```js
+document.querySelector('#box2').innerHTML = "<h1>Dit is nu</h1><p>de tekst in Box Twee.</p>";
+```
+
+Bijna geheel hetzelfde als de tekst veranderen. Het grote verschil is dat je absoluut geen HTML kan toevoegen met `innerText`, dat wordt dan exact getoond zoals je het typt.
+
+## 2.4 Eindopdracht hoofdstuk 2
+Maak `website.js` zodanig dat:
+
+- `box2` krijgt een stuk tekst met html met een mooie achtergrond kleur als je klikt op `box1`;
+- `box1` krijgt hetzelfde maar dan met een mooiere achtergrond kleur, als je klikt op `box2`.
+- Beide deze brokken code draaien pas zodra het hele scherm geladen is.
+
+\pagebreak
+
+# Hoofdstuk 3: JSON
