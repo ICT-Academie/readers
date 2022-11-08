@@ -367,4 +367,4 @@ Hierbij is het de bedoeling dat:
 
 Je mag ook de code inzien van het voorbeeld, deze is te vinden op:
 
-https://github.com/koffiebaard/js-eindopdracht
+[https://github.com/koffiebaard/js-reader-eindopdracht](https://github.com/koffiebaard/js-reader-eindopdracht)
