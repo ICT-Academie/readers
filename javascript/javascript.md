@@ -94,7 +94,9 @@ Om ons eerste stukje JavaScript te schrijven maken we gebruik van het JavaScript
 <script src="website.js"></script>
 ```
 
-Dat zegt eigenlijk: Laad een script in, genaamd `website.js`. Die gaan we nu aanmaken met de inhoud:
+Dat zegt eigenlijk: Laad het script hier in, met de naam `website.js`. Je ziet in het HTML voorbeeld hierboven dat dit script helemaal als laatste (vlak voor de body) wordt ingeladen. De plek waar je dit script inlaad is belangrijk: Tijdens het laden van de hele pagina gaat JavaScript meteen draaien zodra de browser een script tegen komt. Zet je deze dus halverwege de pagina, dan ziet JavaScript maar de helft van de pagina. Zet je het script in de `<head>`, dan heeft het helemaal geen toegang tot de HTML want die is er dan nog niet.
+
+Het script `website.js` gaan we nu aanmaken met de inhoud:
 
 ```js
 document.querySelector('#box1').style.backgroundColor = "green";
@@ -111,24 +113,24 @@ Laten we dat even ontleden. JavaScript is een taal waarin je een heleboel aan el
 Als je nu de website bekijkt, zie je dat doos nummer 1 groen is geworden. Het werkt!
 
 ## 1.3 Developer tools
-Fijn dat het nu goed gaat, maar wat moeten we doen als er iets mis gaat? Hoe controleer je dat? *Developer Tools* is je redding. Druk op F12 en er verschijnt een balk onderin:
+Fijn dat het nu goed gaat, maar wat moeten we doen als er iets mis gaat? Hoe controleer je dat? *Developer Tools* is je redding. Druk op F12 terwijl je in de browser zit en er verschijnt een balk onderin:
 
 ![](images/developer-tools.png){ width=100% }
 
-Alle HTML van de hele pagina staat aan de linkerkant. Als je iets aanklikt zie je de styling staan in het vak helemaal rechts. Daar kan je ook zien welke stijlen worden overgeschreven. In ons geval door JavaScript, en dat ziet er zo uit:
+Alle HTML van de hele pagina staat aan de linkerkant. Als je iets aanklikt zie je de styling (CSS) staan in het vak helemaal rechts. Daar kan je ook zien welke stijlen worden overgeschreven. In ons geval door JavaScript, en dat ziet er zo uit:
 
-![](images/developer-tools-css.png){ width=30% }
+![](images/developer-tools-css.png){ width=25% }
 
 Dat kan je lezen als: op het element zelf is een stijl neergezet (door JavaScript). Dat overschrijft de `background-color` stijl die het element krijgt vanaf `#box1` (daar staat ook een streep door). Helemaal rechts staat waar de stijl vandaan komt, in dit geval `website.css` op regel 1.
 
-\pagebreak
-
-Alle foutmeldingen van JavaScript komen in de tab `Console`. Als je `console.log("test")` in JavaScript zet ergens, komt dat ook hier terecht (dat is de echo / Console.WriteLine van JavaScript). Als we bijvoorbeeld een typfout hebben gemaakt in onze code, dan zie je dit staan:
+Alle foutmeldingen van JavaScript komen in de tab `Console`. Als je `console.log("test")` in JavaScript zet, komt dat ook hier terecht (dat is de echo / Console.WriteLine van JavaScript). Als we bijvoorbeeld een typfout hebben gemaakt in onze code, dan zie je dit staan:
 
 ![](images/developer-tools-js-error.png){ width=50% }
 
 ## 1.4 Opdrachten hoofdstuk 1
 Box1 is inmiddels aangepast, probeer nu zelf de kleur van box2 aan te passen naar *oranje* met een *hexadecimale kleurcode*. Gelukt? Voeg dan nog twee divs toe in de HTML en pas daar de kleur van aan met JavaScript.
+
+\pagebreak
 
 # Hoofdstuk 2: Nog meer JavaScript
 Laten we nog wat meer aspecten van JavaScript doorlopen
@@ -250,17 +252,26 @@ let gebruiker = {
 };
 ```
 
-Dan kan je de verschillende velden direct uitvragen adhv de naam. Bij een array (`[ ]`) kan je erdoorheen loopen en daarna de waarden uitvragen:
+Dan kan je de verschillende velden direct uitvragen via de naam die je eraan geeft. Deze namen hebben dezelfde regels als variabelen, dus geen spaties en dergelijke. Bij een array (`[ ]`) kan je erdoorheen loopen en daarna de waarden uitvragen. Bijvoorbeeld:
 
 ```js
 console.log(gebruiker.naam); // Geeft terug: "Tim"
 
-console.log(gebruiker.naam); // Geeft terug: "70"
+console.log(gebruiker.leeftijd); // Geeft terug: "70"
 
 gebruiker.hobbys.forEach(function (hobby) {
     console.log(hobby); // Elke keer in de loop de volgende hobby
 })
 ```
+
+Maar je kan velden uit een object ook opvragen op de PHP manier:
+
+```js
+console.log(gebruiker["naam"]); // Geeft terug: "Tim"
+
+console.log(gebruiker["leeftijd"]); // Geeft terug: "70"
+```
+
 
 ## 3.3 Opdrachten hoofdstuk 3
 Maak je eigen JSON object zoals het voorbeeld hierboven. Niet met een gebruiker, maar iets anders. Over je hobby of allerdaagse dingen zoals een huis of auto. Lees de waarden uit en zet ze netjes (met html zoals `h1` en `p`) in `box1` en `box2` zodra je op die elementen klikt.
