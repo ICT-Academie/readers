@@ -34,7 +34,7 @@ JavaScript is gemaakt in 10 dagen, in 1995. Laat dat even inzinken. Tien dagen. 
 
 JavaScript is initieel ontworpen als script taal in de browser, om zo soepel mogelijk samen te kunnen werken met Java. De naam JavaScript komt daar ook vandaan. Waarom Java specifiek, als het ook werkt met alle andere talen? Heel simpel: Java was destijds een van de populairste programmeertalen, en kon zelfs draaien in browsers als mini-applicaties (*applets*). Op die populariteit kan je dan mooi meeliften.
 
-Tegenwoordig zijn er enorm veel bedrijven en organisaties die meewerken aan het ontwikkelen van JavaScript. De taal veranderd enorm snel en is heel erg flexibel. De laatste jaren is JavaScript zelfs ook populair als *back-end*. Je kan het op dezelfde manier draaien als b.v. PHP, Java en C# met behulp van de **V8 engine**, gemaakt door Google.
+Tegenwoordig zijn er enorm veel bedrijven en organisaties die meewerken aan het ontwikkelen van JavaScript. De taal veranderd enorm snel en is heel erg flexibel. De laatste jaren is JavaScript zelfs ook populair als *back-end*. Je kan het op dezelfde manier draaien als bijvoorbeeld PHP, Java en C# met behulp van de **V8 engine**, gemaakt door Google.
 
 \pagebreak
 
@@ -212,7 +212,7 @@ Informatie versturen van plek A naar B is misschien wel de meest voorkomende han
 ## 3.1 Structuur van JSON
 JSON staat voor JavaScript Object Notation. Het is dus hoe JavaScript zelf ook zijn informatie opslaat, voor objecten en arrays.
 
-Stel: Jouw *front-end* (b.v. JavaScript) vraagt aan jouw *back-end* (b.v. PHP) om informatie van een gebruiker. PHP haalt dat op uit de database (MySQL bijvoorbeeld) en geeft dat resultaat terug. Als je dat PHP bestand bekijkt in de browser zou je dan kunnen zien:
+Stel: Jouw *front-end* (bijvoorbeeld JavaScript) vraagt aan jouw *back-end* (bijvoorbeeld PHP) om informatie van een gebruiker. PHP haalt dat op uit de database (MySQL bijvoorbeeld) en geeft dat resultaat terug. Als je dat PHP bestand bekijkt in de browser zou je dan kunnen zien:
 
 ```json
 {
@@ -231,7 +231,7 @@ Dit is JSON. Het heeft een hele specifieke syntax, een manier van schrijven. Maa
 
 - `{ }` Met **curly brackets** heb je een object. In een object kan je namen met waarden neerzetten (zoals variabelen).
 - `"naam": "Tim",` De naam van de "variabel", een dubbele punt en dan de waarde die je erin wilt zetten. Deze velden (of **properties**) eindigen met een komma om aan te geven dat er nog een aankomt, dus het allerlaatste veld heeft deze komma niet.
-- `"leeftijd": 70,` Dubbele quotes maakt een string (tekst), en zonder de quotes heb je dan b.v. een cijfer, boolean, etc. Dat gaat verder automatisch.
+- `"leeftijd": 70,` Dubbele quotes maakt een string (tekst), en zonder de quotes heb je dan bijvoorbeeld een cijfer, boolean, etc. Dat gaat verder automatisch.
 - `[ ]` Met **square brackets** heb je een array. Een lijst van waarden (en alleen de waarden!). Het kan verder alles bevatten. Een lijst van cijfers, een lijst van teksten, etc.
 
 \pagebreak
@@ -279,12 +279,13 @@ Maak je eigen JSON object zoals het voorbeeld hierboven. Niet met een gebruiker,
 \pagebreak
 
 # Hoofdstuk 4: Fetch data
-Een van de grootste krachten van JavaScript is het kunnen ophalen van informatie van een *back-end*. Je stuurt een *request* (net zoals een browser dat doet als je in de URL iets typt) en je krijgt het antwoord.
+Een van de grootste krachten van JavaScript is het kunnen ophalen van informatie van een *back-end*. Je stuurt een *request* (verzoek), net zoals bij het bezoeken van een website door middle van een URL, en je krijgt een response (antwoord) terug.
+
 
 ## 4.1 Geen pagina verversen
 In het verleden heb je wel eens gewerkt met een formulier (`<form></form>`). Een HTML element dat je om een aantal tekstvelden heen zet en zo gegevens naar een back-end pagina (zoals PHP) kon sturen.
 
-De hele pagina ververst als je een formulier op die manier opstuurt. Het scherm blijft hangen tot je een antwoord krijgt. Terwijl je wacht gaat het PHP script draaien en krijg je een nieuwe pagina te zien met de nieuwe gegevens.
+De hele pagina ververst als je een formulier op die manier opstuurt. Het scherm blijft hangen tot je een antwoord (response) krijgt. Terwijl je wacht gaat het PHP script draaien en krijg je een nieuwe pagina te zien met de nieuwe gegevens.
 
 In plaats daarvan kunnen we JavaScript het laten versturen zonder de pagina te verversen. JavaScript stuurt alleen wat in het formulier staat, en krijgt alleen het antwoord daarvoor terug. De hele website blijft verder staan. Het resultaat is een website die minder laadtijd heeft en een stuk vlotter voelt.
 
@@ -292,16 +293,16 @@ Je kan een voorbeeld hiervan vinden op: [http://www.jsexample.ikleverhet.in](htt
 
 
 ## 4.2 Veiligheid
-Voor veiligheidsredenen mag je niet zomaar een back-end van een andere website bereiken. Dat noem je CORS, *Cross Origin Resource Sharing*, oftewel het delen van informatie buiten je eigen domeinnaam (jouw *origin*). Zo'n back-end moet dan expliciet aangeven dat dat mag.
+Voor veiligheidsredenen mag je niet zomaar een back-end (zoals PHP) van een andere website bereiken. Dat noem je CORS, *Cross Origin Resource Sharing*, oftewel het delen van informatie buiten je eigen domeinnaam (dat is in dit geval je *origin*). Elk back-end moet voor zichzelf aangeven of andere websites verzoeken (requests) mogen sturen.
 
-Er zijn wel publieke back-ends (API's) te vinden die specifiek aangeven dat het mag, gelukkig. Er zijn lijsten te vinden zoals deze:
+Er zijn wel publieke back-ends (zoals wat je maakt in PHP, oftewel API's) te vinden die specifiek aangeven dat dat mag, gelukkig. Er zijn lijsten te vinden zoals deze:
 
 [https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis)
 
-Als je wilt testen met een *back-end* zonder dat zelf te moeten maken, kies er dan eentje uit deze lijst die CORS heeft.
+Als je wilt testen met een *back-end* zonder er zelf een te maken, kies er dan eentje uit deze lijst die CORS heeft.
 
 ## 4.3 Fetch
-Om informatie van het back-end op te vragen, gebruik je een functie genaamd `fetch()`. Dit zit standaard in de nieuwe versie van JavaScript en is beschikbaar in alle moderne browsers.
+Om informatie van een back-end op te vragen gebruik je een functie genaamd `fetch()`. Dit zit standaard in de nieuwe versie van JavaScript en is beschikbaar in alle moderne browsers.
 
 Een voorbeeld:
 ```js
@@ -311,10 +312,10 @@ let response = await fetch(url);
 Als we dat ontleden, zijn dit de stappen die genomen worden:
 
 1. Je roept `fetch(url)` aan met een url erin (bijvoorbeeld `test.php` of `https://google.com/geenidee`);
-2. `fetch()` gaat die url opvragen (laten we zeggen dat dat `test.php` is);
+2. `fetch()` gaat die url opvragen - laten we zeggen dat dat `test.php` is;
 3. De webserver op je laptop (Apache, vanuit XAMPP) ontvangt de aanvraag (request), en voert de PHP code van `test.php` uit;
-4. Het antwoord (response) is klaar, en wordt binnengehaald door `fetch()`.
-5. Wat `fetch()` dus binnenhaalt (in de variabel `response`) is exact hetzelfde als wat je in de browser ziet als je zelf naar de url gaat.
+4. Het antwoord (response) is klaar en wordt binnengehaald door `fetch()`.
+5. Wat `fetch()` binnenhaalt, in de variabel `response`, is exact hetzelfde als wat je in de browser ziet als je zelf naar de url gaat.
 
 
 ## 4.4 Asynchroon
@@ -332,7 +333,7 @@ fetch(url).then(function(response) {
 
 Laten we dat even ontleden:
 
-1. `fetch(url)` Doe een request naar een url (b.v. `test.php`)
+1. `fetch(url)` Doe een request naar een url (bijvoorbeeld `test.php`)
 2. `.then()` ontvangt 1 parameter, en dat is een functie. Die functie wordt uitgevoerd zodra het response van de url binnen is.
 3. `.then( function(response) {} )` Een naamloze functie is dus de parameter, en als die wordt uitgevoerd krijg je de `response` erbij als parameter in dié functie; hetgene wat `fetch()` heeft opgehaald, ofwel de response die de `url` heeft teruggegeven.
 
@@ -370,10 +371,10 @@ Je gaat nu je eigen zoek functie maken. Een webpagina met een invulveld en een z
 Hierbij is het de bedoeling dat:
 
 - Je een invoerveld met een knop maakt;
-- Je in staat bent om zoektermen naar de *back-end* te sturen;
-- De back-end deze termen opzoekt op een API/Database;
-- De back-end zijn zoekresultaten teruggeeft in *JSON*;
-- Je gebruik maakt van minstens 1 database en 1 API. Spreek van tevoren af met een docent welke API je wil gaan gebruiken. Je mag hiervoor geen Wikipedia gebruiken. Voor ideeën kan je denken aan API’s van games, Google, eBay, Amazon, Bol.com, Tweakers, Pokemon, Chuck Norris facts, Star Wars, cat facts, etc.
+- Je in staat bent om zoektermen naar jouw *back-end* te sturen;
+- Dit back-end deze termen opzoekt in een API én een database;
+- Dit back-end zijn zoekresultaten teruggeeft in *JSON*;
+- Je gebruik maakt van minstens 1 database en 1 API. Spreek van tevoren af met een docent welke API je wil gaan gebruiken. Je mag hiervoor geen Wikipedia gebruiken. Voor ideeën kan je denken aan API's van games, Google, eBay, Amazon, Bol.com, Tweakers, Pokemon, Chuck Norris facts, Star Wars, cat facts, etc.
 - De website moet er wel leuk uit zien, vergeet deze niet te stylen!
 
 Je mag ook de code inzien van het voorbeeld, deze is te vinden op:
