@@ -30,14 +30,22 @@ sudo tlmgr install latexmk
 The Windows equivalent is supposedly [MikTex](https://miktex.org/download) but it hasn't been tested yet.
 
 ### Build a reader
-Build the `versie-beheer` reader:
+Building a reader:
 ```bash
 make reader=versie-beheer build
 ```
 
-Build the reader and open it immediately:
+Building a reader and opening it immediately after:
 ```bash
 make reader=versie-beheer buildopen
 ```
 
+The different readers you can build:
+```bash
+make reader=versie-beheer buildopen
+make reader=javascript buildopen
+```
+
+
+### Distribution
 For now we'll keep the generated readers in the dist folder and commit them in Git. That way we'll have a single source of truth. We can figure out a better way for versioning and storing assets later.
