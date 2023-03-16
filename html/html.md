@@ -4,6 +4,18 @@ author: "Tim Quax (tquax@novacollege.nl)"
 geometry: "left=1cm,right=1cm,top=1cm,bottom=2.5cm"
 mainfont: Open Sans
 documentclass: scrartcl
+subparagraph: yes
+header-includes: |
+  \linespread{1}
+
+  \usepackage{setspace}
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{\baselineskip}
+
+  \usepackage{titlesec}
+  \titlespacing{\section}{0pt}{12pt plus 2pt minus 1pt}{-10pt plus 1pt minus 1pt}
+  \titlespacing{\subsection}{0pt}{12pt plus 2pt minus 1pt}{-10pt plus 1pt minus 1pt}
+  \titlespacing{\subsubsection}{0pt}{12pt plus 2pt minus 1pt}{-10pt plus 1pt minus 1pt}
 ---
 \pagebreak
 # HTML
@@ -58,7 +70,9 @@ Die ziet er wel heel raar uit, dus laten we die even ontleden:
 
 - Een link werd vroeger een `anchor` genoemd, daarom heet het element dus `<a>`
 - De plek waar je de browser heen wilt wijzen, werd de `hypertext reference` genoemd. Oftewel een `href`. Dat is dus het attribuut waar je je link in zet.
+- Een link kan wijzen naar een compleet andere website (b.v. `href="https://google.com/"`) of naar een HTML bestand in dezelfde map (b.v. `href="test.html"`) of zelfs een HTML bestand in een andere map (b.v. `map/nog_een_map/test.html`).
 - Tussen de open- en sluitende tag (`<a>` en `</a>`) is er wel degelijk inhoud; de tekst waar je op moet klikken om naar de link te gaan.
+
 
 \pagebreak
 
@@ -117,15 +131,15 @@ In de paragraaf staat dus 1 regel tekst, een link naar Google op een nieuwe rege
 Een HTML pagina bestaat uit iets meer dan alleen maar paragrafen en links. Het bestaat uit vier delen:
 
 ### Doctype
-Een `doctype` is exact wat het zegt: een document type. Het geeft aan wat voor soort document jouw bestand is. Het is niet zomaar een tekst bestand, het is een HTML bestand en browsers moeten het ook zo behandelen.
+Een `doctype` is exact wat het zegt: een document type. Het geeft aan wat voor soort document jouw bestand is. Het is niet zomaar een tekst document, het is HTML dus toon het ook als HTML.
 
 Dit is altijd de **eerste regel in een HTML bestand**!
 
 ### HTML
-Na de doctype is het `html` element altijd het eerste wat je ziet. Daar wordt vervolgens **alle HTML** ingezet. Meestal zal je daar nog een attribuut in zien; de taal waar het document in geschreven is; het `lang` attribuut zal je straks in het voorbeeld tegenkomen.
+Na de doctype is het `html` element altijd het eerste wat je ziet. Daar wordt vervolgens **alle HTML** ingezet. Het is gebruikelijk om daar nog een `lang` attribuut tegen te komen; oftewel de gebruikte taal.
 
 ### Head
-De `head` is een apart gedeelte van de pagina, met informatie /over/ je pagina. Hier staan zaken die je niet gaat zien op je pagina, maar die wel belangrijk zijn. Als je opmaak bestanden (CSS) wilt toevoegen doe je dat bijvoorbeeld hier. Als je een titel zichtbaar wilt hebben in de tab bovenin je browser, en/of een icoontje, dan geef je die hier ook aan.
+De `head` is een apart gedeelte van de pagina, met informatie /over/ je pagina. Hier staan zaken die je niet gaat zien op je pagina maar wel heel belangrijk zijn. Denk bijvoorbeeld aan opmaak, een titel in de tab bovenin, etc.
 
 De head zie je niet maar is zeker wel deel van de html. Deze staat in het `html` element, altijd als eerste.
 
@@ -151,6 +165,44 @@ Als deze vier onderdelen samen komen komt het er zo uit:
 
 ## 1.4 Opdrachten hoofdstuk 1
 
-Maak een nieuw project (in `PHPStorm`) en maak het bestand `hoofdstuk1.html` aan met de inhoud van het voorbeeld hierboven. Maak twee paragrafen, Elk met een tekst met linkjes in de tekst.
+Maak een nieuw project aan in `PHPStorm`. Maak een bestand `hoofdstuk1a.html` en een bestand `hoofdstuk1b.html`. Zet het bovenstaande voorbeeld erin en maak twee paragrafen in elk bestand, elk met een link naar het andere bestand.
 
 \pagebreak
+
+# Hoofdstuk 2: Tekst en afbeeldingen in HTML
+Nu je wat meer weet over hoe HTML is opgebouwd en hoe het werkt, gaan we wat dieper in de stof van tekst en afbeeldingen. Je hebt al een beetje met paragrafen en links gewerkt, maar je kan er nog veel meer mee. Denk bijvoorbeeld aan dikgedrukte tekst, ondersteepte tekst, koppen bij teksten, opsomminglijsten, enzovoorts.
+
+## 2.1 Tekst
+Zonder uberhaupt nog CSS aan te raken kan een paragraaf al best goed aangekleed worden.
+
+### Dikgedrukte tekst
+Je kan tekst dikgedrukt maken met `<b>` (van bold).
+
+Bijvoorbeeld: `Alleen dit <b>woord</b> is dikgedrukt.`
+
+### Schuingedrukte tekst
+Schuin gedrukte tekst maak je met `<i>` (van italic).
+
+Bijvoorbeeld: `Alleen dit <i>woord</i> is schuingedrukt.`
+
+### Ondersteepte tekst
+Ondersteepte tekst maak je met `<u>` (van underline).
+
+Bijvoorbeeld: `Alleen dit <u>woord</u> is ondersteept.`
+
+### Kop boven tekst
+Een kop zet je boven de paragraaf, en die kop kan je in verschillende groottes neerzetten. Er zijn 6 groottes, en de grootte zit in de naam. `<h1>` (van header) is de grootste kop en `h6` is de kleinste. Bijvoorbeeld:
+
+```html
+<h1>Een hele grote kop boven de tekst</h1>
+<p>Met een mooie paragraaf eronder.</p>
+
+<h6>Een hele kleine kop boven de tekst</h6>
+<p>Met een iets minder mooie paragraaf eronder.</p>
+```
+
+## 2.2 Opsomminglijsten
+Asd
+
+## 2.3 Afbeeldingen
+Asd
