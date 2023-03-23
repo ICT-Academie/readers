@@ -202,7 +202,42 @@ Een kop zet je boven de paragraaf, en die kop kan je in verschillende groottes n
 ```
 
 ## 2.2 Opsomminglijsten
-Asd
+- Een opsomminglijst kan handig zijn.
+- Als je een lijst van items wilt noteren.
+- Denk aan b.v. boodschappen of taken.
+- Maar vooral geen alinea aan tekst, verworven in een lijst.
+
+Een lijst geef je aan met `<ul>` (unordered list) of `<ol>` (ordered list). Een ordered list is genummerd waar een unordered list stipjes heeft. In zo'n lijst heb je vervolgens list items (`<li>`) staan. Bijvoorbeeld:
+
+```html
+<ul>
+  <li>List item nummer 1</li>
+  <li>List item nummer 2</li>
+  <li>List item nummer 3</li>
+</ul>
+```
 
 ## 2.3 Afbeeldingen
-Asd
+Afbeeldingen kan je overal in de HTML neerzetten, zelfs tussen tekst, en dan staat de afbeelding simpelweg tussen de tekst. Een afbeelding maak je met de `img` tag (image). De `<img>` tag heeft geen inhoud tussen de tags, want daar kan geen afbeelding in gezet worden. De HTML is alleen tekst, dus je zet daar de locatie van de afbeelding - de map en bestandsnaam waar het gevonden kan worden.
+
+Bijvoorbeeld:
+
+```html
+<img src="naam-van-je-afbeelding.jpg">
+```
+
+Als de afbeelding in een map `images` staat, dan doe je dit:
+
+```html
+<img src="images/naam-van-je-afbeelding.jpg">
+```
+
+Je kan daar zoveel mappen neerzetten als je wilt. Je geeft de mappen aan vanaf de map waar je HTML bestand staat. Dus in dezelfde map van `voorbeeld.html` staat dus een map `images`. In die map `images` staat het bestand `naam-van-je-afbeelding.jpg`.
+
+## 2.4 Opdrachten hoofdstuk 2
+Maak een hoofdstuk2.html. Maak er iets leuks van, er moet minimaal in staan:
+
+- Tekst - kopjes en paragrafen;
+- Opgemaakt - dikgedrukte-, schuine- en onderstreepte tekst, met enters;
+- Een opsomminglijst;
+- Een afbeelding.
