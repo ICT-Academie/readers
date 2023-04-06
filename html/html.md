@@ -52,7 +52,7 @@ Er zijn in principe twee soorten HTML elementen. Eigenlijk zes, maar we houden h
 ### Normale elementen (normal elements)
 Als voorbeeld pakken we een paragraaf (een alinea aan tekst). Dat begint met de tag `<p>`. Tags staan altijd in die chevron tekens (< en >). De tag om te eindigen is dan `</p>`; de slash (/) vertelt dat dit het einde van het element is. Tussen die twee tags staat dus je paragraaf, de werkelijke tekst.
 
-![](images/html_element.png){ width=50% }
+![](images/html_element.png){ width=50% }developer-tools.png
 
 De paragraaf ziet er zo uit:
 
@@ -340,6 +340,8 @@ Dat ziet er dan zo uit:
 
 ![](images/table-with-th.png){ width=35% }
 
+\pagebreak
+
 ## 3.3 div
 Regelmatig zal je je HTML willen opsplitsen, puur voor het stijlen. Meerdere kopjes met paragrafen onder elkaar hoeven helemaal niet bij elkaar horen. Misschien wil je dat tonen met ruimte ertussen, of een andere achtergrondskleur. Daar komt `<div>` (division) bij kijken.
 
@@ -406,6 +408,8 @@ p {
 
 Dit maakt de kleur van de tekst in alle paragrafen groen, en de achtergrond van alle paragrafen worden zwart.
 
+\pagebreak
+
 ## 4.2 Kleuren
 Hierboven heb je al wat kleuren voorbij zien komen, zoals `green` en `black`. Er zijn 140 kleurnamen maar daar red je het niet mee. Namen verzinnen voor alle 16+ miljoen kleuren wordt een beste klus. Daarom is er een ander systeem bedacht: hex kleuren.
 
@@ -466,6 +470,8 @@ div {
 ## 4.4 Verschillende stijlen
 In het voorbeeld hierboven zie je de stijl om de tekst kleur aan te passen (`color`) en om de achtergrondkleur aan te passen (`background-color`), maar er zijn enorm veel stijlen die je toe kan passen.
 
+Het zijn er teveel om op te noemen, dus voel je vrij om te googlen naar wat je wilt - je zal altijd wel wat vinden.
+
 Voor tekst e.d:
 
 - Tekst kleur: `color: green`
@@ -477,12 +483,16 @@ Voor bijna alle HTML elementen:
 
 - Breedte: `width: 200px`
 - Hoogte: `height: 200px`
-- Marge: `margin: 10px`
 - Rand: `border: 1px solid #00FF00` (1px brede border, solide lijn, kleur #00FF00)
 - Achtergrondkleur: `background-color: #FF0000`
+- Marge: `margin: 10px`
+- Padding: `padding: 10px`
 
-Het zijn er teveel om op te noemen, dus voel je vrij om te googlen naar wat je wilt - je zal altijd wel wat vinden.
+Een kleine notitie over marges en paddings; ze lijken enorm op elkaar maar toch zijn ze iets anders. Een marge is ruimte om een HTML element heen, en padding is de ruimte binnen de randen van een element. Als je een rand (border) op het element zou zetten, zit deze dus tussen de marge en padding.
 
+Zoals dit:
+
+![](images/margin-padding.png){width=60%}
 
 ## 4.5 CSS in de HTML pagina
 In een HTML pagina moet je de CSS gaan inladen, als je wilt dat de HTML gestyled wordt. Dat kan op twee manieren; de goede manier en de snelle manier.
@@ -543,13 +553,14 @@ Maak hoofdstuk4.html en hoofdstuk4.css aan. Maak er vooral iets moois van, het v
 Alles wat je aan HTML neerzet moet gestyled worden met CSS, in hoofdstuk4.css. Je kan googlen naar wat voor een stylen je allemaal hebt, maar je kan ook de kleuren etc aanpassen zoals in de voorbeelden van dit hoofdstuk.
 
 \pagebreak
+
 # Hoofdstuk 5: CSS gevorderd
 
 ## 5.1 Specifieke CSS selectors
 Een heel veel voorkomende situatie is het willen stylen van een specifiek HTML element. Niet alle afbeeldingen, of alle paragrafen, maar 1 specifieke paragraaf. Op die ene pagina, daar. En niks anders. Of je wilt misschien een aantal paragrafen een style geven - maar niet allemaal.
 
 ### ID
-Je kan elk HTML element een ID meegeven, een HTML attribuut dat een unieke waarde moet hebben.
+Een ID geef je aan 1 HTML element, die is dan uniek over de hele pagina. Je kan elk HTML element een ID meegeven, een HTML attribuut dat dus wel een unieke waarde moet hebben.
 
 HTML voorbeeld:
 ```html
@@ -564,7 +575,7 @@ In CSS kan je HTML met een ID stylen met een hekje (`#`) ervoor. Bijvoorbeeld:
 ```
 
 ### Classes
-Je kan een groep van HTML elementen ook stijlen geven. Dan kies je zelf exact welk HTML element de stijlen wel krijgt, als een groepering. Dat is het `class` attribuut die je op alle HTML elementen kan toevoegen.
+Je kan ook een groep van HTML elementen stijlen geven. Dan kies je zelf exact welk HTML element de stijlen wel of niet krijgt, als een groepering. Dat is het `class` attribuut die je op HTML elementen kan toevoegen.
 
 HTML voorbeeld:
 ```html
@@ -596,10 +607,101 @@ ul .speciale_styling {
 }
 ```
 
-## 5.2 Flexbox
+## 5.2 Display
+Alle HTML elementen hebben vanuit zichzelf altijd een display type. Een van deze twee: Inline of block. 
 
+Je kan met CSS dan ook de display type aanpassen:
 
-## 5.3 Floats, block/inline
+```css
+img {
+  display: block
+}
+```
+
+Je kan ook `display: none` neerzetten, en dan verdwijnt het element compleet.
+
+### Inline
+Inline elementen (zoals `<img>` of `<b>` ) zullen altijd naast elkaar komen te staan, en ze zijn zo breed als wat er in staat.
+
+### Block
+Block elementen (zoals `<h1>` of `<p>`) zullen altijd onder elkaar komen te staan, want ze nemen altijd 100% van de beschikbare breedte. Ze zijn dan wel zo hoog als nodig voor wat er in staat.
+
+### Flex
+Er is relatief recent `flex` bij gekomen, ook wel Flexbox genoemd. Het is enorm uitgebreid en concentreert zich vooral op hoe HTML elementen over de pagina heen vloeien, voor alle soorten schermgroottes. Als je thumbnails laat zien, wil je misschien minder thumbnails laten zien op een telefoon. Of misschien wil je bij een artikel enkele onderdelen naast elkaar zetten op een groot scherm. 
+
+Dit soort zaken worden heel makkelijk met Flexbox, maar het is nog steeds enorm complex. We gaan er niet in detail op in, maar als je er meer over wilt leren kan dat hier: [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+\pagebreak
+
+## 5.3 Float
+Als je zonder iets complex als Flexbox toch elementen naast elkaar wilt zetten, kan je `float` gebruiken. Zoals de naam al zegt zal het element gaan "zweven". Je kan de zweef-richting aangeven en dan valt het element naar die kant toe.
+
+Als je een afbeelding ergens neerzet, en deze vervolgens gaat floaten naar rechts:
+
+```css
+img {
+  float: right;
+}
+```
+
+Dan staat de afbeelding helemaal rechts, maar nog steeds binnen het element waar het al in stond.
+
+Een voorbeeld:
+
+```html
+<style>
+  div {
+    width: 200px;
+    height: 200px;
+    float: left;
+  }
+
+  #green_box {
+    background-color: #00ff00;
+  }
+
+  #red_box {
+    background-color: #ff0000;
+  }
+</style>
+
+<div id="green_box">De mooiste div</div>
+<div id="red_box">Ook een mooie div, maar minder.</div>
+```
+
+Puur omdat de `float: left` op de div staat, staan ze naast elkaar. Het ziet er zo uit:
+
+![](images/html-float-example.png){width=40%}
+
+\pagebreak
 
 ## 5.4 Debuggen
-Developer tools.
+Zodra de CSS niet lijkt te werken zoals je voor ogen had, of het lijkt helemaal niet gestyled te worden, dan wil je graag uitvogelen wat er mis ging. Misschien staat er een typfout, of is er een andere stijl die jouw nieuwe stijl overschrijft, of is er iets anders mis.
+
+Daar hebben we Developer tools voor. Elke noemenswaardige browser heeft er een en die open je met F12. Die ziet er ongeveer zo uit:
+
+![](images/developer-tools.png){ width=100% }
+
+Aan de linkerkant zie je alle HTML die de pagina getoond wordt. Als je een element aanklikt zie je rechts alle CSS die er op staat. Elke CSS regel kan je hier aanpassen om te kijken hoe het eruit komt te zien, maar let wel: dit verdwijnt zodra je de pagina ververst.
+
+Dat maakt het wel heel makkelijk om met verschillende stijlen te spelen, of verschillende oplossingen te proberen als het niet werkt.
+
+Als je een heleboel HTML hebt, is zoeken door die lijst niet zo heel handig. Dan kan je het cursor-icoontje helemaal linksboven aanklikken. Dan kan je met je muis op de website klikken op het element dat je zoekt en wordt deze geselecteerd in de Developer Tools:
+
+![](images/developer-tools-pick-element.png){ width=70% }
+
+\pagebreak
+
+## 5.5 Opdrachten hoofdstuk 5
+Maak de twee screenshots hieronder na. Gebruik hiervoor GEEN tabellen. Tip: Leer wat meer over float of misschien zelfs Flexbox.
+
+Maak in het bestand `hoofdstuk5-1.html`:
+
+![](images/float-assignment-1.png){width=70%}
+
+En in het bestand `hoofdstuk5-2.html`:
+
+![](images/float-assignment-2.png){width=80%}
+
+\pagebreak
+# Hoofdstuk 6: Formulieren
