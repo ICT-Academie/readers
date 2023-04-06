@@ -170,7 +170,7 @@ Maak een nieuw project aan in `PHPStorm`. Maak een bestand `hoofdstuk1a.html` en
 \pagebreak
 
 # Hoofdstuk 2: Tekst en afbeeldingen in HTML
-Nu je wat meer weet over hoe HTML is opgebouwd en hoe het werkt, gaan we wat dieper in de stof van tekst en afbeeldingen. Je hebt al een beetje met paragrafen en links gewerkt, maar je kan er nog veel meer mee. Denk bijvoorbeeld aan dikgedrukte tekst, ondersteepte tekst, koppen bij teksten, opsomminglijsten, enzovoorts.
+Nu je wat meer weet over hoe HTML is opgebouwd en hoe het werkt, gaan we wat dieper in de stof van tekst en afbeeldingen. Je hebt al een beetje met paragrafen en links gewerkt, maar je kan er nog veel meer mee. Denk bijvoorbeeld aan dikgedrukte tekst, ondersteepte tekst, koppen bij teksten, enzovoorts.
 
 ## 2.1 Tekst
 Zonder uberhaupt nog CSS aan te raken kan een paragraaf al best goed aangekleed worden.
@@ -201,23 +201,16 @@ Een kop zet je boven de paragraaf, en die kop kan je in verschillende groottes n
 <p>Met een iets minder mooie paragraaf eronder.</p>
 ```
 
-## 2.2 Opsomminglijsten
-- Een opsomminglijst kan handig zijn.
-- Als je een lijst van items wilt noteren.
-- Denk aan b.v. boodschappen of taken.
-- Maar vooral geen alinea aan tekst, verworven in een lijst.
+## 2.3 Speciale tekens
+Speciale karakters kan je laten zien op een webpagina door een bijhorende code in de HTML te zetten. Elk van de speciale karakters begint met een ampersand (`&`) en eindigt met een puntkomma (`;`). Als je deze code in je HTML zet, wordt het automatisch vertaald naar het speciale teken.
 
-Een lijst geef je aan met `<ul>` (unordered list) of `<ol>` (ordered list). Een ordered list is genummerd waar een unordered list stipjes heeft. In zo'n lijst heb je vervolgens list items (`<li>`) staan. Bijvoorbeeld:
+Het copyright symbool (`©`) kan je bijvoorbeeld neerzetten als `&copy;`.
 
-```html
-<ul>
-  <li>List item nummer 1</li>
-  <li>List item nummer 2</li>
-  <li>List item nummer 3</li>
-</ul>
-```
+Het euro teken (`€`) kan je neerzetten als `&euro;`.
 
-## 2.3 Afbeeldingen
+We hebben het eerder gehad over hoe alle spaties, tabs en enters uiteindelijk worden getoond als 1 spatie. Als je toch meerdere spaties wilt tonen, kan je de "no break space" gebruiken: `&nbsp;`. Zoals de naam zegt wordt deze spatie niet opgebroken naar een andere regel en wordt het niet weggecijferd door HTML zelf.
+
+## 2.4 Afbeeldingen
 Afbeeldingen kan je overal in de HTML neerzetten, zelfs tussen tekst, en dan staat de afbeelding simpelweg tussen de tekst. Een afbeelding maak je met de `img` tag (image). De `<img>` tag heeft geen inhoud tussen de tags, want daar kan geen afbeelding in gezet worden. De HTML is alleen tekst, dus je zet daar de locatie van de afbeelding - de map en bestandsnaam waar het gevonden kan worden.
 
 Bijvoorbeeld:
@@ -232,12 +225,295 @@ Als de afbeelding in een map `images` staat, dan doe je dit:
 <img src="images/naam-van-je-afbeelding.jpg">
 ```
 
-Je kan daar zoveel mappen neerzetten als je wilt. Je geeft de mappen aan vanaf de map waar je HTML bestand staat. Dus in dezelfde map van `voorbeeld.html` staat dus een map `images`. In die map `images` staat het bestand `naam-van-je-afbeelding.jpg`.
+Je kan daar zoveel mappen neerzetten als je wilt. Je geeft de mappen aan vanaf de map waar je HTML bestand staat. Dus in dezelfde map van `voorbeeld.html` staat een map `images`. In die map `images` staat het bestand `naam-van-je-afbeelding.jpg`.
+
+Je kan bij een afbeelding de hoogte of breedte (of allebei) aanpassen.
+
+Een afbeelding die 400 pixels breed wordt, met automatisch de hoogte berekend:
+```html
+<img src="naam-van-je-afbeelding.jpg" width=400>
+```
+
+Een afbeelding die 250 pixels hoog is, met de breedte automatisch berekend:
+```html
+<img src="naam-van-je-afbeelding.jpg" height=250>
+```
 
 ## 2.4 Opdrachten hoofdstuk 2
 Maak een hoofdstuk2.html. Maak er iets leuks van, er moet minimaal in staan:
 
-- Tekst - kopjes en paragrafen;
-- Opgemaakt - dikgedrukte-, schuine- en onderstreepte tekst, met enters;
+- Tekst - twee kopjes met elk een paragraaf;
+- De tekst is opgemaakt - met dikgedrukte-, schuine-, onderstreepte tekst en enters;
+- Een afbeelding - download een afbeelding en zet deze in de map bij je HTML bestand;
+- Een footer (een regel onderin de pagina) met een copyright regel.
+
+
+# Hoofdstuk 3: Opsomminglijsten, tabellen en divs
+
+Teksten en afbeeldingen zijn belangrijk, maar het tonen van data ook. HTML heeft opsomminglijsten en tabellen om op een overzichtelijke manier data te laten zien.
+
+
+## 3.1 Opsomminglijsten
+- Een opsomminglijst kan handig zijn.
+- Als je een lijst van items wilt noteren.
+- Denk aan b.v. boodschappen of taken.
+- Maar vooral geen alinea aan tekst, verworven in een lijst.
+
+Een lijst geef je aan met `<ul>` (unordered list) of `<ol>` (ordered list). Een ordered list is genummerd waar een unordered list stipjes heeft. In zo'n lijst heb je vervolgens list items (`<li>`) staan. 
+
+Een unordered list ziet er zo uit:
+
+```html
+<ul>
+  <li>List item nummer</li>
+  <li>List item nummer, nog eentje</li>
+  <li>List item nummer, de laatste</li>
+</ul>
+```
+
+En een ordered list ziet er dan zo uit:
+
+```html
+<ol>
+  <li>List item nummer 1</li>
+  <li>List item nummer 2</li>
+  <li>List item nummer 3</li>
+</ol>
+```
+
+## 3.2 Tabellen
+Als je meer dan een lijst wilt, dan kan je de data neerzetten in rijen en kolommen. Oftewel, tabellen.
+
+### Tabel
+Je start een tabel met `<table>` en sluit deze weer af met `</table>`.
+
+### Rij
+Je geeft een rij aan met `<tr>` (table row) en daarin komen vervolgens de kolommen. Het enige wat ooit in een `<tr>` mag staan zijn kolommen. Elke `<tr>` wordt een nieuwe rij in de tabel.
+
+### Kolommen
+Je geeft een kolom aan met `<td>` (table data). Des te meer kolommen je neerzet in een rij, des te meer vakken de rij wordt opgedeeld. Dit bepaalt dus hoeveel kolommen de tabel krijgt.
+
+Bijvoorbeeld:
+
+```html
+<table>
+  <tr>
+    <td>Rij 1. Kolom 1.</td>
+    <td>Rij 1. Kolom 2.</td>
+  </tr>
+  <tr>
+    <td>Rij 2. Kolom 1.</td>
+    <td>Rij 2. Kolom 2.</td>
+  </tr>
+</table>
+```
+
+Dat komt er dan zo uit te zien:
+```
+Rij 1. Kolom 1. Rij 1. Kolom 2.
+Rij 2. Kolom 1. Rij 2. Kolom 2. 
+```
+
+### Kopjes
+Het is altijd wel wenselijk om kopjes boven alle kolommen te zetten, zodat je weet waar je precies naar kijkt. In plaats van een normale kolom (`<td>`, table data) zet je deze neer als een `<th>` (table header).
+
+Bijvoorbeeld:
+
+```html
+<table>
+  <tr>
+    <th>Kop 1</th>
+    <th>Kop 2</th>
+  </tr>
+  <tr>
+    <td>Rij 1. Kolom 1.</td>
+    <td>Rij 1. Kolom 2.</td>
+  </tr>
+  <tr>
+    <td>Rij 2. Kolom 1.</td>
+    <td>Rij 2. Kolom 2.</td>
+  </tr>
+</table>
+```
+
+Dat ziet er dan zo uit:
+
+![](images/table-with-th.png){ width=35% }
+
+## 3.3 div
+Regelmatig zal je je HTML willen opsplitsen, puur voor het stijlen. Meerdere kopjes met paragrafen onder elkaar hoeven helemaal niet bij elkaar horen. Misschien wil je dat tonen met ruimte ertussen, of een andere achtergrondskleur. Daar komt `<div>` (division) bij kijken.
+
+Het heeft van zichzelf nauwelijks opmaak. Het zal de volledige breedte innemen dat het kan innemen, verder zie je de hele `<div>` niet. Maar de verschillende divs kan je vervolgens wel anders stijlen.
+
+Je kan alle soorten HTML in een div zetten, en zoveel divs gebruiken als je maar wilt. Een voorbeeld:
+
+```html
+<div>
+  <h1>Kopje 1</h1>
+  <p>Korte paragraaf 1</p>
+</div>
+
+<div>
+  <h1>Kopje 2</h1>
+  <p>Korte paragraaf 2</p>
+</div>
+```
+
+
+## 3.4 Opdrachten hoofdstuk 3
+Maak een hoofdstuk3.html met:
+
+- Een boodschappenlijst met prijzen en euro tekens, zonder sortering (unordered list);
+- Een stappenlijst van hoe je iets koopt in de winkel, met sortering (ordered list);
+- Een tabel met een aantal producten uit de supermarkt, met een naam, merk, prijs, etc, inclusief kopjes.
+
+
+# Hoofdstuk 4: CSS basis
+Nu je weet hoe HTML in grote lijnen gebouwd wordt, gaan we het mooi maken. Het stylen van de HTML doen we met CSS (Cascaded Style Sheets). Wat het "cascaded" gedeelte uit CSS betekent wordt later duidelijk.
+
+Het is een specifieke taal (geen programmeertaal) om styling aan te kunnen geven aan HTML elementen. Specifiek aan 1 html element, of aan alle paragrafen (`<p>`) of alle afbeeldingen (`img`), of zelfs alle afbeeldingen die in paragrafen staan.
+
+Daarom zijn het cascaded style sheets; cascading betekent "trapsgewijs": Je zet bijvoorbeeld een tekstgrootte op de hele `<body>` en alle paragrafen (`<p>`) in de body krijgen deze stijl mee. Als het water van een waterval, gaan de stijlen ook trapsgewijs naar de HTML elementen eronder.
+
+## 4.1 CSS regels
+CSS bestaat uit rulesets, of rule / regel voor kort, om aan te geven welke stijl aan welk element moet hangen. Zo'n regel bestaat uit deze onderdelen:
+
+### Selector
+Als eerst geef je aan waar je de stijlen op wilt toepassen. Op een paragraaf? Een afbeelding? Een specifieke afbeelding in een paragraaf? Dat is de selector.
+
+Bijvoorbeeld `p` zal de stijlen toepassen op alle paragrafen op de hele pagina. `img` zal de stijlen toepassen op alle images op de hele pagina.
+
+`p img` zal de stijlen toepassen op alle afbeeldingen die in een paragraaf staan. En `ul li` zal alleen de stijlen toepassen op list items in een unordered list.
+
+`p, img` zal de stijlen toepassen op zowel paragrafen EN afbeeldingen. Een subtiel verschil.
+
+
+### Declaratie (of enkele regel, single rule)
+Elke stijl is hetzelfde opgebouwd. Alle stijlen hebben een vaste naam (een property) en daar kan je een waarde in stoppen (property value). Dat geef je aan zoals dit: `background-color: red`. In dit geval is `background-color` de vaste naam voor de stijl van de achtergrondkleur en de waarde die je meegeeft is rood, dus de achtergrondkleur wordt dan ook rood.
+
+Elke stijl (regel) wordt afgesloten met een puntkomma (`;`).
+
+Al deze stijlen (regels) voor een selector staat bij elkaar tussen curly braces (`{` en `}`).
+
+De bovenstaande onderdelen komen dan zo samen:
+
+```css
+p {
+  color: green;
+  background-color: black;
+}
+```
+
+Dit maakt de kleur van de tekst in alle paragrafen groen, en de achtergrond van alle paragrafen worden zwart.
+
+## 4.2 CSS in de HTML pagina
+In een HTML pagina moet je de CSS gaan inladen, als je wilt dat de HTML gestyled wordt. Dat kan op twee manieren; de goede manier en de snelle manier.
+
+### CSS in een apart bestand (goede manier)
+Je geeft aan in de `<head>` sectie dat je een CSS bestand wilt inladen. Je maak dan bijvoorbeeld een nieuw bestand `stylesheet.css` aan, naast je HTML bestanden. In dat bestand kan je CSS regels zetten, allemaal onder elkaar.
+
+Vervolgens zet je in de HTML, bij `<head>`, deze regel om het CSS bestand in te laden:
+
+```html
+<link rel="stylesheet" href="stylesheet.css"> 
+```
+
+Dus dat komt er dan zo uit te zien:
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML hoofdstuk 4</title>
+    <link rel="stylesheet" href="stylesheet.css"> 
+  </head>
+  <body>
+    <p>Dit is een paragraaf met een mooi brok tekst.</p>
+  </body>
+</html>
+```
+
+De browser ziet in de `<head>` staan dat er een stylesheet is, deze wordt gedownload voordat de pagina getoond wordt. Zodra de website / HTML pagina getoond wordt, heeft het alle styling op de HTML al toegepast.
+
+### CSS in het HTML bestand zelf (de snelle manier, met strafpunten)
+Je kan in een HTML bestand ook CSS regels neerzetten. Dat is snel gedaan omdat je geen nieuw bestand hoeft aan te maken, maar het is vaak niet wenselijk. Je moet veel zoeken naar CSS regels als je iets wilt aanpassen, en het CSS bestand wordt vastgehouden door de browser terwijl de losse styling in de HTML altijd opnieuw gedownload moet worden.
+
+Je gebruikt hiervoor een `<style>` element. Het gehele element wordt niet getoond op je scherm, daar kan je direct CSS regels in neerzetten. Bijvoorbeeld:
+
+```html
+<style>
+  h1 {
+    color: red;
+  }
+
+  p {
+    color: green;
+  }
+</style>
+
+<h1>Kopje</h1>
+<p>Paragraaf</p>
+```
+
+## 4.3 Opdrachten hoofdstuk 4
+Maak hoofdstuk4.html en hoofdstuk4.css aan. Maak er vooral iets moois van, het volgende moet erin staan:
+
+- Enkele kopjes met paragrafen;
 - Een opsomminglijst;
-- Een afbeelding.
+- Een tabel.
+
+Alles wat je aan HTML neerzet moet gestyled worden met CSS, in hoofdstuk4.css. Je kan googlen naar wat voor een stylen je allemaal hebt, maar je kan ook de kleuren etc aanpassen zoals in de voorbeelden van dit hoofdstuk.
+
+
+# Hoofdstuk 5: CSS gevorderd
+
+## 4.2 Specifieke CSS selectors
+Een heel veel voorkomende situatie is het willen stylen van een specifiek HTML element. Niet alle afbeeldingen, of alle paragrafen, maar 1 specifieke paragraaf. Op die ene pagina, daar. En niks anders. Of je wilt misschien een aantal paragrafen een style geven - maar niet allemaal.
+
+### ID
+Je kan elk HTML element een ID meegeven, een HTML attribuut dat een unieke waarde moet hebben.
+
+HTML voorbeeld:
+```html
+<h1 id="unieke_naam_van_deze_kop">Kopje</h1>
+```
+
+In CSS kan je HTML met een ID stylen met een hekje (`#`) ervoor. Bijvoorbeeld:
+```css
+#unieke_naam_van_deze_kop {
+  color: red;
+}
+```
+
+### Classes
+Je kan een groep van HTML elementen ook stijlen geven. Dan kies je zelf exact welk HTML element de stijlen wel krijgt, als een groepering. Dat is het `class` attribuut die je op alle HTML elementen kan toevoegen.
+
+HTML voorbeeld:
+```html
+<ul>
+  <li>Geen speciale styling</li>
+  <li class="speciale_styling">WEL speciale styling!</li>
+  <li>Saaie list item</li>
+  <li class="speciale_styling">Hele toffe list item!</li>
+</ul>
+```
+
+In CSS kan je HTML met een class stylen met een punt (`.`) ervoor. Bijvoorbeeld:
+```css
+.speciale_styling {
+  background-color: black;
+  color: yellowgreen;
+}
+```
+
+Dat ziet er dan zo uit:
+
+![](images/css_li_class.png){ width=35% }
+
+Je kan dit nog steeds gebruiken in combinatie met andere selectors. Bijvoorbeeld alleen elementen met de class `speciale_styling` in unordered lists:
+
+```css
+ul .speciale_styling {
+  ...
+}
+```
