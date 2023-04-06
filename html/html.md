@@ -247,7 +247,7 @@ Maak een hoofdstuk2.html. Maak er iets leuks van, er moet minimaal in staan:
 - Een afbeelding - download een afbeelding en zet deze in de map bij je HTML bestand;
 - Een footer (een regel onderin de pagina) met een copyright regel.
 
-
+\pagebreak
 # Hoofdstuk 3: Opsomminglijsten, tabellen en divs
 
 Teksten en afbeeldingen zijn belangrijk, maar het tonen van data ook. HTML heeft opsomminglijsten en tabellen om op een overzichtelijke manier data te laten zien.
@@ -367,7 +367,7 @@ Maak een hoofdstuk3.html met:
 - Een stappenlijst van hoe je iets koopt in de winkel, met sortering (ordered list);
 - Een tabel met een aantal producten uit de supermarkt, met een naam, merk, prijs, etc, inclusief kopjes.
 
-
+\pagebreak
 # Hoofdstuk 4: CSS basis
 Nu je weet hoe HTML in grote lijnen gebouwd wordt, gaan we het mooi maken. Het stylen van de HTML doen we met CSS (Cascaded Style Sheets). Wat het "cascaded" gedeelte uit CSS betekent wordt later duidelijk.
 
@@ -406,7 +406,85 @@ p {
 
 Dit maakt de kleur van de tekst in alle paragrafen groen, en de achtergrond van alle paragrafen worden zwart.
 
-## 4.2 CSS in de HTML pagina
+## 4.2 Kleuren
+Hierboven heb je al wat kleuren voorbij zien komen, zoals `green` en `black`. Er zijn 140 kleurnamen maar daar red je het niet mee. Namen verzinnen voor alle 16+ miljoen kleuren wordt een beste klus. Daarom is er een ander systeem bedacht: hex kleuren.
+
+### Wat is hex?
+Hex is een manier van tellen, een zogenaamd "getallen systeem". Zo is binair tellen met nullen en enen, decimaal telt met nul tot negen. Hex staat voor hexadecimaal: "hexa" betekent 6, "deci" betekent 10, dus in hex tel je met 16 getallen. 
+
+Hex telt van 0 tot 9 en dan van A tot F. Oftewel:
+
+`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `A`, `B`, `C`, `D`, `E`, `F`.
+
+### RGB
+RGB is een kleurensysteem dat kleuren toont door de primaire kleuren Rood, Groen en Blauw te mengen. Het wordt vooral gebruikt voor digitale kleuren te tonen.
+
+### Hex kleuren
+Je geeft hex altijd aan met een hekje aan het begin (`#`). De kleuren zijn altijd 6 "cijfers". 
+
+Twee cijfers voor rood. Twee cijfers voor groen. Twee cijfers voor blauw. Het formaat is dus: `#RRGGBB`.
+
+Met 00 staat de kleur helemaal uit. Met FF staat de kleur helemaal aan. Enkele voorbeelden:
+
+- Fel rood:  `#FF0000` (rood volledig aan, en groen/blauw uit)
+- Fel groen: `#00FF00` (groen volledig aan, en rood/blauw uit)
+- Fel blauw: `#0000FF` (blauw volledig aan, rood/groen uit)
+
+En alle combinaties zijn verder mogelijk. `#000000` is zwart, `#FFFFFF` is wit, `#FF00FF` combineert rood en blauw voluit en is dus de kleur magenta.
+
+## 4.3 Afmetingen (pixels, percentages)
+Je kan de grootte van elk HTML element aanpassen, of een marge eromheen zetten, of de grootte van tekst aanpassen, maar wat je ook doet: je zal de afmetingen aan moeten geven. Hoe groot is de marge, hoe breed wordt je afbeelding, etc.
+
+Het populairst is om dat aan te geven in pixels. Dan zet je in CSS een getal met "px" erachter, zoals dit:
+
+```css
+img {
+  width: 200px;
+}
+```
+
+Dat is vrij makkelijk te doen, werkt ook op tekst, maar het is ook vrij lastig. Op telefoons passen bijvoorbeeld meer pixels op een kleinere ruimte, dus hoe komt het er dan uit te zien?
+
+Voor tekst groottes wordt ook vaak `em` gebruikt: dat maakt de groottes relatief aan de rest van de tekst. Dat is heel handig met alle verschillende schermgroottes en resoluties. Een kop (`h1`) met een `font-size` van `3em` is bijvoorbeeld 3x zo groot als de tekst in een `p` met de font-size `1em`. Bijvoorbeeld:
+
+```css
+p {
+  font-size: 1em;
+}
+```
+
+Voor de afmetingen van gehele HTML elementen zijn `vh` (viewport height) en `vw` (viewport width) ook veelgebruikt. 1 vw is 1% van de breedte van het beschikbare deel van het scherm (de viewport). 1vh is 1% van de hoogte. Bijvoorbeeld:
+
+```css
+div {
+  width: 5vw;
+  height: 5vh;
+}
+```
+
+
+## 4.4 Verschillende stijlen
+In het voorbeeld hierboven zie je de stijl om de tekst kleur aan te passen (`color`) en om de achtergrondkleur aan te passen (`background-color`), maar er zijn enorm veel stijlen die je toe kan passen.
+
+Voor tekst e.d:
+
+- Tekst kleur: `color: green`
+- Tekst grootte: `font-size: 20px`
+- Tekst dikgedrukt: `font-weight: bold`
+- Tekst uitlijnen: `text-align: center` (center, left, right, justify)
+
+Voor bijna alle HTML elementen:
+
+- Breedte: `width: 200px`
+- Hoogte: `height: 200px`
+- Marge: `margin: 10px`
+- Rand: `border: 1px solid #00FF00` (1px brede border, solide lijn, kleur #00FF00)
+- Achtergrondkleur: `background-color: #FF0000`
+
+Het zijn er teveel om op te noemen, dus voel je vrij om te googlen naar wat je wilt - je zal altijd wel wat vinden.
+
+
+## 4.5 CSS in de HTML pagina
 In een HTML pagina moet je de CSS gaan inladen, als je wilt dat de HTML gestyled wordt. Dat kan op twee manieren; de goede manier en de snelle manier.
 
 ### CSS in een apart bestand (goede manier)
@@ -435,7 +513,7 @@ Dus dat komt er dan zo uit te zien:
 
 De browser ziet in de `<head>` staan dat er een stylesheet is, deze wordt gedownload voordat de pagina getoond wordt. Zodra de website / HTML pagina getoond wordt, heeft het alle styling op de HTML al toegepast.
 
-### CSS in het HTML bestand zelf (de snelle manier, met strafpunten)
+### CSS in het HTML bestand zelf (de snelle manier)
 Je kan in een HTML bestand ook CSS regels neerzetten. Dat is snel gedaan omdat je geen nieuw bestand hoeft aan te maken, maar het is vaak niet wenselijk. Je moet veel zoeken naar CSS regels als je iets wilt aanpassen, en het CSS bestand wordt vastgehouden door de browser terwijl de losse styling in de HTML altijd opnieuw gedownload moet worden.
 
 Je gebruikt hiervoor een `<style>` element. Het gehele element wordt niet getoond op je scherm, daar kan je direct CSS regels in neerzetten. Bijvoorbeeld:
@@ -455,7 +533,7 @@ Je gebruikt hiervoor een `<style>` element. Het gehele element wordt niet getoon
 <p>Paragraaf</p>
 ```
 
-## 4.3 Opdrachten hoofdstuk 4
+## 4.6 Opdrachten hoofdstuk 4
 Maak hoofdstuk4.html en hoofdstuk4.css aan. Maak er vooral iets moois van, het volgende moet erin staan:
 
 - Enkele kopjes met paragrafen;
@@ -464,10 +542,10 @@ Maak hoofdstuk4.html en hoofdstuk4.css aan. Maak er vooral iets moois van, het v
 
 Alles wat je aan HTML neerzet moet gestyled worden met CSS, in hoofdstuk4.css. Je kan googlen naar wat voor een stylen je allemaal hebt, maar je kan ook de kleuren etc aanpassen zoals in de voorbeelden van dit hoofdstuk.
 
-
+\pagebreak
 # Hoofdstuk 5: CSS gevorderd
 
-## 4.2 Specifieke CSS selectors
+## 5.1 Specifieke CSS selectors
 Een heel veel voorkomende situatie is het willen stylen van een specifiek HTML element. Niet alle afbeeldingen, of alle paragrafen, maar 1 specifieke paragraaf. Op die ene pagina, daar. En niks anders. Of je wilt misschien een aantal paragrafen een style geven - maar niet allemaal.
 
 ### ID
@@ -517,3 +595,11 @@ ul .speciale_styling {
   ...
 }
 ```
+
+## 5.2 Flexbox
+
+
+## 5.3 Floats, block/inline
+
+## 5.4 Debuggen
+Developer tools.
