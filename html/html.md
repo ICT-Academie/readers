@@ -904,3 +904,20 @@ Maak `hoofdstuk6.html` met een formulier om een nieuw account ergens aan te make
 - Een dropdown veld
 - Enkele checkboxes
 - En natuurlijk een registreer-knop.
+
+\pagebreak
+
+# Eindopdracht HTML
+Voor de eindopdracht ga je een website maken waarbij je zelf mag bepalen hoe hij eruit komt te zien. De minimale eisen zijn:
+
+- Achtergrondkleuren en achtergrondafbeeldingen naar keuze.
+- Een stukje over jezelf op de voorpagina met wat afbeeldingen/foto’s.
+- Een link naar een nieuwe pagina waarop downloadlinks staan voor je Java opdrachten (zip bestand).
+- Een pagina waarop je werkende links hebt naar je uitgewerkte HTML opdrachten (deze moeten dus allemaal ook in je project komen).
+- Een pagina over je hobby(s) waarin je een paar afbeeldingen laat zien en er een stukje over schrijft (youtube links mogen ook).
+
+Zorg er dus voor dat het er leuk uitziet!
+
+***Zie de reader Website uploaden Eindopdracht op moodle voor het online zetten van je website.***
+
+De website kan daarna worden nagekeken op de computer van de docent.
