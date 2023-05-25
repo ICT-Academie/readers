@@ -52,7 +52,7 @@ Er zijn in principe twee soorten HTML elementen. Eigenlijk zes, maar we houden h
 ### Normale elementen (normal elements)
 Als voorbeeld pakken we een paragraaf (een alinea aan tekst). Dat begint met de tag `<p>`. Tags staan altijd in die chevron tekens (< en >). De tag om te eindigen is dan `</p>`; de slash (/) vertelt dat dit het einde van het element is. Tussen die twee tags staat dus je paragraaf, de werkelijke tekst.
 
-![](images/html_element.png){ width=50% }developer-tools.png
+![](images/html_element.png){ width=50% }
 
 De paragraaf ziet er zo uit:
 
@@ -315,24 +315,30 @@ Rij 2. Kolom 1. Rij 2. Kolom 2.
 ```
 
 ### Kopjes
-Het is altijd wel wenselijk om kopjes boven alle kolommen te zetten, zodat je weet waar je precies naar kijkt. In plaats van een normale kolom (`<td>`, table data) zet je deze neer als een `<th>` (table header).
+Het is altijd wel wenselijk om kopjes boven alle kolommen te zetten, zodat je weet waar je precies naar kijkt. 
+
+Je splitst de kopjes en de data (de verschillende rijen) in twee delen. Er komt een `<thead>` en een `<tbody>`, en die vul je met rijen (en kolommen). De kolommen van het kopje (in `<thead>` dus) worden in plaats van `<td>` (table data) genoteerd als `<th>` (table header).
 
 Bijvoorbeeld:
 
 ```html
 <table>
-  <tr>
-    <th>Kop 1</th>
-    <th>Kop 2</th>
-  </tr>
-  <tr>
-    <td>Rij 1. Kolom 1.</td>
-    <td>Rij 1. Kolom 2.</td>
-  </tr>
-  <tr>
-    <td>Rij 2. Kolom 1.</td>
-    <td>Rij 2. Kolom 2.</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Kop 1</th>
+      <th>Kop 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rij 1. Kolom 1.</td>
+      <td>Rij 1. Kolom 2.</td>
+    </tr>
+    <tr>
+      <td>Rij 2. Kolom 1.</td>
+      <td>Rij 2. Kolom 2.</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -521,7 +527,7 @@ Dus dat komt er dan zo uit te zien:
 </html>
 ```
 
-De browser ziet in de `<head>` staan dat er een stylesheet is, deze wordt gedownload voordat de pagina getoond wordt. Zodra de website / HTML pagina getoond wordt, heeft het alle styling op de HTML al toegepast.
+De browser ziet in de `<head>` dat er een stylesheet is, deze wordt gedownload voordat de pagina getoond wordt. Zodra de website / HTML pagina getoond wordt, heeft het alle styling op de HTML al toegepast.
 
 ### CSS in het HTML bestand zelf (de snelle manier)
 Je kan in een HTML bestand ook CSS regels neerzetten. Dat is snel gedaan omdat je geen nieuw bestand hoeft aan te maken, maar het is vaak niet wenselijk. Je moet veel zoeken naar CSS regels als je iets wilt aanpassen, en het CSS bestand wordt vastgehouden door de browser terwijl de losse styling in de HTML altijd opnieuw gedownload moet worden.
@@ -614,7 +620,7 @@ Je kan met CSS dan ook de display type aanpassen:
 
 ```css
 img {
-  display: block
+  display: block;
 }
 ```
 
@@ -648,23 +654,25 @@ Dan staat de afbeelding helemaal rechts, maar nog steeds binnen het element waar
 
 Een voorbeeld:
 
+CSS:
+```css
+div {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+#green_box {
+  background-color: #00ff00;
+}
+
+#red_box {
+  background-color: #ff0000;
+}
+```
+
+HTML:
 ```html
-<style>
-  div {
-    width: 200px;
-    height: 200px;
-    float: left;
-  }
-
-  #green_box {
-    background-color: #00ff00;
-  }
-
-  #red_box {
-    background-color: #ff0000;
-  }
-</style>
-
 <div id="green_box">De mooiste div</div>
 <div id="red_box">Ook een mooie div, maar minder.</div>
 ```
@@ -715,17 +723,17 @@ Om bekend te worden met de basis van formulieren nemen we als voorbeeld het inlo
 Elk formulier begint met het `<form>` element. Alle formulier elementen die daar instaan worden behandeld als 1 formulier, en worden allemaal tegelijk verzonden als je op de verstuur-knop drukt. Bijvoorbeeld:
 
 ```html
-<form action="inloggen.html" method="POST">
+<form action="inloggen.html" method="post">
   ...
 </form>
 ```
 
-Je kan dus twee attributen aangeven. Met `action` kan je de URL aangeven waar je het ingevulde formulier heen wilt sturen. Standaard is dat de URL waar je nu op zit. De tweede is `method`, en dat gaat over _hoe_ je het formulier opstuurt. Er zijn twee opties, `GET` en `POST`. Daar gaan we wat meer over vertellen.
+Je kan dus twee attributen aangeven. Met `action` kan je de URL aangeven waar je het ingevulde formulier heen wilt sturen. Standaard is dat de URL waar je nu op zit. De tweede is `method`, en dat gaat over _hoe_ je het formulier opstuurt. Er zijn twee opties, `get` en `post`. Daar gaan we wat meer over vertellen.
 
 ### GET en POST
-Er zijn een heleboel `methodes` waarop je een URL kan bereiken. De twee meest-gebruikte, en ook de enige die in HTML worden ondersteund, zijn `GET` en `POST`. De methode gaat hand in hand met de URL, en vertelt wat je precies wilt doen met de URL.
+Er zijn een heleboel `methodes` waarop je een URL kan bereiken. De twee meest-gebruikte, en ook de enige die in HTML worden ondersteund, zijn `get` en `post`. De methode gaat hand in hand met de URL, en vertelt wat je precies wilt doen met de URL.
 
-Met `GET` haal je de informatie van de URL op (vaak een HTML pagina). Bijvoorbeeld als je iets in de adresbalk van je browser typt en op enter drukt. Dan haal je de HTML pagina op van een server en wordt deze getoond in je browser. Alle informatie die je dan meegeeft staat in de URL zelf. Bijvoorbeeld:
+Met `get` haal je de informatie van de URL op (vaak een HTML pagina). Bijvoorbeeld als je iets in de adresbalk van je browser typt en op enter drukt. Dan haal je de HTML pagina op van een server en wordt deze getoond in je browser. Alle informatie die je dan meegeeft staat in de URL zelf. Bijvoorbeeld:
 
 ```r
 https://example.com/?username=tim&password=h33lg3h31m
@@ -733,7 +741,7 @@ https://example.com/?username=tim&password=h33lg3h31m
 
 De meegegeven informatie begint met het vraagteken. Dan heb je, net als variabelen, een naam en een waarde, in de vorm van `naam=waarde`. Dus een variabel `username` wordt ingesteld met de waarde `tim`. De verschillende variabelen, of parameters, worden gescheiden met een ampersand (`&`).
 
-Met `POST` stuur je iets op. Dus de meeste formulieren gebruiken `POST` om de ingevulde informatie naar een URL te sturen. Deze informatie zie je niet in de URL staan, want vooral handig is met wachtwoorden en andere gevoelige informatie.
+Met `post` stuur je iets op. Dus de meeste formulieren gebruiken `post` om de ingevulde informatie naar een URL te sturen. Deze informatie zie je niet in de URL staan, want vooral handig is met wachtwoorden en andere gevoelige informatie.
 
 ### input
 Het belangrijkste invulveld is een `input`. Dat is het standaard tekstveld wat je overal ziet. De HTML ziet er zo uit:
@@ -779,7 +787,7 @@ Je kan de velden neerzetten zoals je zelf wilt, maar als je er veel in je formul
 We nemen als voorbeeld een formulier om in te loggen:
 
 ```html
-<form method="POST">
+<form method="post">
   <ul>
     <li>
       <label for="username_veld">Gebruikersnaam</label>
