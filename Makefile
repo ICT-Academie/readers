@@ -12,18 +12,17 @@ else
 endif
 
 validate_reader:
-	if [[ ! -f "$(reader)/$(reader).md" ]]; then echo "Error: Unknown reader."; exit 1; fi
-	if [[ "$(reader)" == "README" ]]; then echo "Nice try."; exit 1; fi
+	if [[ ! -f "readers/$(reader)/$(reader).md" ]]; then echo "Error: Unknown reader."; exit 1; fi
 
 build: validate_reader
-	cd $(reader); \
+	cd readers/$(reader); \
 	pandoc $(reader).md \
 		--toc \
 		-s \
-		-o ../dist/$(reader).pdf \
+		-o ../../dist/$(reader).pdf \
 		--pdf-engine=xelatex \
 		--highlight-style espresso \
-		-H ../headers.tex \
+		-H ../../headers.tex \
 		--include-before-body cover.tex
 
 buildopen: build
