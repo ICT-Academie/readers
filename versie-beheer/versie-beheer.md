@@ -1,9 +1,11 @@
 ---
 title: "Versie Beheer"
+version: v1.1 (2022-10-06)
 author: "Tim Quax (tquax@novacollege.nl)"
-geometry: "left=1cm,right=1cm,top=1cm,bottom=2.5cm"
+geometry: "left=1cm,right=1cm,top=2cm,bottom=2.5cm"
 mainfont: Open Sans
 documentclass: scrartcl
+subparagraph: yes
 ---
 \pagebreak
 # Versie beheer

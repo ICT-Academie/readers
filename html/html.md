@@ -1,21 +1,11 @@
 ---
 title: "HTML"
+version: v1.1 (2023-09-28)
 author: "Tim Quax (tquax@novacollege.nl)"
 geometry: "left=1cm,right=1cm,top=1cm,bottom=2.5cm"
 mainfont: Open Sans
 documentclass: scrartcl
 subparagraph: yes
-header-includes: |
-  \linespread{1}
-
-  \usepackage{setspace}
-  \setlength{\parindent}{0pt}
-  \setlength{\parskip}{\baselineskip}
-
-  \usepackage{titlesec}
-  \titlespacing{\section}{0pt}{12pt plus 2pt minus 1pt}{-10pt plus 1pt minus 1pt}
-  \titlespacing{\subsection}{0pt}{12pt plus 2pt minus 1pt}{-10pt plus 1pt minus 1pt}
-  \titlespacing{\subsubsection}{0pt}{12pt plus 2pt minus 1pt}{-10pt plus 1pt minus 1pt}
 ---
 \pagebreak
 # HTML
@@ -681,9 +671,13 @@ Puur omdat de `float: left` op de div staat, staan ze naast elkaar. Het ziet er 
 
 ![](images/html-float-example.png){width=40%}
 
+
+## 5.4 Position
+Het CSS attribuut `position` is `absoluut verboden`. Dit attribuut zorgt ervoor dat een HTML element compleet buiten de normale website valt. Je kan hier geen functionele website mee maken, en dus behandelen we dat niet in deze reader.
+
 \pagebreak
 
-## 5.4 Debuggen
+## 5.5 Debuggen
 Zodra de CSS niet lijkt te werken zoals je voor ogen had, of het lijkt helemaal niet gestyled te worden, dan wil je graag uitvogelen wat er mis ging. Misschien staat er een typfout, of is er een andere stijl die jouw nieuwe stijl overschrijft, of is er iets anders mis.
 
 Daar hebben we Developer tools voor. Elke noemenswaardige browser heeft er een en die open je met F12. Die ziet er ongeveer zo uit:
@@ -700,7 +694,7 @@ Als je een heleboel HTML hebt, is zoeken door die lijst niet zo heel handig. Dan
 
 \pagebreak
 
-## 5.5 Opdrachten hoofdstuk 5
+## 5.6 Opdrachten hoofdstuk 5
 Maak de twee screenshots hieronder na. Gebruik hiervoor GEEN tabellen. Tip: Leer wat meer over float of misschien zelfs Flexbox.
 
 Maak in het bestand `hoofdstuk5-1.html`:

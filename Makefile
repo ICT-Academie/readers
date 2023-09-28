@@ -23,8 +23,9 @@ build: validate_reader
 		-o ../dist/$(reader).pdf \
 		--pdf-engine=xelatex \
 		--highlight-style espresso \
-		-H ../headers.tex \
-		--include-before-body cover.tex
+		--include-before-body cover.tex \
+		--include-in-header ../headers.tex \
+		--template ../template.tex
 
 buildopen: build
 	open dist/$(reader).pdf
