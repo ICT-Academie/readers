@@ -1,9 +1,11 @@
 ---
 title: "JavaScript"
+version: v1.0 (2023-02-23)
 author: "Tim Quax (tquax@novacollege.nl)"
-geometry: "left=1cm,right=1cm,top=1cm,bottom=2.5cm"
+geometry: "left=1cm,right=1cm,top=2cm,bottom=2.5cm"
 mainfont: Open Sans
 documentclass: scrartcl
+subparagraph: yes
 ---
 \pagebreak
 # JavaScript (JS)
