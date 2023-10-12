@@ -1,5 +1,5 @@
 ---
-title: "SharpPhone - NET 6 Desktop"
+title: "Programmeren Gevorderd: C#"
 version: v1.3 (2023-10-12)
 author: "Sven Wind (swind@novacollege.nl)"
 geometry: "left=1cm,right=1cm,top=1.5cm,bottom=2.5cm"
@@ -8,7 +8,10 @@ documentclass: scrartcl
 subparagraph: yes
 ---
 \pagebreak
-# Introductie SharpPhone
+# Programmeren Gevorderd: C\#
+In deze reader ga je meer leren over C#, met name hoe je een grafische interface kan bouwen met WinForms. Je gaat een applicatie bouwen voor SharpPhone.
+
+## Introductie SharpPhone
 SharpPhone is een middelgrote handelsonderneming die in 1999 is
 opgericht door de huidige directrice Melanie Hendrikse. Vanaf het begin
 heeft SharpPhone zich gespecialiseerd in de verkoop van kwalitatief
