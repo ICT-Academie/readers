@@ -1,5 +1,6 @@
 ---
 title: "Database basisbegrippen"
+version: v1.0 (2023-10-05)
 author: "Tim Quax (tquax@novacollege.nl)"
 geometry: "left=1cm,right=1cm,top=1cm,bottom=2.5cm"
 mainfont: Open Sans
@@ -78,13 +79,19 @@ Wil je een webshop bouwen? Dan staan er niet alleen klanten met hun inloggegeven
 \pagebreak
 
 # 1. Installeren
+We hebben nu twee dingen nodig; de database server (MySQL) en de client die we gebruiken om dan te verbinden.
 
-Installeer MySQL
+## Installeer MySQL
+Op de downloads pagina van MySQL kan je de juiste versie vinden voor je laptop:
 
-Installeer MySQL Workbench
+[https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)
+
+
+
+## Installeer MySQL Workbench
 
 Download het SQL bestand van Moodle en open het in MySQL Workbench:
 
-![](images/sql-file-open){ width=50% }
+![](images/sql-file-open.png){ width=50% }
 
 Dan krijg je nu alle SQL statements
