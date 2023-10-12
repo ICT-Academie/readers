@@ -44,6 +44,8 @@ The different readers you can build:
 ```bash
 make reader=versie-beheer buildopen
 make reader=javascript buildopen
+make reader=html buildopen
+make reader=programmeren_gevorderd_csharp buildopen
 ```
 
 
