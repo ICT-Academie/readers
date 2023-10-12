@@ -2,82 +2,14 @@
 title: "Java"
 version: v1.3 (2023-10-12)
 author: "Wouter van Hezel (whezel@novacollege.nl)"
-geometry: "left=1cm,right=1cm,top=1cm,bottom=2.5cm"
+geometry: "left=1cm,right=1cm,top=2cm,bottom=2.5cm"
 mainfont: Open Sans
 documentclass: scrartcl
 subparagraph: yes
 ---
 \pagebreak
 # Java
-
-*Een inleiding tot het programmeren in Java*
-
-![](./images/cover.png){width="6.309027777777778in"
-height="9.722222222222222e-3in"}![](./images/image2.jpeg){width="3.125in"
-height="3.125in"}
-
-> v1.3 (2023-10-12)
-
-Inhoud
-
-[Inleiding](#page3) [3](#page3)
-
-> [Compileren en de kracht van Java](#page3) [3](#page3)
->
-> [IntelliJ IDEA Ultimate](#page4) [4](#page4)
->
-> [Opdrachten](#page4) [4](#page4)
-
-[1. Hallo Wereld!](#page5) [5](#page5)
-
-> [Compileren](#page5) [5](#page5)
->
-> [Bespreking](#page6) [6](#page6)
-
-[Opdrachten Hoofdstuk 1](#page6) [6](#page6)
-
-[2. Variabelen](#page7) [7](#page7)
-
-> [Primitieve variabelentypes](#page8) [8](#page8)
-
-[Opdrachten Hoofdstuk 2](#page8) [8](#page8)
-
-[3. Operator](#page9) [9](#page9)
-
-> [Betekenis operatoren](#page9) [9](#page9)
->
-> [Auto-increment operatoren](#page10) [10](#page10)
-
-[Opdrachten Hoofdstuk 3](#page10) [10](#page10)
-
-[4. Statements](#page11) [11](#page11)
-
-> [If/else statements](#page11) [11](#page11)
->
-> [Voorbeeld](#page12) [12](#page12)
-
-[Opdrachten Hoofdstuk 4](#page13) [13](#page13)
-
-[5. Lussen](#page14) [14](#page14)
-
-> [For-lus](#page14) [14](#page14)
->
-> [While-lus](#page14) [14](#page14)
-
-[Opdrachten Hoofdstuk 5](#page14) [14](#page14)
-
-[6. Invoer vanaf het toetsenbord](#page14) [15](#page14)
-
-[Opdrachten Hoofdstuk 6](#page16) [16](#page16)
-
-[Eindopdracht](#page17) [17](#page17)
-
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        2
-
-  ------------------------------------------------- ---------------------
-
-[]{#page3 .anchor}Inleiding
+Een inleiding tot het programmeren in Java.
 
 Deze reader is een afgeleide van het Wikibook: Programmeren in Java,
 voor meer informatie zie de website van Wikibooks --
@@ -90,7 +22,7 @@ Youtube films over diverse onderwerpen, waaronder Java
 [[http://docs.oracle.com/javase/tutorial/]{.underline}](http://docs.oracle.com/javase/tutorial/) -
 Officiële documentatie van Oracle
 
-Wat is een programmeertaal?
+## Wat is een programmeertaal?
 
 Om een computer te \'\'programmeren\'\', ofwel verschillende instructies
 achter elkaar zetten in een \'\'programma\'\', moest men vroeger veel
@@ -107,7 +39,7 @@ die in een keer heel veel nullen en enen voor ons neerzetten. Deze
 instructies zijn ook een stuk makkelijker te begrijpen dan een reeks
 getallen.
 
-Compileren en de kracht van Java
+## Compileren en de kracht van Java
 
 Zoals eerder gezegd, een computer verstaat alleen enen en nullen. Dus
 hoe kan een computer ooit een programma uitvoeren in een programmeertaal
@@ -144,12 +76,7 @@ dan het programma uit.
 
 *Java-programma → bytecode → machinetaal*
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        3
-
-  ------------------------------------------------- ---------------------
-
-[]{#page4 .anchor}
+# Een inleiding tot het programmeren in Java
 
 De JVM is wel degelijk afhankelijk van het platform, maar is beschikbaar
 voor veel verschillende systemen, is gratis en hoeft slechts eenmalig te
@@ -169,8 +96,7 @@ Jetbrains IDE's. Een IDE is eigenlijk een hele slimme tekstverwerker die
 je helpt door foute code te corrigeren en automatisch de opmaak/kleuren
 toe te passen.
 
-Ga naar
-[[https://www.jetbrains.com]{.underline}](https://www.jetbrains.com/) en
+Ga naar [[https://www.jetbrains.com]{.underline}](https://www.jetbrains.com/) en
 maak daar een account aan [met jouw **persoonlijke school-mail
 adres**]{.underline}. Vervolgens is het mogelijk om een
 studentenlicentie aan te vragen.
@@ -188,12 +114,7 @@ zien.
 **Tip: Sla per hoofdstuk de opdrachten op in een map en geef de
 opdrachten de naam van de opgave.**
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        4
-
-  ------------------------------------------------- ---------------------
-
-[]{#page5 .anchor}1. Hallo Wereld!
+# 1. Hallo Wereld!
 
 We gaan nu ons eerste Java programma schrijven. Daarna gaan we het
 programma compileren.
@@ -206,31 +127,27 @@ COMMAND LINE APP**
 Zorg ervoor dat je eerste project HalloWereld heet, gebruik geen spaties
 voor projectnamen. Neem vervolgens dit eerste stukje code over:
 
-![](./images/image3.png){width="6.269444444444445in"
-height="1.3805555555555555in"}
+![](./images/image3.png){width="6.269444444444445in"}
 
 > public class Main {
 
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
+![](./images/image4.png){width="6.065972222222222in"}
 
-> public static void main(String\[\] args) {
-> System.*out*.println(\"Hello World!\");
+```java
+public static void main(String[] args) {
+  System.out.println("Hello World!");
+}
+```
 
-![](./images/image5.png){width="6.065972222222222in"
-height="0.31527777777777777in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> }
+![](./images/image5.png){width="6.065972222222222in"}
 
 ![](./images/image4.png){width="6.065972222222222in"
 height="0.15694444444444444in"}
 
-Compileren
+![](./images/image4.png){width="6.065972222222222in"
+height="0.15694444444444444in"}
+
+## Compileren
 
 Wanneer je vanuit een commandolijn-omgeving (DOS-prompt, UNIX-shell,
 Windows: Start \> Run \> typ \"cmd\" \...) werkt, ga je nu naar de map
@@ -242,32 +159,25 @@ height="0.4083333333333333in"}
 > javac Hallo.java
 
 **Vanuit IntelliJ kan je als alternatief heel eenvoudig op de groene**
-![](./images/image7.jpeg){width="0.2708333333333333in"
-height="0.23958333333333334in"} **knop drukken, het resultaat wordt
+![](./images/image7.jpeg){width="0.2708333333333333in"}
+**knop drukken, het resultaat wordt
 onder je code weergegeven**
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        5
-
-  ------------------------------------------------- ---------------------
-
-[]{#page6 .anchor}Bespreking
+## Bespreking
 
 ![](./images/image8.png){width="6.269444444444445in"
 height="1.0368055555555555in"}
 
-1.  public class Main {
+```java
+public class Main {
+  public static void main(String[] args) {
 
-2.  public static void main(String\[\] args) {
+    System.*out*.println("Hello World!");
+  }
+}
+```
 
-3.  System.*out*.println(\"Hello World!\");
-
-4.  }
-
-5.  }
-
-![](./images/image9.png){width="5.815972222222222in"
-height="0.6298611111111111in"}
+![](./images/image9.png){width="5.815972222222222in"}
 
 Op regel 1 maken we een nieuwe klasse aan. De public duidt erop dat deze
 code in het bestand moet zitten met dezelfde naam als de klasse, gevolgd
@@ -278,8 +188,7 @@ Op regel twee zien we de 'main methode'. Dit is een standaard methode
 waar een programma
 
 begint. Schrijf dus al je code binnen de accolades
-![](./images/image10.jpeg){width="0.6354166666666666in"
-height="0.2604166666666667in"} van deze methode.
+![](./images/image10.jpeg){width="0.6354166666666666in"} van deze methode.
 
 Op regel 3 roepen we een methode op uit de standaard Java code, namelijk
 de methode println. Deze drukt de meegegeven tekst af in de console. De
@@ -300,24 +209,16 @@ Opdracht 1; Druk je volledige naam af op het scherm
 
 Voorbeeld:
 
-![](./images/image11.jpeg){width="4.677083333333333in"
-height="1.0729166666666667in"}
+![](./images/image11.jpeg){width="4.677083333333333in"}
 
 Opdracht 2; Druk je volledige naam, gescheiden door enters af op het
 scherm.
 
 Voorbeeld:
 
-![](./images/image12.jpeg){width="4.84375in"
-height="1.3645833333333333in"}
+![](./images/image12.jpeg){width="4.84375in"}
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        6
-
-  ------------------------------------------------- ---------------------
-
-[]{#page7 .anchor}2. Variabelen
-
+# 2. Variabelen
 Variabelen kunnen we gebruiken om tijdelijk gegevens in op te slaan.
 Deze gegevens kunnen bijvoorbeeld bestaan uit getallen (integers) of
 stukken tekst (strings), maar kunnen bijvoorbeeld ook waar/niet waar
@@ -328,33 +229,27 @@ Nu willen we toch graag wat meer doen dan enkel een tekst weergeven. We
 zullen ons eerste programma een beetje opfleuren met een wiskundige
 berekeningen:
 
-![](./images/image13.png){width="6.269444444444445in"
-height="1.9805555555555556in"}
+![](./images/image13.png){width=6.269444444444445in}
 
-1.  public class Main {
+```java
+public class Main {
 
-2.  public static void main(String\[\] args) {
+  public static void main(String\[\] args) {
+    
+    int a;
+    int b;
+    int c;
 
-3.  int a;
+    a = 1;
+    b = 2;
+    c = a + b;
 
-4.  int b;
+    System.*out*.println(\"1 + 2 = \" + c);
+  }
+}
+```
 
-5.  int c;
-
-6.  a = 1;
-
-7.  b = 2;
-
-8.  c = a + b;
-
-9.  System.*out*.println(\"1 + 2 = \" + c);
-
-10. }
-
-11. }
-
-![](./images/image14.png){width="5.815972222222222in"
-height="1.573611111111111in"}
+![](./images/image14.png){width="5.815972222222222in"}
 
 Op regel 3 tot 5 maken we drie variabelen aan met respectievelijk de
 namen a, b en c. Dit doen we via het sleutelwoord int, wat de afkorting
@@ -395,12 +290,6 @@ is de plus geen wiskundige operator maar een speciale
 \"concatenatie\"-operator die voor het aaneenzetten van tekst wordt
 gebruikt (zie het hoofdstuk over Stringbewerkingen).
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        7
-
-  ------------------------------------------------- ---------------------
-
-[]{#page8 .anchor}
 
 In Java zitten een paar vaste sleutelwoorden zoals int die bepaalde
 types van variabelen bevatten. Variabelen die niet meer doen dan één
@@ -485,7 +374,7 @@ Primitieve variabelentypes
 |          |                |   |                     | > "Hallo!1"; |
 +----------+----------------+---+---------------------+--------------+
 
-Opdrachten Hoofdstuk 2
+## Opdrachten Hoofdstuk 2
 
 Bij deze opdrachten moet je
 
@@ -511,13 +400,7 @@ Opdracht 5; 8,99882
 
 Opdracht 6; G3tal
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        8
-
-  ------------------------------------------------- ---------------------
-
-[]{#page9 .anchor}3. Operator
-
+# 3. Operator
 Operators zijn tekens die ons verschillende bewerkingen of
 vergelijkingen laten doen.
 
@@ -535,11 +418,12 @@ overeenkomen of dat ze verschillend zijn. Als we bijvoorbeeld willen
 weten of een ingevoerd wachtwoord overeenkomt met het opgeslagen
 wachtwoord schrijven we:
 
+```java
 if(password == savedPassword){
 
-> //password is OK
-
+  //password is OK
 }
+```
 
 Een (kleine) extra categorie is het + teken voor strings (teksten). Als
 we een + gebruiken voor twee teksten dan worden de teksten aan elkaar
@@ -710,12 +594,8 @@ Betekenis operatoren
 |   | ijn.** |                                     |                      |   |
 +---+--------+-------------------------------------+----------------------+---+
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        9
 
-  ------------------------------------------------- ---------------------
-
-[]{#page10 .anchor}Auto-increment operatoren
+## Auto-increment operatoren
 
 Je hebt ook nog de auto-increment- en auto-decrementoperatoren. Dit zijn
 operatoren die je kan gebruiken om een variabele met 1 te verhogen of te
@@ -765,22 +645,15 @@ height="0.15694444444444444in"}
 | > b++;    |    | // b =  | > 2                                      |
 +-----------+----+---------+------------------------------------------+
 
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
+![](./images/image4.png){width="6.065972222222222in"}
 
-> }
+![](./images/image4.png){width="6.065972222222222in"}
 
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
+![](./images/image4.png){width="6.065972222222222in"}
 
-> }
+## Opdrachten Hoofdstuk 3
 
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-Opdrachten Hoofdstuk 3
-
-Bij deze opdrachten moet je
+Bij deze opdrachten moet je:
 
 1.  de gegevens in de juiste type variabele stoppen
 
@@ -810,12 +683,8 @@ Opdracht 11; 2999299929292 vermenigvuldigen met 4,2
 
 Opdracht 12; 12 minus 66
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        10
 
-  ------------------------------------------------- ---------------------
-
-[]{#page11 .anchor}4. Statements
+# 4. Statements
 
 Nu we een beetje weten hoe we met variabelen in Java kunnen werken, is
 het tijd om iets verder te gaan kijken. Alles wat we tot nu toe gezien
@@ -838,7 +707,9 @@ Het gebruik van if gaat als volgt:
 ![](./images/image6.png){width="6.269444444444445in"
 height="0.40902777777777777in"}
 
-> if(\<boolean\>){ \... }
+```java
+if(<boolean>){ ... }
+```
 
 Tussen de accolades komt de code die moet worden uitgevoerd als de
 boolean true is. De boolean kan je verkrijgen uit het resultaat van
@@ -859,168 +730,58 @@ uitgevoerd indien de boolean false was:
 ![](./images/image17.png){width="6.269444444444445in"
 height="1.5083333333333333in"}
 
-> if(\<boolean\>)
->
-> {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> \...
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> else
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> \...
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
+```java
+if (<boolean>) {
+   ...
+}
+else {
+  ...
+}
 
 Je ziet dat er bij else geen nieuwe boolean gevraagd wordt. Een
 else-statement komt altijd onmiddellijk na een if-statement. Tenzij je
-gebruik maakt van \"else if\" op de volgende manier:
+gebruik maakt van "else if" op de volgende manier:
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        11
-
-  ------------------------------------------------- ---------------------
-
-[]{#page12
-.anchor}![](./images/image18.png){width="6.269444444444445in"
+![](./images/image18.png){width="6.269444444444445in"
 height="2.1381944444444443in"}
 
-> if(\<boolean\>)
->
-> {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> \...
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> elseif(\<boolean2\>)
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> \...
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> else
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> \...
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
+```java
+if(\<boolean\>)
+{
+  ...
+}
+elseif(\<boolean2\>) {
+  ...
+}
+else {
+  ...
+}
+```
 
 Voorbeeld
 
 ![](./images/image19.png){width="6.269444444444445in"
 height="2.6104166666666666in"}
 
-1.  public class AbsoluutVerschil {
+```java
+public class AbsoluutVerschil {
 
-2.  public static void main(String\[\] args) {
+  public static void main(String\[\] args) {
 
-3.  int a = 19, b = 9;
+    int a = 19, b = 9;
 
-4.  int verschil = 0;
-
-![](./images/image20.png){width="5.815972222222222in"
-height="0.47152777777777777in"}
-
-> 5\.
-
-![](./images/image21.png){width="5.815972222222222in"
-height="0.15694444444444444in"}
-
-6.  if (a \> b) {
-
-![](./images/image21.png){width="5.815972222222222in"
-height="0.15833333333333333in"}
-
-> 7\. verschil = a - b;
-
-![](./images/image21.png){width="5.815972222222222in"
-height="0.15694444444444444in"}
-
-8.  } else {
-
-![](./images/image21.png){width="5.815972222222222in"
-height="0.15833333333333333in"}
-
-> 9\. verschil = b - a;
-
-![](./images/image21.png){width="5.815972222222222in"
-height="0.15694444444444444in"}
-
-10. }
-
-11. 
-
-![](./images/image22.png){width="5.815972222222222in"
-height="0.31527777777777777in"}
-
-12. System.*out*.println(\"Verschil tussen \" + a + \" en \" + b +
-
-13. \" is: \" + verschil);
-
-14. }
-
-15. }
+    int verschil = 0;
+    
+    if (a \> b) {
+      verschil = a - b;
+    } else {
+      verschil = b - a;
+    }
+    
+    System.*out*.println(\"Verschil tussen \" + a + \" en \" + b + \" is: \" + verschil);
+  }
+}
+```
 
 ![](./images/image9.png){width="5.815972222222222in"
 height="0.6284722222222222in"}
@@ -1045,12 +806,7 @@ java compiler is daar blind voor.
 Op regel 12 en 13 schrijven we de waarde van de twee variabelen en hun
 onderling verschil uit.
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        12
-
-  ------------------------------------------------- ---------------------
-
-[]{#page13 .anchor}Opdrachten Hoofdstuk 4
+## Opdrachten Hoofdstuk 4
 
 Opdracht 13; Vul een variabele met een getal, mocht dit getal groter
 zijn dan 10, druk dan een foutmelding af op het scherm.
@@ -1066,12 +822,7 @@ verschijnen. Onder de 5,5 moet er een melding zijn op het scherm dat het
 een onvoldoende is, Daarboven een voldoende. Voor deze opdracht mag er
 maar 1 melding per keer verschijnen.
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        13
-
-  ------------------------------------------------- ---------------------
-
-[]{#page14 .anchor}5. Lussen
+# 5. Lussen
 
 Een andere constructie waarbij het dynamische aspect van Java naar voren
 komt, is de lus. Dit is een constructie waarbij een bepaald stuk code
@@ -1084,44 +835,27 @@ For-lus
 
 Met de for-lus kun je een gecontroleerde herhaling laten plaats vinden.
 
-![](./images/image23.png){width="6.269444444444445in"
-height="1.3520833333333333in"}
+```java
+public class ForTest1 {
 
-> public class ForTest1 {
->
-> public static void main (String args\[\]) { for (int i=0; i \< 5; i++
-> ) {
-
-![](./images/image5.png){width="6.065972222222222in"
-height="0.31527777777777777in"}
-
-> System.*out*.println (\"i heeft de waarde \"+i);
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> }
-
-![](./images/image24.png){width="6.065972222222222in"
-height="0.31527777777777777in"}
-
-> }
+  public static void main (String args\[\]) {
+    
+    for (int i=0; i \< 5; i++) {
+      System.*out*.println ("i heeft de waarde "+i);
+    }
+  }
+}
+```
 
 Ook kan je in grotere hoeveelheden dan 1 door een loop heen:
 
-public static void main(String\[\] args) { for (int i = 0; i \< 25; i =
-i + 5) {
-
-> System.*out*.println(\"i heeft de waarde \" + i);
->
-> }
-
+```java
+public static void main(String\[\] args) {
+  for (int i = 0; i \< 25; i = i + 5) {
+    System.*out*.println("i heeft de waarde " + i);
+  }
 }
+```
 
 While-lus
 
@@ -1130,57 +864,24 @@ wederom tussen accolades {} staat, telkens opnieuw uitgevoerd worden.
 Vaak wordt een while-loop in combinatie met een tellertje gebruikt,
 bijvoorbeeld om de getallen 1-5 weer te geven:
 
-![](./images/image25.png){width="6.269444444444445in"
-height="2.1381944444444443in"}
+```java
+public class WhileTest {
 
-> public class WhileTest {
->
-> public static void main(String\[\] args) { int i=0;
+  public static void main(String\[\] args) {
+    int i=0;
+    System.*out*.println("i heeft de waarde "+i); 
+    
+    while (i<5) {
+      i++;
+      System.*out*.println("plus 1 is "+i);
+    }
 
-![](./images/image5.png){width="6.065972222222222in"
-height="0.31527777777777777in"}
+    System.*out*.println("Aan het einde van deze lus heeft i de waarde +i");
+  }
+}
+```
 
-> System.*out*.println(\"i heeft de waarde \"+i); while (i\<5) {
-
-![](./images/image5.png){width="6.065972222222222in"
-height="0.31319444444444444in"}
-
-> i++;
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> System.*out*.println(\"plus 1 is \"+i);
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> System.*out*.println(\"Aan het einde van deze lus heeft i de waarde
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> \"+i);
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-Opdrachten Hoofdstuk 5
+## Opdrachten Hoofdstuk 5
 
 Opdracht 16; Druk de getallen 1 t/m 5 onder elkaar af op het scherm met
 behulp van een **for**-lus
@@ -1197,47 +898,33 @@ het scherm (19, 21, 23 etc.)
 Opdracht 20; Druk de getallen 4192 tot -2039 per 150 tal af op het
 scherm (4192, 4042, 3892 etc.)
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        14
-
-  ------------------------------------------------- ---------------------
-
-6\. Invoer vanaf het toetsenbord
+# 6. Invoer vanaf het toetsenbord
 
 Voor het verwerken van gegevens is het handig als je de gebruiker om
 gegevens kan vragen.
 
 Uiteraard kan dit ook met Java. Zie onderstaand voorbeeld:
 
-![](./images/image26.png){width="6.269444444444445in"
-height="3.0819444444444444in"}
+![](./images/image26.png){width="6.269444444444445in"}
 
--   Importeer de benodigde onderdelen. import java.util.Scanner;
+-   Importeer de benodigde onderdelen. 
 
-![](./images/image5.png){width="6.065972222222222in"
-height="0.31527777777777777in"}
+```java
+import java.util.Scanner;
 
-> public class invoer {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-> public static void main(String\[\] args) {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
+public class invoer {
+  public static void main(String\[\] args) {
+```
 
 -   Maak een nieuwe variabele aan van het type string: String invoer;
 
-> Scanner scanner = new Scanner(System.*in*);
+```java
+Scanner scanner = new Scanner(System.*in*);
 
-![](./images/image27.png){width="6.065972222222222in"
-height="0.6284722222222222in"}
+System.*out*.print(\"Geef je naam op:\");
+```
 
-> System.*out*.print(\"Geef je naam op:\");
-
-![](./images/image5.png){width="6.065972222222222in"
-height="0.31527777777777777in"}
+![](./images/image5.png){width="6.065972222222222in"}
 
 -   De variable invoer vullen: invoer = scanner.nextLine();
 
@@ -1269,12 +956,7 @@ height="0.17152777777777778in"}
 
 > int invoer = scanner.nextInt();
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        15
-
-  ------------------------------------------------- ---------------------
-
-[]{#page16 .anchor}Opdrachten Hoofdstuk 6
+## Opdrachten Hoofdstuk 6
 
 Opdracht 21; Vraag de gebruiker om zijn naam in te voeren, druk daarna
 zijn naam af op het scherm.
@@ -1295,12 +977,7 @@ Voorbeeld:
 ![](./images/image32.jpeg){width="4.895833333333333in"
 height="2.03125in"}
 
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        16
-
-  ------------------------------------------------- ---------------------
-
-[]{#page17 .anchor}Eindopdracht
+# Eindopdracht
 
 Voor de eindopdracht moet je de volgende figuren met loops proberen af
 te drukken:
@@ -1388,8 +1065,3 @@ Extra opdrachten lussen (voor diegene die van een uitdaging houden,
 +-----------------------+-----------------------+-----------------------+
 |                       |                       |                       |
 +-----------------------+-----------------------+-----------------------+
-
-  ------------------------------------------------- ---------------------
-  Een inleiding tot het programmeren in Java        17
-
-  ------------------------------------------------- ---------------------
