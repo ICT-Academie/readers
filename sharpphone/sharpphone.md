@@ -1,5 +1,14 @@
+---
+title: "SharpPhone - NET 6 Desktop"
+version: v1.3 (2023-10-12)
+author: "Sven Wind (swind@novacollege.nl)"
+geometry: "left=1cm,right=1cm,top=1.5cm,bottom=2.5cm"
+mainfont: Open Sans
+documentclass: scrartcl
+subparagraph: yes
+---
+\pagebreak
 # Introductie SharpPhone
-
 SharpPhone is een middelgrote handelsonderneming die in 1999 is
 opgericht door de huidige directrice Melanie Hendrikse. Vanaf het begin
 heeft SharpPhone zich gespecialiseerd in de verkoop van kwalitatief
@@ -18,86 +27,44 @@ wordt door Melanie
 doeleinden. Genoemde namen zijn tevens fictief. Overeenkomsten met
 bestaande bedrijven en personen berusten op louter toeval.*
 
-# Document revisies
-
-| DATUM     | OMSCHRIJVING                          |
-|-----------|---------------------------------------|
-| 6-4-2023  | Initieel document                     |
-| 31-8-2023 | Aanpassingen formaat.                 |
-| 11-9-2023 | Verwijderen referentie naar Rider IDE |
-|           |                                       |
-|           |                                       |
-|           |                                       |
-|           |                                       |
-
-# Inhoud
-
-[Introductie SharpPhone
-[1](#introductie-sharpphone)](#introductie-sharpphone)
-
-[Document revisies [1](#document-revisies)](#document-revisies)
-
-[Rider [3](#rider)](#rider)
-
-[Project Aanmaken [4](#project-aanmaken)](#project-aanmaken)
-
-[WinForms Editor [6](#winforms-editor)](#winforms-editor)
-
-[Hoofdscherm opzetten [7](#hoofdscherm-opzetten)](#hoofdscherm-opzetten)
-
-[Benamingen voor Form Controls
-[7](#benamingen-voor-form-controls)](#benamingen-voor-form-controls)
-
-[Code editor [8](#code-editor)](#code-editor)
-
-[Events en Callbacks [8](#events-en-callbacks)](#events-en-callbacks)
-
-[Data inrichten [9](#data-inrichten)](#data-inrichten)
-
-[Properties en Fields [9](#properties-en-fields)](#properties-en-fields)
-
-[Toevoegen van nieuwe Smartphones
-[11](#toevoegen-van-nieuwe-smartphones)](#toevoegen-van-nieuwe-smartphones)
-
-[Uitbreiding [13](#uitbreiding)](#uitbreiding)
-
-[Voorraad beheer [13](#voorraad-beheer)](#voorraad-beheer)
-
-[Aanpassen van bestaande SmartPhones
-[13](#aanpassen-van-bestaande-smartphones)](#aanpassen-van-bestaande-smartphones)
-
-[Inloggen [14](#inloggen)](#inloggen)
-
-[Einde [15](#einde)](#einde)
-
-#  Rider
-
-Helaas, helaas, Rider ondersteund niet de nieuwe WinForms editor die
-Visual Studio wel aanbied. Het is van belang om wel Visual Studio te
+## Rider
+Helaas, helaas, Rider ondersteunt niet de nieuwe WinForms editor die
+Visual Studio wel aanbiedt. Het is van belang om wel Visual Studio te
 downloaden. Instructies voor het installeren van Visual Studio kan je
 terug vinden in het Opdrachten document voor C# (Programmeren basis).
 
 Het gebruik van Visual Studio is deze keer verplicht.
 
-# Project Aanmaken
+## Document revisies
 
-Let op, voor deze opdracht heb je Visual Studio (Community nodig. Dit
+| DATUM       | VERSIE      | OMSCHRIJVING                          |
+|-------------|-------------|---------------------------------------|
+| 6-4-2023    | 1.0         | Initieel document                     |
+| 31-8-2023   | 1.1         | Aanpassingen formaat.                 |
+| 11-9-2023   | 1.2         | Verwijderen referentie naar Rider IDE |
+| 12-10-2023  | 1.3         | Migratie naar readers repository      |
+
+
+\pagebreak
+
+# Project aanmaken
+Let op, voor deze opdracht heb je Visual Studio (Community) nodig. Dit
 document zal voornamelijk ingaan op Visual Studio.
 
-<img src=".\/media/image1.png" style="width:6.30139in;height:4.19444in"
-alt="Afbeelding met tekst Automatisch gegenereerde beschrijving" />Open
-de Visual Studio Launcher en maak een nieuw project aan van het type
-”Windows Forms
-App”.<img src=".\/media/image2.png" style="width:6.3in;height:4.19375in"
-alt="Afbeelding met tekst Automatisch gegenereerde beschrijving" />Geef
-je project een goede naam, bijvoorbeeld SharpPhone.
+![](images/image1.png){ width=6in }
 
-<img src=".\/media/image3.png" style="width:6.3in;height:4.19375in"
-alt="Afbeelding met tekst Automatisch gegenereerde beschrijving" />
+Open de Visual Studio Launcher en maak een nieuw project aan van het type
+”Windows Forms App”.
+
+![](images/image2.png){width=6in }
+
+Geef je project een goede naam, bijvoorbeeld SharpPhone.
+
+![](images/image3.png){ width=6in }
 
 Selecteer .NET 6.0 als Framework.
 
-# WinForms Editor
+## WinForms Editor
 
 Windows Forms, ook wel bekend als WinForms, is een applicatie type die
 native werkt op Windows. De gebruiksinteractie wordt aangestuurd door
@@ -108,11 +75,12 @@ Een Form bestaat uit een aantal onderdelen. Een visuele Form editor, een
 resource bestand en de een class-bestand waar we alle code in schrijven.
 Het resource bestand kan je voor nu negeren.
 
-# Hoofdscherm opzetten
+\pagebreak
 
-<img src=".\/media/image4.png"
-style="width:7.17639in;height:3.8875in" />Op het hoofdscherm zullen we
-voorraden bekijken en beheren. Maar eerst gaan we deze grafisch form
+# Hoofdscherm opzetten
+![](images/image4.png){ width=7.17639in }
+
+Op het hoofdscherm zullen we voorraden bekijken en beheren. Maar eerst gaan we deze grafisch form
 geven.
 
 1.  Mocht het nog niet zo zijn, open het Form1 bestand. (Deze staat in
@@ -163,22 +131,22 @@ label3, form1, textbox1, textbox2, etc.
 We geven controls een eigen naam zodat we ze makkelijker kunnen
 terugvinden en zodat we snel kunnen zien waar ze voor gebruikt worden.
 
-# Code editor
+## Code editor
 
 Met F7 en SHIFT + F7 (Visual Studio) kan je wisselen tussen de WinForms
 editor en de code editor. Je ziet al dat hier wat “boilerplate”
 (voorgeschreven) code staat.
 
-<img src=".\/media/image5.png" style="width:6.3in;height:3.34722in"
-alt="Afbeelding met tekst, schermafbeelding, scherm Automatisch gegenereerde beschrijving" />Een
-WinForms is grafisch veel complexer dan een Console applicatie waar je
+![](images/image5.png){ width=6.3in }
+
+Een WinForms is grafisch veel complexer dan een Console applicatie waar je
 tot nu toe mee gewerkt hebt. De constructor roept 1 methode aan,
 Initialize ();  
 Deze methode verteld aan Windows hoe het scherm er op technische wijze
 uit komt te zien. Het is verplicht om deze methode aan te roepen om een
 WinForms op het scherm te tekenen.
 
-# Events en Callbacks
+## Events en Callbacks
 
 Om het programma te laten reageren op input, maken wij gebruik van
 Events. Events, het zegt het al, zijn “gebeurtenissen”. Een Event gaat
@@ -187,6 +155,8 @@ wanneer de gebruiker een Event afvuurt. Het afvuren van een Event, wordt
 ook wel eens ‘Invoking’ genoemd.
 
 Verderop in dit document gaan we gebruik maken van event.
+
+\pagebreak
 
 # Data inrichten
 
@@ -247,6 +217,8 @@ lijstje van smartphones weergeven.
 *Start voor de grap het project. Dan zie je vervolgens een mooie
 grafische interface met 1 smartphone in de lijst.*
 
+\pagebreak
+
 ## Properties en Fields
 
 In C# Basis is dit onderwerp ook al behandeld, maar er is meer dan
@@ -257,8 +229,7 @@ kant is een verborgen stukje data waarop je handelingen kan uitvoeren.
 In oudere applicaties zal je zien dat een Property doorverwijst naar een
 Field, soms ook wel een Backing-Field genoemd.
 
-<img src=".\/media/image6.png" style="width:3.39196in;height:2.61689in"
-alt="Afbeelding met tekst Automatisch gegenereerde beschrijving" />
+![](images/image6.png){ width=3.39196in }
 
 In bovenstaand voorbeeld hebben we een public Property “Id” en een
 private Backing-Field “\_id”. De underscore word vaak gebruikt om public
@@ -272,13 +243,14 @@ Een Property met een Backing-Field wordt ook wel een FullProperty
 genoemd. Als je geen mutaties hoeft te doen op de Backing-Field, kan je
 gebruik maken van een AutoProperty.
 
-<img src=".\/media/image7.png" style="width:3.15027in;height:1.5668in"
-alt="Afbeelding met tekst Automatisch gegenereerde beschrijving" />
+![](images/image7.png){ width=3.15027in }
 
 Hoewel de Field er nu niet meer bij staat, bestaat deze onder water wel
 maar nu communiceer je direct met de Property.
 
 In het algemeen roep je niet direct de Field aan.
+
+\pagebreak
 
 ## Toevoegen van nieuwe Smartphones
 
@@ -349,6 +321,8 @@ Dit is een voorbeeld van een event callback.
 3.  Dubbelklik nu op *btnCancel*, zet de property voor DialogResult op
     DialogResult.Cancel en roep in de callback “*Close();*” aan.
 
+\pagebreak
+
 Nu gaan we terug naar Form1 (WinForms Designer).
 
 1.  Dubbel klik daar op de button “*btnAddPhone*” en maak een callback
@@ -381,6 +355,8 @@ Nu gaan we terug naar Form1 (WinForms Designer).
 
 Probeer het programma nu op te starten en een aantal telefoons toe te
 voegen aan de lijst.
+
+\pagebreak
 
 # Uitbreiding
 
@@ -456,7 +432,9 @@ FormAddPhone hergebruiken.
     SmartPhone door als parameter. Laat dan FormAddPhone als Dialog en
     sla het DialogResult op in een nieuwe variable.
 
-5.  Maak nu weer de controle op DialogResut.OK.
+\pagebreak
+
+5.  Maak nu weer de controle op DialogResult.OK.
 
     1.  Als het resultaat Dialog.Ok is:
 
@@ -492,6 +470,8 @@ inloggen met een gebruikersnaam en wachtwoord.
 4.  Als je het juiste wachtwoord invoert, ga je verder naar het
     hoofdscherm.
 
+\pagebreak
+
 # Einde
 
 Eindelijk, je bent zo goed als klaar. Alleen dit laatste irritante
@@ -502,11 +482,9 @@ screenshots. Het hoeft niet 1 op 1 op elkaar te lijken, zolang dezelfde
 elementen wel aanwezig zijn.  
 *(Dacht je nou echt dat ik code ging delen? )*
 
-<img src=".\/media/image8.png"
-style="width:5.35046in;height:3.32529in" />
+![](images/image8.png){ width=5.35046in }
 
-<img src=".\/media/image9.png"
-style="width:3.78366in;height:2.25853in" />
+![](images/image9.png){ width=3.78366in }
 
 WinForms is een goed idee om relatief snel een prototype of idee in
 elkaar te zetten en te testen. In de industrie zie je WinForms vooral
