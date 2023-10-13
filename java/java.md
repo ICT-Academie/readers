@@ -16,22 +16,20 @@ voor meer informatie zie de website van Wikibooks --
 [[http://wikibooks.nl]{.underline}](http://wikibooks.nl/)
 
 Aanvullende bronnen:
-
-[[http://thenewboston.org]{.underline}](http://thenewboston.org/) --
 Youtube films over diverse onderwerpen, waaronder Java
 [[http://docs.oracle.com/javase/tutorial/]{.underline}](http://docs.oracle.com/javase/tutorial/) -
 Officiële documentatie van Oracle
 
 ## Wat is een programmeertaal?
 
-Om een computer te \'\'programmeren\'\', ofwel verschillende instructies
-achter elkaar zetten in een \'\'programma\'\', moest men vroeger veel
+Om een computer te 'programmeren', ofwel verschillende instructies
+achter elkaar zetten in een 'programma', moest men vroeger veel
 werk verrichten. Een computer werkt namelijk binair (met enen en
 nullen). Om een programma te schrijven moest men dus een heel lange
 serie van enen en nullen achter elkaar zetten. Dit is echter een zeer
 tijdrovende bezigheid, en het gevolg was dat er niet veel programma\'s
 waren en dat het schrijven van een nieuw programma zeer veel tijd in
-beslag nam. Daarom heeft men de \'\'programmeertaal\'\' uitgevonden, die
+beslag nam. Daarom heeft men de 'programmeertaal' uitgevonden, die
 programmeren een stuk eenvoudiger maakt.
 
 Programmeertalen zijn eigenlijk niets anders dan versimpelde instructies
@@ -45,9 +43,9 @@ Zoals eerder gezegd, een computer verstaat alleen enen en nullen. Dus
 hoe kan een computer ooit een programma uitvoeren in een programmeertaal
 met complexe dingen zoals objecten? Het antwoord is vrij simpel: voordat
 je iets met een programma kan doen, moet de code eerst worden omgezet
-naar enen en nullen. Dit proces heet \'\'compileren\'\'.
+naar enen en nullen. Dit proces heet 'compileren'.
 
-Bij een \"klassieke\" programmeertaal, bijvoorbeeld C++, wordt de
+Bij een "klassieke" programmeertaal, bijvoorbeeld C++, wordt de
 programmacode omgezet naar code die direct door een computer te
 begrijpen is. Dat is uiteraard gemakkelijk, want er is geen extra
 programma nodig om de code uit te voeren. Maar dit betekent wel dat code
@@ -56,21 +54,21 @@ andere systemen (bv. Apple Mac OS of Linux). Er moeten dus aparte
 versies voor die systemen gecompileerd worden, en vaak dient de
 programmacode eerst worden aangepast omdat deze systemen anders werken.
 
-Met Java is het de bedoeling om platformonafhankelijke programma\'s te
+Met Java is het de bedoeling om platformonafhankelijke programma's te
 maken. Dat wil zeggen dat een programma dat je thuis maakt in Java zal
 draaien op jouw besturingssysteem, maar ook op andere besturingssystemen
-als Linux of MAC OS X, \...
+als Linux of MAC OS X,...
 
 Java lost dit probleem op door gebruik te maken van een compiler die
 weliswaar een binair bestand aanmaakt, maar waarin de opdrachten nog
 steeds platformonafhankelijk zijn. In plaats van de broncode
 rechtstreeks om te zetten naar machinetaal, zoals bij C of C++ e.d. het
 geval is. Dit heeft tot gevolg dat de Java-compiler geen
-\'\'stand-alone\'\' uitvoerbaar bestand (een .exe onder Microsoft
+'stand-alone' uitvoerbaar bestand (een .exe onder Microsoft
 Windows) maakt. In de plaats daarvan compileert de Java-compiler een
 bestand in bytecode. Dit bestand wordt dan ingelezen door een
-\'\'interpreter\'\' (\'\'Java Virtual Machine\'\', JVM) dat op elk
-platform waar Java programma\'s op moeten draaien geïnstalleerd moet
+'interpreter' ('Java Virtual Machine', JVM) dat op elk
+platform waar Java programma's op moeten draaien geïnstalleerd moet
 worden. De JVM leest de bytecode, interpreteert de opdrachten en voert
 dan het programma uit.
 
@@ -83,7 +81,7 @@ voor veel verschillende systemen, is gratis en hoeft slechts eenmalig te
 worden geïnstalleerd.
 
 Het uitvoeren van bytecode gaat weliswaar iets trager dan het doorsnee
-\'native\' programma, oftewel een programma dat specifiek voor één
+'native' programma, oftewel een programma dat specifiek voor één
 systeem is geschreven (onder Microsoft Windows een .exe), maar dit is in
 het dagelijks gebruik nauwelijks merkbaar. Het voordeel is echter dat je
 niet afhankelijk bent van beslissingen van de softwareontwikkelaar om
@@ -127,34 +125,20 @@ COMMAND LINE APP**
 Zorg ervoor dat je eerste project HalloWereld heet, gebruik geen spaties
 voor projectnamen. Neem vervolgens dit eerste stukje code over:
 
-![](./images/image3.png){width="6.269444444444445in"}
-
-> public class Main {
-
-![](./images/image4.png){width="6.065972222222222in"}
 
 ```java
-public static void main(String[] args) {
-  System.out.println("Hello World!");
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
 }
 ```
-
-![](./images/image5.png){width="6.065972222222222in"}
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
 
 ## Compileren
 
 Wanneer je vanuit een commandolijn-omgeving (DOS-prompt, UNIX-shell,
-Windows: Start \> Run \> typ \"cmd\" \...) werkt, ga je nu naar de map
+Windows: Start > Run > typ "cmd") werkt, ga je nu naar de map
 waar het bestand Hallo.java staat. Daar typ je het volgende commando:
-
-![](./images/image6.png){width="6.269444444444445in"
-height="0.4083333333333333in"}
 
 > javac Hallo.java
 
@@ -165,20 +149,13 @@ onder je code weergegeven**
 
 ## Bespreking
 
-![](./images/image8.png){width="6.269444444444445in"
-height="1.0368055555555555in"}
-
 ```java
 public class Main {
-  public static void main(String[] args) {
-
-    System.*out*.println("Hello World!");
-  }
+    public static void main(String[] args) {
+        System.*out*.println("Hello World!");
+    }
 }
 ```
-
-![](./images/image9.png){width="5.815972222222222in"}
-
 Op regel 1 maken we een nieuwe klasse aan. De public duidt erop dat deze
 code in het bestand moet zitten met dezelfde naam als de klasse, gevolgd
 door .java. In dit geval dus Hallo.java. Meer over klassen vind je in
@@ -229,32 +206,26 @@ Nu willen we toch graag wat meer doen dan enkel een tekst weergeven. We
 zullen ons eerste programma een beetje opfleuren met een wiskundige
 berekeningen:
 
-![](./images/image13.png){width=6.269444444444445in}
-
 ```java
 public class Main {
+    public static void main(String[] args) {
+        int a;
+        int b;
+        int c;
 
-  public static void main(String\[\] args) {
-    
-    int a;
-    int b;
-    int c;
-
-    a = 1;
-    b = 2;
-    c = a + b;
-
-    System.*out*.println(\"1 + 2 = \" + c);
-  }
+        a = 1;
+        b = 2;
+        c = a + b;
+        
+        System.out.println("1 + 2 = " + c);
+    }
 }
 ```
-
-![](./images/image14.png){width="5.815972222222222in"}
 
 Op regel 3 tot 5 maken we drie variabelen aan met respectievelijk de
 namen a, b en c. Dit doen we via het sleutelwoord int, wat de afkorting
 is voor integer (je mag echter nooit integer voluit schrijven bij
-declaratie van een variabele). Dit sleutelwoord bepaalt welk soort
+declaratie van een variabele). Dit sleutelwoord bepaalt, welk soort
 variabele we aanmaken.
 
 Het aanmaken van een variabele noemen we declareren. Het vertelt de
@@ -266,9 +237,6 @@ tijdens het compileren.
 We kunnen nog op een andere manier een reeks variabelen van hetzelfde
 type declareren door regel 3 tot 5 te schrijven als:
 
-![](./images/image15.png){width="6.269444444444445in"
-height="0.4083333333333333in"}
-
 > int a,b,c;
 
 Deze laatste manier zorgt voor iets compactere code, maar is verder
@@ -278,16 +246,16 @@ Op regel 6 en 7 geven we zowel de variabele a als b een waarde. Men mag
 niet eender wat na het is gelijk aanteken zetten (zie verder). De actie
 die we ondernemen heet initialiseren omdat we voor de eerste keer de
 variabelen een waarde toekennen. Het is gelijk aanteken noemen we de
-toekenningsoperator en lees je best als \"wordt\" (en niet als \"is\").
+toekenningsoperator en lees je best als "wordt" (en niet als "is").
 
 Op regel 8 initialiseren we de variabele c. Niet met een door ons
 bepaalde waarde maar met de som van de twee variabelen a en b. Het
 plusteken is een wiskundige operator.
 
 Op regel 9 tonen we een woord op het scherm zoals we eerder al deden.
-Dat woord is \"1 + 2 = \". Daarna schrijven we een plusteken. Dit keer
+Dat woord is "1 + 2 = ". Daarna schrijven we een plusteken. Dit keer
 is de plus geen wiskundige operator maar een speciale
-\"concatenatie\"-operator die voor het aaneenzetten van tekst wordt
+"concatenatie"-operator die voor het aaneenzetten van tekst wordt
 gebruikt (zie het hoofdstuk over Stringbewerkingen).
 
 
@@ -300,104 +268,39 @@ type. Hieronder zie je alle primitieve typen:
 
 Primitieve variabelentypes
 
-+----------+----------------+---+---------------------+--------------+
-| >        | >              | > | > **Bereik**        | > *          |
-| **Sleute |  **Betekenis** |   |                     | *Voorbeeld** |
-| lwoord** |                | * |                     |              |
-|          |                | * |                     |              |
-|          |                | B |                     |              |
-|          |                | i |                     |              |
-|          |                | t |                     |              |
-|          |                | s |                     |              |
-|          |                | * |                     |              |
-|          |                | * |                     |              |
-+----------+----------------+---+---------------------+--------------+
-| > **b    | > booleaanse   | > | > true of false     | > boolean a  |
-| oolean** | > waarde       |   |                     | > = true;    |
-|          |                | 1 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-| >        | > heel klein   | > | > -128 (-2^7^) tot  | > byte b =   |
-| **byte** | > geheel getal |   | > 127 (2^7^ - 1)    | > 8;         |
-|          |                | 8 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-| >        | > karakter     | > | > Alle              | > char c =   |
-| **char** |                |   | > Unicode-tekens    | > \'a\';     |
-|          |                | 1 |                     |              |
-|          |                | 6 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-| > *      | > klein geheel | > | > -32768 (-2^15^)   | > short d =  |
-| *short** | > getal        |   | > tot               | > 658;       |
-|          |                | 1 |                     |              |
-|          |                | 6 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-|          |                |   | > 32767 (-2^15^ -   |              |
-|          |                |   | > 1)                |              |
-+----------+----------------+---+---------------------+--------------+
-| >        | > geheel getal | > | > -2147483648       | > int e =    |
-|  **int** |                |   | > (-2^31^) tot      | > 2000000;   |
-|          |                | 3 |                     |              |
-|          |                | 2 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-|          |                |   | > 2147483647        |              |
-|          |                |   | > (2^31^ - 1)       |              |
-+----------+----------------+---+---------------------+--------------+
-| >        | > groot geheel | > | > -2^63^ tot        | > long f =   |
-| **long** | > getal        |   | > 2^63^ - 1         |              |
-|          |                | 6 |                     |              |
-|          |                | 4 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-|          |                |   |                     | > 220000000; |
-+----------+----------------+---+---------------------+--------------+
-| > *      | > reëel getal  | > | > ±0,14 \* 10^-64^  | > float g =  |
-| *float** |                |   | > tot               | > 89567;     |
-|          |                | 3 |                     |              |
-|          |                | 2 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-|          |                |   | > ±0,34 \* 10^39^   |              |
-+----------+----------------+---+---------------------+--------------+
-| > **     | > reëel getal  | > | > ±0,49 \* 10^-325^ | > double h = |
-| double** |                |   | > tot               |              |
-|          |                | 6 |                     |              |
-|          |                | 4 |                     |              |
-+----------+----------------+---+---------------------+--------------+
-|          | > (dubbele     |   | > ±0,18 \* 10^309^  | > 1000.987;  |
-|          | > precisie)    |   |                     |              |
-+----------+----------------+---+---------------------+--------------+
-| >        | > niets        | > | > \-                | > void       |
-| **void** |                |   |                     | > methode()  |
-|          |                | \ |                     | > { }        |
-|          |                | - |                     |              |
-+----------+----------------+---+---------------------+--------------+
-| > **     | > verzameling  |   |                     | > String     |
-| String** | > karakters    |   |                     | > groet =    |
-+----------+----------------+---+---------------------+--------------+
-|          |                |   |                     | > "Hallo!1"; |
-+----------+----------------+---+---------------------+--------------+
+| Sleutelwoord | Betekenis                         | Bits | Bereik                                                 | Voorbeeld                    |
+|--------------|-----------------------------------|------|--------------------------------------------------------|------------------------------|
+| boolean      | booleaanse waarde                 | 1    | true / false                                           | boolean a = true;            |
+| byte         | heel klein geheel getal           | 8    | -128 tot 127                                           | byte b = 8;                  |
+| char         | karakter                          | 16   | Alle Unicode-tekens                                    | char c = 'a';                |
+| short        | klein geheel getal                | 16   | -32768 tot 32767                                       | short d = 658;               |
+| int          | geheel getal                      | 32   | -2147483648 tot	2147483647                             | int e = 2000000;             |
+| long         | groot geheel getal                | 64   | -2<sup>63</sup> tot 2<sup>63</sup> - 1                 | 	long f = 220000000;         |
+| float        | reëel getal                       | 32   | ±0,14 * 10<sup>-64</sup> tot ±0,34 * 10<sup>39</sup>   | 	float g = 89567;            |
+| double       | reëel getal<br>(dubbele precisie) | 64   | ±0,49 * 10<sup>-325</sup> tot ±0,18 * 10<sup>309</sup> | double h = 1000.987;         |
+| void         | niets                             | -    | -                                                      | void methode() { }           |
+| String       | verzameling karakters             |      |                                                        | 			String groet = “Hallo!1”; |
 
 ## Opdrachten Hoofdstuk 2
 
 Bij deze opdrachten moet je
 
-1.  de gegevens in het juiste type variabele stoppen
-
-2.  vervolgens de variabele afdrukken op het scherm.
+1.  De gegevens in het juiste type variabele stoppen
+2.  Vervolgens de variabele afdrukken op het scherm
 
 Bijvoorbeeld:
 
+```java
 byte opdracht1 = 8;
+System.out.println(opdracht1);
 
-System.*out*.println(opdracht1);
-
-String opdracht2 = \"Naam\";
-
-System.*out*.println(opdracht2);
+String opdracht2 = "Naam";
+System.out.println(opdracht2);
+```
 
 Opdracht 3; Java Rules!
-
 Opdracht 4; -127
-
 Opdracht 5; 8,99882
-
 Opdracht 6; G3tal
 
 # 3. Operator
@@ -420,256 +323,64 @@ wachtwoord schrijven we:
 
 ```java
 if(password == savedPassword){
-
-  //password is OK
+	//password is OK
 }
 ```
 
-Een (kleine) extra categorie is het + teken voor strings (teksten). Als
-we een + gebruiken voor twee teksten dan worden de teksten aan elkaar
-geplakt.
+Een (kleine) extra categorie is het + teken voor strings (teksten). Als we een + gebruiken voor twee teksten dan worden de teksten aan elkaar geplakt.
 
-Hier onder vind je een greep uit de meest gebruikte operatoren van Java
-en hun betekenis. **Kijk bij toekomstige opdrachten weer naar deze
-tabel!**
+Hier onder vind je een greep uit de meest gebruikte operatoren van Java en hun betekenis. **Kijk bij toekomstige opdrachten weer naar deze tabel!**
 
 Betekenis operatoren
 
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > **Betekenis**                     | > **Voorbeeld**      |   |
-|   |  **Sym |                                     |                      |   |
-|   | bool** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > Een waarde toekennen aan een      | > a = 5;             |   |
-|   |  **=** | > variabele                         |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **De |                                     |                      |   |
-|   | > var  |                                     |                      |   |
-|   | iabele |                                     |                      |   |
-|   | > a    |                                     |                      |   |
-|   | > (    |                                     |                      |   |
-|   | eerder |                                     |                      |   |
-|   | > g    |                                     |                      |   |
-|   | edecla |                                     |                      |   |
-|   | reerd) |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | krijgt |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | waarde |                                     |                      |   |
-|   | > 5**  |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > Waarden/Variabelen bij elkaar     | > b = a + 1;         |   |
-|   |  **+** | > optellen                          |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **De |                                     |                      |   |
-|   | > var  |                                     |                      |   |
-|   | iabele |                                     |                      |   |
-|   | > b    |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | krijgt |                                     |                      |   |
-|   | > de   |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | waarde |                                     |                      |   |
-|   | > van  |                                     |                      |   |
-|   | > (a + |                                     |                      |   |
-|   | > 1),  |                                     |                      |   |
-|   | > hier |                                     |                      |   |
-|   | > dus  |                                     |                      |   |
-|   | > 6**  |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > Waarden/Variabelen van elkaar     | > c = b - a;         |   |
-|   |  **-** | > aftrekken                         |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **c  |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | krijgt |                                     |                      |   |
-|   | > de   |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | waarde |                                     |                      |   |
-|   | > van  |                                     |                      |   |
-|   | > het  |                                     |                      |   |
-|   | > ve   |                                     |                      |   |
-|   | rschil |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | tussen |                                     |                      |   |
-|   | > b en |                                     |                      |   |
-|   | > a,   |                                     |                      |   |
-|   | > hier |                                     |                      |   |
-|   | > dus  |                                     |                      |   |
-|   | > 1**  |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > Vermenigvuldigen                  | > d = c \* 5;        |   |
-|   | **\*** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **d  |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | krijgt |                                     |                      |   |
-|   | > de   |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | waarde |                                     |                      |   |
-|   | > van  |                                     |                      |   |
-|   | > c    |                                     |                      |   |
-|   | > ver  |                                     |                      |   |
-|   | menigv |                                     |                      |   |
-|   | uldigd |                                     |                      |   |
-|   | > met  |                                     |                      |   |
-|   | > 5,   |                                     |                      |   |
-|   | > hier |                                     |                      |   |
-|   | > dus  |                                     |                      |   |
-|   | > 5**  |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > Delen of                          | > e = d / 10;        |   |
-|   |  **/** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **e  |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | krijgt |                                     |                      |   |
-|   | > de   |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   | waarde |                                     |                      |   |
-|   | > van  |                                     |                      |   |
-|   | > d    |                                     |                      |   |
-|   | > g    |                                     |                      |   |
-|   | edeeld |                                     |                      |   |
-|   | > door |                                     |                      |   |
-|   | > 10,  |                                     |                      |   |
-|   | > hier |                                     |                      |   |
-|   | > dus  |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   |  0.5** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > \"Is linkerlid gelijk aan         | > boolean m = (5 ==  |   |
-|   | **==** | > rechterlid?\"                     | > 6);                |   |
-+---+--------+-------------------------------------+----------------------+---+
+| Symbool | Betekenis                                                                                                                                        | Voorbeeld             |
+|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| =       | Een waarde toekennen aan een variabele<br>De variabele a (eerder gedeclareerd) krijgt waarde 5                                                   | a = 5;                |
+| +       | Waarden/Variabelen bij elkaar optellen<br>De variabele b krijgt de waarde van (a + 1), hier dus 6                                                | b = a + 1;            |
+| -       | Waarden/Variabelen van elkaar aftrekken<br>c krijgt de waarde van het verschil tussen b en a, hier dus 1                                         | c = b - a;            |
+| *	      | Vermenigvuldigen<br>d krijgt de waarde van c vermenigvuldigd met 5, hier dus 5                                                                   | d = c * 5;            |
+| /	      | Delen<br>e krijgt de waarde van d gedeeld door 10, hier dus 0.5                                                                                  | e = d / 10;           |
+| ==      | "Is linkerlid gelijk aan rechterlid?"<br>m zal false zijn omdat 5 niet gelijk is aan zes, de == geeft een boolean als resultaat (true of false). | boolean m = (5 == 6); |	
+| !=      | "Is linkerlid verschillend aan rechterlid?"<br>n zal true zijn.                                                                                  | boolean n = (5 != 6); |
+| >       | "Is linkerlid groter dan rechterlid?"<br>o zal false zijn.                                                                                       | boolean o = (5 > 6);  |
+| >=      | "Is linkerlid groter dan of gelijk aan rechterlid?"<br>p zal true zijn.                                                                          | boolean p = (4 >= 4); |	
+| <       | "Is linkerlid kleiner dan rechterlid?"<br>q zal true zijn.                                                                                       | boolean q = (5 < 6);  |	
+| <=      | "Is linkerlid kleiner dan of gelijk aan rechterlid?"<br>r zal false zijn.                                                                        | boolean r = (6 <= 5); |	
 
-> **m zal false zijn omdat 5 niet gelijk is aan zes, de == geeft een
-> boolean als resultaat (true of false).**
-
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > \"Is linkerlid verschillend aan   | > boolean n = (5 !=  |   |
-|   | **!=** | > rechterlid?\"                     | > 6);                |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **n  |                                     |                      |   |
-|   | > zal  |                                     |                      |   |
-|   | > true |                                     |                      |   |
-|   | > z    |                                     |                      |   |
-|   | ijn.** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > \"Is linkerlid groter dan         | > boolean o = (5 \>  |   |
-|   | **\>** | > rechterlid?\"                     | > 6);                |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **o  |                                     |                      |   |
-|   | > zal  |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   |  false |                                     |                      |   |
-|   | > z    |                                     |                      |   |
-|   | ijn.** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > *    | > \"Is linkerlid groter dan of      | > boolean p = (4 \>= |   |
-|   | *\>=** | > gelijk aan rechterlid?\"          | > 4);                |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **p  |                                     |                      |   |
-|   | > zal  |                                     |                      |   |
-|   | > true |                                     |                      |   |
-|   | > z    |                                     |                      |   |
-|   | ijn.** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | >      | > \"Is linkerlid kleiner dan        | > boolean q = (5 \<  |   |
-|   | **\<** | > rechterlid?\"                     | > 6);                |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **q  |                                     |                      |   |
-|   | > zal  |                                     |                      |   |
-|   | > true |                                     |                      |   |
-|   | > z    |                                     |                      |   |
-|   | ijn.** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > *    | > \"Is linkerlid kleiner dan of     | > boolean r = (6 \<= |   |
-|   | *\<=** | > gelijk aan rechterlid?\"          | > 5);                |   |
-+---+--------+-------------------------------------+----------------------+---+
-|   | > **r  |                                     |                      |   |
-|   | > zal  |                                     |                      |   |
-|   | >      |                                     |                      |   |
-|   |  false |                                     |                      |   |
-|   | > z    |                                     |                      |   |
-|   | ijn.** |                                     |                      |   |
-+---+--------+-------------------------------------+----------------------+---+
-
-
+\pagebreak
 ## Auto-increment operatoren
 
-Je hebt ook nog de auto-increment- en auto-decrementoperatoren. Dit zijn
-operatoren die je kan gebruiken om een variabele met 1 te verhogen of te
-verlagen. Ze zien er zo uit: ++ en \--. Je kan ze voor of na een
-variabele zetten (zonder spatie gescheiden) om deze variabele te
-bewerken (Bvb. \"i++;\" zal de variabele i met 1 verhogen, \"j\--;\" zal
-j met 1 verlagen). Bemerk het verschil in gedrag wanneer de operator
-voor (preincrementie) of na (postincrementie) de variabele staat.
+Je hebt ook nog de auto-increment- en auto-decrementoperatoren. Dit zijn operatoren die je kan gebruiken om een variabele met 1 te verhogen of te verlagen. Ze zien er zo uit: ++ en --. Je kan ze voor of na een variabele zetten (zonder spatie gescheiden) om deze variabele te bewerken (Bvb. "i++;" zal de variabele i met 1 verhogen, "j\--;" zal j met 1 verlagen). Bemerk het verschil in gedrag wanneer de operator voor (preincrementie) of na (postincrementie) de variabele staat.
 
 *Voorbeelden*
-
-![](./images/image16.png){width="6.269444444444445in"
-height="1.9805555555555556in"}
-
-> public class IncrementKort {
->
-> public static void main(String\[\] args) {
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
-
-+-----------+----+---------+------------------------------------------+
-| > int     | a  |         | > d;                                     |
-|           | =  |         |                                          |
-|           | 1, |         |                                          |
-|           | b  |         |                                          |
-|           | =  |         |                                          |
-|           | 2, |         |                                          |
-|           | c, |         |                                          |
-+-----------+----+---------+------------------------------------------+
-| > c =     | ++ | // a =  | > 2, c = 2                               |
-|           | a; |         |                                          |
-+-----------+----+---------+------------------------------------------+
-| > c =     | a+ | // a =  | > c = 2 (!)                              |
-|           | +; | 3,      |                                          |
-+-----------+----+---------+------------------------------------------+
-| > d =     |    | > // b  |                                          |
-| > \--b;   |    | > = 1,  |                                          |
-|           |    | > d = 1 |                                          |
-+-----------+----+---------+------------------------------------------+
-|           |    |         |                                          |
-+-----------+----+---------+------------------------------------------+
-| > \--b;   |    | // b =  | > 0                                      |
-+-----------+----+---------+------------------------------------------+
-| > ++b;    |    | // b =  | > 1                                      |
-+-----------+----+---------+------------------------------------------+
-| > b++;    |    | // b =  | > 2                                      |
-+-----------+----+---------+------------------------------------------+
-
-![](./images/image4.png){width="6.065972222222222in"}
-
-![](./images/image4.png){width="6.065972222222222in"}
-
-![](./images/image4.png){width="6.065972222222222in"}
+```java
+public class IncrementKort {
+	public static void main(String[] args) {
+		int a = 1, b = 2, c, d;
+		c = ++a; // a = 2, c = 2
+		c = a++; // a = 3, c = 2 (!)
+		d = --b; // b = 1, d = 1
+		--b; // b = 0
+		++b; // b = 1
+		b++; // b = 2
+	}
+}
+```
 
 ## Opdrachten Hoofdstuk 3
-
 Bij deze opdrachten moet je:
-
-1.  de gegevens in de juiste type variabele stoppen
-
+1.  De gegevens in de juiste type variabele stoppen
 2.  De bewerking uitvoeren
-
-3.  het resultaat van de bewerking afdrukken op het scherm.
+3.  Het resultaat van de bewerking afdrukken op het scherm.
 
 Voorbeeld:
-
+```java
 int getal1 = 8698765;
-
 int getal2 = 10675632;
+int resultaat = getal1 * getal2;
+System.out.println(resultaat);
+```
 
-int resultaat = getal1 \* getal2;
-
-System.*out*.println(resultaat);
 
 Opdracht 7; 8 keer 9
 
@@ -683,29 +394,16 @@ Opdracht 11; 2999299929292 vermenigvuldigen met 4,2
 
 Opdracht 12; 12 minus 66
 
+\pagebreak
 
 # 4. Statements
-
-Nu we een beetje weten hoe we met variabelen in Java kunnen werken, is
-het tijd om iets verder te gaan kijken. Alles wat we tot nu toe gezien
-hebben, zouden we in principe ook nog met simpele code kunnen bereiken.
-Laten we nu eens wat dieper ingaan op een van de dynamische aspecten van
-Java.
+Nu we een beetje weten hoe we met variabelen in Java kunnen werken, is het tijd om iets verder te gaan kijken. Alles wat we tot nu toe gezien hebben, zouden we in principe ook nog met simpele code kunnen bereiken. Laten we nu eens wat dieper ingaan op een van de dynamische aspecten van Java.
 
 If/else statements
 
-Statement is het Engels voor \'voorwaarde\' en wordt zeer veel in Java
-gebruikt. Met Java is het mogelijk om verschillende acties uit te voeren
-afhankelijk van de uitkomst van een bepaalde voorwaarde. De meest
-simpele voorwaarde die we kunnen stellen is de vergelijking van twee
-waarden. Zo zou je Java bijvoorbeeld kunnen laten bepalen of een
-variabele groter of kleiner is dan 5 en afhankelijk daarvan een reactie
-geven.
+Statement is het Engels voor \'voorwaarde\' en wordt zeer veel in Java gebruikt. Met Java is het mogelijk om verschillende acties uit te voeren afhankelijk van de uitkomst van een bepaalde voorwaarde. De meest simpele voorwaarde die we kunnen stellen is de vergelijking van twee waarden. Zo zou je Java bijvoorbeeld kunnen laten bepalen of een variabele groter of kleiner is dan 5 en afhankelijk daarvan een reactie geven.
 
 Het gebruik van if gaat als volgt:
-
-![](./images/image6.png){width="6.269444444444445in"
-height="0.40902777777777777in"}
 
 ```java
 if(<boolean>){ ... }
@@ -715,20 +413,18 @@ Tussen de accolades komt de code die moet worden uitgevoerd als de
 boolean true is. De boolean kan je verkrijgen uit het resultaat van
 bijvoorbeeld de == operator. Je kijkt of het resultaat van de bewerking
 true is en voert vervolgens een gewenste bewerking uit. Zo zal code
-onder \"if(4 \< 5) { \... }\" altijd uitgevoerd worden (daar 4 altijd
+onder "if(4 < 5) { ... }" altijd uitgevoerd worden (daar 4 altijd
 kleiner is dan 5).
 
 Let erop dat tussen de accolades een willekeurige hoeveelheid
 programmacode kan komen (net zoals de accolades bij een methode). Tussen
 de accolades vind je namelijk een code block. Dat is een blok waarbinnen
-je code kan groeperen. Als het if-statement true evalueert zal hij de
+je code kan groeperen. Als het if-statement true evalueert, zal hij de
 volledige blok code tussen de accolades uitvoeren.
 
 Na een if kan je else gebruiken om de code te bepalen die enkel wordt
 uitgevoerd indien de boolean false was:
 
-![](./images/image17.png){width="6.269444444444445in"
-height="1.5083333333333333in"}
 
 ```java
 if (<boolean>) {
@@ -737,20 +433,19 @@ if (<boolean>) {
 else {
   ...
 }
-
+```
 Je ziet dat er bij else geen nieuwe boolean gevraagd wordt. Een
 else-statement komt altijd onmiddellijk na een if-statement. Tenzij je
 gebruik maakt van "else if" op de volgende manier:
+\pagebreak
 
-![](./images/image18.png){width="6.269444444444445in"
-height="2.1381944444444443in"}
 
 ```java
-if(\<boolean\>)
+if(<boolean>)
 {
   ...
 }
-elseif(\<boolean2\>) {
+elseif(<boolean2>) {
   ...
 }
 else {
@@ -760,37 +455,28 @@ else {
 
 Voorbeeld
 
-![](./images/image19.png){width="6.269444444444445in"
-height="2.6104166666666666in"}
 
 ```java
-public class AbsoluutVerschil {
-
-  public static void main(String\[\] args) {
-
-    int a = 19, b = 9;
-
-    int verschil = 0;
-    
-    if (a \> b) {
-      verschil = a - b;
-    } else {
-      verschil = b - a;
-    }
-    
-    System.*out*.println(\"Verschil tussen \" + a + \" en \" + b + \" is: \" + verschil);
-  }
-}
+1	public class AbsoluutVerschil {
+2		public static void main(String[] args) {
+3			int a = 19, b = 9;
+4			int verschil = 0;
+5
+6			if (a > b) {
+7				verschil = a - b;
+8			} else {
+9				verschil = b - a;
+10			}	
+11			System.out.println("Verschil tussen " + a + " en " + b + " is: " + verschil);
+12		}
+13	}
 ```
-
-![](./images/image9.png){width="5.815972222222222in"
-height="0.6284722222222222in"}
 
 In bovenstaand programma kan zowel a groter zijn dan b of b groter dan
 a. Het zal niets echter niets uitmaken voor het verschil.
 
-Op regel 6 zien we de vergelijking a \> b. We maken gebruik van de
-\"groter dan\" relationele operator die als resultaat een boolean heeft
+Op regel 6 zien we de vergelijking a > b. We maken gebruik van de
+"groter dan" relationele operator die als resultaat een boolean heeft
 en dus geschikt is om tussen haakjes van if te staan.
 
 Op regel 7 zien we wat er moet gebeuren indien a groter is dan b. Dan
@@ -805,6 +491,8 @@ java compiler is daar blind voor.
 
 Op regel 12 en 13 schrijven we de waarde van de twee variabelen en hun
 onderling verschil uit.
+
+\pagebreak
 
 ## Opdrachten Hoofdstuk 4
 
@@ -831,33 +519,29 @@ voldoen. Er zijn verschillende soorten lussen die we kunnen gebruiken.
 Ik zal de twee die het meest gebruikt worden, de while-lus en de for-lus
 hier bespreken.
 
-For-lus
+## For-lus
 
 Met de for-lus kun je een gecontroleerde herhaling laten plaats vinden.
 
 ```java
-public class ForTest1 {
-
-  public static void main (String args\[\]) {
-    
-    for (int i=0; i \< 5; i++) {
-      System.*out*.println ("i heeft de waarde "+i);
-    }
-  }
+public static void main (String args[]) {    
+	for (int i=0; i < 5; i++) {
+		System.out.println ("i heeft de waarde " + i);
+	}
 }
 ```
 
 Ook kan je in grotere hoeveelheden dan 1 door een loop heen:
 
 ```java
-public static void main(String\[\] args) {
-  for (int i = 0; i \< 25; i = i + 5) {
-    System.*out*.println("i heeft de waarde " + i);
-  }
+public static void main (String[] args) {
+	for (int i = 0; i < 25; i = i + 5) {
+		System.out.println("i heeft de waarde " + i);
+	}
 }
 ```
 
-While-lus
+## While-lus
 
 Zolang aan *statement* voldaan wordt, zal de code in de loop, die
 wederom tussen accolades {} staat, telkens opnieuw uitgevoerd worden.
@@ -866,25 +550,23 @@ bijvoorbeeld om de getallen 1-5 weer te geven:
 
 ```java
 public class WhileTest {
-
-  public static void main(String\[\] args) {
-    int i=0;
-    System.*out*.println("i heeft de waarde "+i); 
-    
-    while (i<5) {
-      i++;
-      System.*out*.println("plus 1 is "+i);
-    }
-
-    System.*out*.println("Aan het einde van deze lus heeft i de waarde +i");
-  }
+	public static void main(String[] args) {
+		int i = 0;
+		System.*out*.println("i heeft de waarde " + i); 
+	
+		while (i<5) {
+			i++;
+			System.out.println("plus 1 is "+i);
+		}
+		System.out.println("Aan het einde van deze lus heeft i de waarde: " + i);
+	}
 }
 ```
 
 ## Opdrachten Hoofdstuk 5
 
 Opdracht 16; Druk de getallen 1 t/m 5 onder elkaar af op het scherm met
-behulp van een **for**-lus
+behulp van een **for**-lus<
 
 Opdracht 17; Druk de getallen 10 t/m 15 achter elkaar af op het scherm
 met een **while**-lus.
@@ -905,44 +587,23 @@ gegevens kan vragen.
 
 Uiteraard kan dit ook met Java. Zie onderstaand voorbeeld:
 
-![](./images/image26.png){width="6.269444444444445in"}
-
 -   Importeer de benodigde onderdelen. 
 
 ```java
 import java.util.Scanner;
-
 public class invoer {
-  public static void main(String\[\] args) {
+	public static void main(String[] args) {
+		// Maak een nieuwe variabele aan van het type string: String invoer;
+		Scanner scanner = new Scanner(System.*in*);
+		System.*out*.print(\"Geef je naam op:\");
+		// De variable invoer vullen: 
+		invoer = scanner.nextLine();
+		// Uitvoer naar het beeldscherm: 
+		System.out.println("Hallo " + invoer);
+	}
+}
+
 ```
-
--   Maak een nieuwe variabele aan van het type string: String invoer;
-
-```java
-Scanner scanner = new Scanner(System.*in*);
-
-System.*out*.print(\"Geef je naam op:\");
-```
-
-![](./images/image5.png){width="6.065972222222222in"}
-
--   De variable invoer vullen: invoer = scanner.nextLine();
-
--   Uitvoer naar het beeldscherm: System.*out*.println(\"Hallo \" +
-    invoer);
-
-![](./images/image28.png){width="6.065972222222222in"
-height="0.7868055555555555in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15833333333333333in"}
-
-> }
-
-![](./images/image4.png){width="6.065972222222222in"
-height="0.15694444444444444in"}
 
 Uitwerking:
 
@@ -951,16 +612,14 @@ Uitwerking:
 Voor het invoeren van getallen kan je ook onderstaand voorbeeld
 gebruiken:
 
-![](./images/image30.png){width="6.269444444444445in"
-height="0.17152777777777778in"}
-
 > int invoer = scanner.nextInt();
+
+\pagebreak
 
 ## Opdrachten Hoofdstuk 6
 
 Opdracht 21; Vraag de gebruiker om zijn naam in te voeren, druk daarna
-zijn naam af op het scherm.
-
+zijn naam af op het scherm.<br>
 Opdracht 22; Vraag de gebruiker om een getal groter dan 1, druk de
 voorgaande getallen af op het scherm.
 
@@ -977,91 +636,27 @@ Voorbeeld:
 ![](./images/image32.jpeg){width="4.895833333333333in"
 height="2.03125in"}
 
+\pagebreak
+
 # Eindopdracht
 
 Voor de eindopdracht moet je de volgende figuren met loops proberen af
 te drukken:
 
-+-----------------------+-----------------------+-----------------------+
-| > Figuur 1            | > Figuur 2            | > Figuur 3            |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| > **\***              | > **\***              | > **\*\*\*\*\***      |
-+-----------------------+-----------------------+-----------------------+
-| > **\***              | > **\*\***            | > **\*\*\*\***        |
-+-----------------------+-----------------------+-----------------------+
-| > **\***              | > **\*\*\***          | > **\*\*\***          |
-+-----------------------+-----------------------+-----------------------+
-| > **\***              | > **\*\*\*\***        | > **\*\***            |
-+-----------------------+-----------------------+-----------------------+
-| > **\***              | > **\*\*\*\*\***      | > **\***              |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| > Figuur 4            | > Figuur 5            | > Figuur 6            |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| > **11111**           | > **1**               | > **11111**           |
-+-----------------------+-----------------------+-----------------------+
-| > **22222**           | > **22**              | > **2222**            |
-+-----------------------+-----------------------+-----------------------+
-| > **33333**           | > **333**             | > **333**             |
-+-----------------------+-----------------------+-----------------------+
-| > **44444**           | > **4444**            | > **44**              |
-+-----------------------+-----------------------+-----------------------+
-| > **55555**           | > **55555**           | > **5**               |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
 
-Extra opdrachten lussen (voor diegene die van een uitdaging houden,
-**optionele opdrachten!**):
+| Figuur 1                                             | Figuur 2                                            | Figuur 3                                        |
+|------------------------------------------------------|-----------------------------------------------------|-------------------------------------------------|
+| <pre>\*<br>\*<br>\*<br>\*<br>\*<br></pre>            | <pre>\*<br>\**<br>\***<br>\****<br>\*****<br></pre> | <pre>\*****<br>\****<br>\***<br>\**<br>\*</pre> |
+| **Figuur 4**                                         | **Figuur 5**                                        | **Figuur 6**                                    |
+| <pre>11111<br>22222<br>33333<br>44444<br>55555</pre> | <pre>1<br>22<br>333<br>4444<br>55555<br></pre>      | <pre>11111<br>2222<br>333<br>22<br>1</pre>      |
 
-+-----------------------+-----------------------+-----------------------+
-| > Figuur 7            | > Figuur 8            | > Figuur 9            |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| **\***                | **1**                 | **\***                |
-+-----------------------+-----------------------+-----------------------+
-| **\*\***              | **12**                | **\*\*\***            |
-+-----------------------+-----------------------+-----------------------+
-| **\*\*\***            | **123**               | **\*\*\*\*\***        |
-+-----------------------+-----------------------+-----------------------+
-| **\*\*\*\***          | **1234**              | **\*\*\*\*\*\*\***    |
-+-----------------------+-----------------------+-----------------------+
-| **\*\*\*\*\***        | **123456**            | *                     |
-|                       |                       | *\*\*\*\*\*\*\*\*\*** |
-+-----------------------+-----------------------+-----------------------+
-|                       | **1234567**           | **\*\                 |
-|                       |                       | *\*\*\*\*\*\*\*\*\*** |
-+-----------------------+-----------------------+-----------------------+
-|                       | **12345678**          | **\*\*\*\             |
-|                       |                       | *\*\*\*\*\*\*\*\*\*** |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| > Figuur 10           | > Figuur 11           |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| **1**                 | **1**                 |                       |
-+-----------------------+-----------------------+-----------------------+
-| **121**               | **232**               |                       |
-+-----------------------+-----------------------+-----------------------+
-| **12321**             | **34543**             |                       |
-+-----------------------+-----------------------+-----------------------+
-| **1234321**           | **4567654**           |                       |
-+-----------------------+-----------------------+-----------------------+
-| **123454321**         | **567898765**         |                       |
-+-----------------------+-----------------------+-----------------------+
-| **12345654321**       | **67890109876**       |                       |
-+-----------------------+-----------------------+-----------------------+
-| **1234567654321**     | **7890123210987**     |                       |
-+-----------------------+-----------------------+-----------------------+
-| **123456787654321**   | **890123454321098**   |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
+Extra opdrachten lussen (voor diegene die van een uitdaging houden, **optionele opdrachten!**):
+
+| Figuur 7                                                                                                                            | Figuur 8                                                                                                                            | Figuur 9                                                                                                                                   |
+|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| <pre>    *<br>   \**<br>  \***<br> \****<br>\*****</pre>                                                                            | <pre>       1<br>      12<br>     123<br>    1234<br>   12345<br>  123456<br> 1234567<br>12345678</pre>                             | <pre>       *<br>      \***<br>     \*****<br>    \*******<br>   \*********<br>  \***********<br> \*************<br>\***************</pre> |
+| **Figuur 10**                                                                                                                       | **Figuur 11**                                                                                                                       |
+| <pre>       1<br>      121<br>     12321<br>    1234321<br>   123454321<br>  12345654321<br> 1234567654321<br>123456787654321</pre> | <pre>       1<br>      232<br>     34543<br>    4567654<br>   567898765<br>  67890109876<br> 7890123210987<br>890123454321098</pre> |
+
+
+
