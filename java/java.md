@@ -648,9 +648,11 @@ height="2.03125in"}
 
 Voor de eindopdracht moet je de volgende figuren met loops proberen af
 te drukken:
+
 ![](./images/java_eindopdracht_1.png)
 
 Extra opdrachten lussen (voor diegene die van een uitdaging houden, **optionele opdrachten!**):
+
 ![](./images/java_eindopdracht_2.png)
 
 
