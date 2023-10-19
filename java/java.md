@@ -2,7 +2,7 @@
 title: "Java"
 version: v1.3 (2023-10-12)
 author: "Wouter van Hezel (whezel@novacollege.nl)"
-geometry: "left=1cm,right=1cm,top=2cm,bottom=2.5cm"
+geometry: "left=1cm,right=1cm,top=2.2cm,bottom=2.5cm"
 mainfont: Open Sans
 documentclass: scrartcl
 subparagraph: yes
@@ -72,7 +72,7 @@ platform waar Java programma's op moeten draaien geïnstalleerd moet
 worden. De JVM leest de bytecode, interpreteert de opdrachten en voert
 dan het programma uit.
 
-*Java-programma → bytecode → machinetaal*
+*Java-programma -> bytecode -> machinetaal*
 
 # Een inleiding tot het programmeren in Java
 
@@ -303,6 +303,8 @@ Opdracht 4; -127
 Opdracht 5; 8,99882
 Opdracht 6; G3tal
 
+\pagebreak
+
 # 3. Operator
 Operators zijn tekens die ons verschillende bewerkingen of
 vergelijkingen laten doen.
@@ -510,6 +512,8 @@ verschijnen. Onder de 5,5 moet er een melding zijn op het scherm dat het
 een onvoldoende is, Daarboven een voldoende. Voor deze opdracht mag er
 maar 1 melding per keer verschijnen.
 
+\pagebreak
+
 # 5. Lussen
 
 Een andere constructie waarbij het dynamische aspect van Java naar voren
@@ -580,6 +584,8 @@ het scherm (19, 21, 23 etc.)
 Opdracht 20; Druk de getallen 4192 tot -2039 per 150 tal af op het
 scherm (4192, 4042, 3892 etc.)
 
+\pagebreak
+
 # 6. Invoer vanaf het toetsenbord
 
 Voor het verwerken van gegevens is het handig als je de gebruiker om
@@ -644,17 +650,17 @@ Voor de eindopdracht moet je de volgende figuren met loops proberen af
 te drukken:
 
 
-| Figuur 1                                             | Figuur 2                                            | Figuur 3                                        |
-|------------------------------------------------------|-----------------------------------------------------|-------------------------------------------------|
-| <pre>\*<br>\*<br>\*<br>\*<br>\*<br></pre>            | <pre>\*<br>\**<br>\***<br>\****<br>\*****<br></pre> | <pre>\*****<br>\****<br>\***<br>\**<br>\*</pre> |
-| **Figuur 4**                                         | **Figuur 5**                                        | **Figuur 6**                                    |
-| <pre>11111<br>22222<br>33333<br>44444<br>55555</pre> | <pre>1<br>22<br>333<br>4444<br>55555<br></pre>      | <pre>11111<br>2222<br>333<br>22<br>1</pre>      |
+| Figuur 1                                             | Figuur 2                                                      | Figuur 3                                                  |
+|------------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------|
+| <pre>\*<br>\*<br>\*<br>\*<br>\*<br></pre>            | <pre>\*<br>\*\*<br>\*\*\*<br>\*\*\*\*<br>\*\*\*\*\*<br></pre> | <pre>\*\*\*\*\*<br>\*\*\*\*<br>\*\*\*<br>\*\*<br>\*</pre> |
+| **Figuur 4**                                         | **Figuur 5**                                                  | **Figuur 6**                                              |
+| <pre>11111<br>22222<br>33333<br>44444<br>55555</pre> | <pre>1<br>22<br>333<br>4444<br>55555<br></pre>                | <pre>11111<br>2222<br>333<br>22<br>1</pre>                |
 
 Extra opdrachten lussen (voor diegene die van een uitdaging houden, **optionele opdrachten!**):
 
 | Figuur 7                                                                                                                            | Figuur 8                                                                                                                            | Figuur 9                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| <pre>    *<br>   \**<br>  \***<br> \****<br>\*****</pre>                                                                            | <pre>       1<br>      12<br>     123<br>    1234<br>   12345<br>  123456<br> 1234567<br>12345678</pre>                             | <pre>       *<br>      \***<br>     \*****<br>    \*******<br>   \*********<br>  \***********<br> \*************<br>\***************</pre> |
+| <pre>    *<br>   \*\*<br>  \*\*\*<br> \*\*\*\*<br>\*\*\*\*\*</pre>                                                                  | <pre>       1<br>      12<br>     123<br>    1234<br>   12345<br>  123456<br> 1234567<br>12345678</pre>                             | <pre>       *<br>      \***<br>     \*****<br>    \*******<br>   \*********<br>  \***********<br> \*************<br>\***************</pre> |
 | **Figuur 10**                                                                                                                       | **Figuur 11**                                                                                                                       |
 | <pre>       1<br>      121<br>     12321<br>    1234321<br>   123454321<br>  12345654321<br> 1234567654321<br>123456787654321</pre> | <pre>       1<br>      232<br>     34543<br>    4567654<br>   567898765<br>  67890109876<br> 7890123210987<br>890123454321098</pre> |
 
