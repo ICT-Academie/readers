@@ -51,3 +51,7 @@ make reader=programmeren_gevorderd_csharp buildopen
 
 ### Distribution
 For now we'll keep the generated readers in the dist folder and commit them in Git. That way we'll have a single source of truth. We can figure out a better way for versioning and storing assets later.
+
+## Reader specifics
+
+The database basic reader uses a Pokemon database, although all fields have been renamed to make more sense. [The original database can be found here](https://github.com/brianr852/Pokemon-Database) and the [direct link to the sql file used is here](https://raw.githubusercontent.com/brianr852/Pokemon-Database/master/Dump20160519-1.sql).
