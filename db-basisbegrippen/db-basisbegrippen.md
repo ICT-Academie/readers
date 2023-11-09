@@ -1,6 +1,6 @@
 ---
 title: "Database basisbegrippen"
-version: v1.1 (2023-11-03)
+version: v1.1 (2023-11-09)
 author: "Tim Quax (tquax@novacollege.nl)"
 geometry: "left=1cm,right=1cm,top=2cm,bottom=2.5cm"
 mainfont: Open Sans
