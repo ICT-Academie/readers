@@ -1,6 +1,6 @@
 ---
 title: "Database basisbegrippen"
-version: v1.0 (2023-11-02)
+version: v1.1 (2023-11-09)
 author: "Tim Quax (tquax@novacollege.nl)"
 geometry: "left=1cm,right=1cm,top=2cm,bottom=2.5cm"
 mainfont: Open Sans
@@ -127,7 +127,7 @@ We gaan een database incl. tabellen importeren, dus nu is het niet van toepassin
 
 ![](images/workbench-create-schema.png){ width=30% }
 
-## 2.3 Maak een Pokédex
+## 2.4 Maak een Pokédex
 Bijna elke applicatie heeft te maken het het opslaan of oproepen van data, denk maar aan de boekenvoorraad van Bol.com, de spelresultaten in een game, etc. Een goed begrip van databases is dan ook heel belangrijk. We gaan daar in dit onderdeel een start mee maken.
 
 We gaan een database bestand importeren. Download het SQL bestand `pokedex.sql`:
@@ -143,7 +143,24 @@ Dan krijg je nu alle SQL statements ingeladen in MySQL Workbench. Selecteer alle
 \pagebreak
 
 # 3 Select
-Het praten met een database (of eerder, de tabellen in een database) gaat altijd via een `query` (ook wel `statement` genoemd). Om data uit de tabellen van een database te krijgen maak je een `select query`. Dat ziet er bijvoorbeeld zo uit:
+Het praten met een database (of eerder, de tabellen in een database) gaat altijd via een `query` (ook wel `statement` genoemd). Om data uit de tabellen van een database te krijgen maak je een `select query`. 
+
+## 3.1 Query uitvoeren
+Je kan queries typen en uitvoeren vanuit een query venster. De makkelijkste manier om zo'n query venster te openen is met een rechtermuisklik op de tabel. Het maakt niet uit welke tabel omdat je in je query altijd verteld welke tabel je wilt gebruiken.
+
+Vergeet niet de database (of schema) te selecteren door te dubbelklikken. Anders moet je altijd de databasenaam vermelden bij elk tabel.
+
+![](images/workbench-open-query-screen.png)
+
+Dan krijg je een tekstvak te zien, met de resultaten van je query eronder. Met de bliksem icoontjes kan je queries uitvoeren. De linker voert alles uit, dus we gebruiken liever het rechter icoon met de cursor erop. Die voert de query uit waar je cursor nu op staat:
+
+![](images/workbench-execute-query.png)
+
+Daarna krijg je eronder de lijst van resultaten te zien. Of een foutmelding.
+
+\pagebreak
+## 3.2 Basis query
+Zo'n select query ziet er bijvoorbeeld zo uit:
 
 ![](images/queries-select-basic.png){ width=80% }
 
@@ -152,6 +169,14 @@ Laten we deze query eens ontleden:
 `select *`: Een query begint met een werkwoord, in dit geval haal je dus iets op. Na de select staat er wat je precies wilt ophalen. De asterisk (`*`) zegt dat je alles wilt hebben wat er in het tabel staat. Je kan er ook specifieke velden neerzetten.
 
 `from pokemon`: Waar selecteer je iets uit? Of in het geval van iets toevoegen of aanpassen, in welke tabel doe je dat? In dit geval dus de `pokemon` tabel.
+
+Een andere query die je zou kunnen uitvoeren is bijvoorbeeld:
+
+```sql
+select * from abilities;
+```
+
+Probeer eens een paar tabellen te queryen. Dan gaan we verder naar de volgende stap.
 
 \pagebreak
 ## 3.3 Select query - where
@@ -175,7 +200,15 @@ where
 	`weight` > 3000;
 ```
 
-Met `where` kan je bepalen welke `condities` of `vereisten` aan je resultaten hangen. Dus nu willen we alleen Pokemon zien die zwaarder zijn dan 3000 kilo. Dit werkt net zoals een if statement, en zoals een if statement kan je er ook meerdere vereisten aan hangen, met het sleutelwoord `and` en `or`.
+Met `where` kan je bepalen welke `condities` of `vereisten` aan je resultaten hangen. Dus nu willen we alleen Pokemon zien die zwaarder zijn dan 3000 kilo. Dit werkt net zoals een if statement.
+
+Je kan bijvoorbeeld ook zoeken op een specifieke waarde:
+
+```sql
+select * from `pokemon` where `weight` = 200
+```
+
+Waarbij een string (een stuk tekst) in quotes moet staan, als je daarop zoekt. Net zoals een if statement kan je er ook meerdere vereisten aan hangen, met het sleutelwoord `and` en `or`.
 
 \pagebreak
 
