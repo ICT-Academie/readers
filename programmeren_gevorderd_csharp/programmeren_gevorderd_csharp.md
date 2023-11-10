@@ -140,7 +140,7 @@ Met F7 en SHIFT + F7 (Visual Studio) kan je wisselen tussen de WinForms
 editor en de code editor. Je ziet al dat hier wat “boilerplate”
 (voorgeschreven) code staat.
 
-![](images/image5.png){ width=6.3in }
+![](images/image5.png)
 
 Een WinForms is grafisch veel complexer dan een Console applicatie waar je
 tot nu toe mee gewerkt hebt. De constructor roept 1 methode aan,
@@ -165,10 +165,8 @@ Verderop in dit document gaan we gebruik maken van event.
 
 We zijn nu klaar om de data in te richten voor onze app.
 
-1.  Maak een nieuwe class genaamd “Phone”.
-
-2.  Maak nu een nieuwe class genaamd “SmartPhone” aan in een nieuw
-    bestand en voeg de volgende properties toe.
+1.  Maak nu een nieuwe class genaamd “SmartPhone” aan in een nieuw
+    bestand en voeg de volgende properties toe. In de "Solution Explorer", rechtermuisknop op je Project (groen icoon) -> Add -> Class...
 
     1.  Id : Uniek nummer van de smartphone
 
@@ -180,8 +178,10 @@ We zijn nu klaar om de data in te richten voor onze app.
 
     5.  Price: De prijs van de smartphone
 
-3.  In de SmartPhone class, maak een methode die een Smartphone aanmaakt
-    en returned.
+![](images/image10.png)
+
+2.  In de SmartPhone class, maak een methode die een Smartphone aanmaakt
+    en returned (oftewel een Constructor).
 
 Terug in Form1.cs (de code editor) gaan we in het List control een
 lijstje van smartphones weergeven.
@@ -485,9 +485,9 @@ screenshots. Het hoeft niet 1 op 1 op elkaar te lijken, zolang dezelfde
 elementen wel aanwezig zijn.  
 *(Dacht je nou echt dat ik code ging delen? )*
 
-![](images/image8.png){ width=5.35046in }
+![](images/image8.png)
 
-![](images/image9.png){ width=3.78366in }
+![](images/image9.png)
 
 WinForms is een goed idee om relatief snel een prototype of idee in
 elkaar te zetten en te testen. In de industrie zie je WinForms vooral
