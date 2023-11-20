@@ -8,6 +8,7 @@ documentclass: scrartcl
 subparagraph: yes
 ---
 \pagebreak
+# EWA
 # Programmeren Gevorderd: C\#
 In deze reader ga je meer leren over C#, met name hoe je een grafische interface kan bouwen met WinForms. Je gaat een applicatie bouwen voor SharpPhone.
 
