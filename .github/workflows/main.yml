@@ -12,4 +12,18 @@ jobs:
           args: >-  # allows you to break string into multiple lines
             --standalone
             --output=readers/dist/programmeren_gevorderd_csharp.pdf
-            readers/programmeren_gevorderd_csharp/programmeren_gevorderd_csharp.md
+            readers/programmeren_gevorderd_csharp/programmeren_gevorderd_csharp.md      
+            
+      - name: Commit files
+        id: commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add --all
+          if [-z "$(git status --porcelain)"]; then
+           echo "::set-output name=push::false"
+          else
+           git commit -m "Add changes" -a
+           echo "::set-output name=push::true"
+          fi
+        shell: bash
