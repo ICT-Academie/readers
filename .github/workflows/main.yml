@@ -14,21 +14,26 @@ jobs:
   converttopdf:
     name: Build PDF
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Create folder
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create PDF folder
         run: |
           mkdir -p programmeren_gevorderd_csharp/pdfs
-      - uses: baileyjm02/markdown-to-pdf@v1
+
+      - name: Convert Markdown to PDF
+        uses: baileyjm02/markdown-to-pdf@v1
         with:
           input_path: programmeren_gevorderd_csharp/programmeren_gevorderd_csharp.md
-          output_dir: pdfs
+          output_dir: programmeren_gevorderd_csharp/pdfs
           images_dir: programmeren_gevorderd_csharp/images
-          # for example <img src="./images/file-name.png">
           image_import: ./programmeren_gevorderd_csharp/images
-          # Default is true, can set to false to only get PDF files
           build_html: false
-      - uses: actions/upload-artifact@v3
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v3
         with:
-          name: docs
-          path: pdfs
+          name: PDFs
+          path: programmeren_gevorderd_csharp/pdfs
