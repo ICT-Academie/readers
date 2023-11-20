@@ -19,7 +19,7 @@ jobs:
       - uses: baileyjm02/markdown-to-pdf@v1
         with:
           input_dir: programmeren_gevorderd_csharp
-          output_dir: dist
+          output_dir: pdfs
           images_dir: programmeren_gevorderd_csharp/images
           # for example <img src="./images/file-name.png">
           #image_import: ./images
