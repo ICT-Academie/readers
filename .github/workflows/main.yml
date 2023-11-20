@@ -27,5 +27,5 @@ jobs:
           build_html: false
       - uses: actions/upload-artifact@v3
         with:
-          name: docs
-          path: programmeren_gevorderd_csharp.pdf
+          name: docs.pdf
+          path: pdfs
