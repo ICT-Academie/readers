@@ -4,10 +4,11 @@ name: Docs to PDF
 # This workflow is triggered on pushes to the repository.
 on:
   push:
+    branches: svens-actions-pandoc-experiment
     # Paths can be used to only trigger actions when you have edited certain files, such as a file within the /docs directory
-    paths:
-      - 'programmeren_gevorderd_csharp/**.md'
-      - 'programmeren_gevorderd_csharp/images/**'
+    #paths:
+     # - 'programmeren_gevorderd_csharp/**.md'
+      #- 'programmeren_gevorderd_csharp/images/**'
 
 jobs:
   converttopdf:
