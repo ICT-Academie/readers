@@ -1,20 +1,32 @@
-name: Long Usage
+# .github/workflows/convert-to-pdf.yml
 
-on: push
+name: Docs to PDF
+# This workflow is triggered on pushes to the repository.
+on:
+  push:
+    branches:
+      - main
+    # Paths can be used to only trigger actions when you have edited certain files, such as a file within the /docs directory
+    paths:
+      - 'programmeren_gevorderd_csharp/**.md'
+      - 'programmeren_gevorderd_csharp/images/**'
 
 jobs:
-  convert_via_pandoc:
-    runs-on: ubuntu-22.04
+  converttopdf:
+    name: Build PDF
+    runs-on: ubuntu-latest
     steps:
-      - uses: docker://pandoc/core:2.9
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: baileyjm02/markdown-to-pdf@v1
         with:
-          args: >-  # allows you to break string into multiple lines
-            --standalone
-            --output=readers/dist/programmeren_gevorderd_csharp.pdf
-            readers/programmeren_gevorderd_csharp/programmeren_gevorderd_csharp.md      
-            
+          input_dir: docs
+          output_dir: pdfs
+          images_dir: programmeren_gevorderd_csharp/images
+          # for example <img src="./images/file-name.png">
+          image_import: ./images
+          # Default is true, can set to false to only get PDF files
+          build_html: false
       - uses: actions/upload-artifact@v3
         with:
-          name: pdfs
-          path: readers/dist/
+          name: docs
+          path: pdfs
