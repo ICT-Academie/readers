@@ -16,16 +16,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Create folder
+        run: |
+          mkdir -p programmeren_gevorderd_csharp/pdfs
       - uses: baileyjm02/markdown-to-pdf@v1
         with:
-          input_dir: programmeren_gevorderd_csharp
+          input_path: programmeren_gevorderd_csharp/programmeren_gevorderd_csharp.md
           output_dir: pdfs
           images_dir: programmeren_gevorderd_csharp/images
           # for example <img src="./images/file-name.png">
-          image_import: ./images
+          image_import: ./programmeren_gevorderd_csharp/images
           # Default is true, can set to false to only get PDF files
           build_html: false
       - uses: actions/upload-artifact@v3
         with:
-          name: docs.pdf
+          name: docs
           path: pdfs
