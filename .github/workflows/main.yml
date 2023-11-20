@@ -13,5 +13,5 @@ jobs:
         with:
           args: >-  # allows you to break string into multiple lines
             --standalone
-            --output=readers/dist/Java.pdf
-            readers/java/java.md
+            --output=readers/dist/programmeren_gevorderd_csharp.pdf
+            readers/programmeren_gevorderd_csharp/programmeren_gevorderd_csharp.md
