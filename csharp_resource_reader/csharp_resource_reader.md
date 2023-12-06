@@ -1,13 +1,3 @@
----
-title: "C# Resource reader"
-version: v1.3 (2023-12-4)
-author: "Sven Wind (swind@novacollege.nl)"
-geometry: "left=1cm,right=1cm,top=1.5cm,bottom=2.5cm"
-mainfont: Open Sans
-documentclass: scrartcl
----
-\pagebreak
-
 # Inhoud
 
 [Document revisies [4](#document-revisies)](#document-revisies)
@@ -120,9 +110,11 @@ documentclass: scrartcl
 
 [Classes [34](#classes)](#classes)
 
-[Methods [34](#methods)](#methods)
+[Constructors [34](#constructors)](#constructors)
 
-[Afsluiting [37](#afsluiting)](#afsluiting)
+[Methods [36](#methods)](#methods)
+
+[Afsluiting [38](#afsluiting)](#afsluiting)
 
 # Document revisies
 
@@ -157,12 +149,12 @@ documentclass: scrartcl
 <p>Toevoeging ‘Byte’ in Primaire datatypes.</p></td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
+<td>4-12-2023</td>
+<td>Toevoegen van IO hoofdstuk.</td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
+<td>6-12-2023</td>
+<td>Toevoegen van Constructor hoofdstuk.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -981,11 +973,11 @@ behandelen.
 <img src=".\/media/image39.png"
 style="width:5.14655in;height:2.93791in" />Als je wilt werken met files,
 moet je eerst de juiste namespace toevoegen aan de C# bestand, namelijk
-de `System.IO`-namespace.
+de \`System.IO\`-namespace.
 
 ## Simpel lezen van een bestand
 
-Nu we de `IO` namespace hebben, kunnen we gaan werken met bestanden.
+Nu we de \`IO\` namespace hebben, kunnen we gaan werken met bestanden.
 Maar we gaan maar een paar basis classes behandelen.
 
 Om een bestand te lezen, moet je 1 ding van te voren weten:
@@ -1002,10 +994,10 @@ Nu staat het pad in je klembord.
 
 <img src=".\/media/image40.png"
 style="width:7.54305in;height:0.92708in" />Nu gaan we terug naar het
-programmeren. Om een bestand uit te lezen, gebruiken we de `File`-
-class, die te vinden is in de `System.IO`-namespace. In de
-`File`-class kan je een aantal handige methodes vinden, we zijn nu
-geïnteresseerd `ReadAllText()`.
+programmeren. Om een bestand uit te lezen, gebruiken we de \`File\`-
+class, die te vinden is in de \`System.IO\`-namespace. In de
+\`File\`-class kan je een aantal handige methodes vinden, we zijn nu
+geïnteresseerd ‘ReadAllText()’.
 
 ## Simpel schrijven van een bestand
 
@@ -1035,8 +1027,8 @@ struct, enum, ect.
 style="width:4.5688in;height:3.97677in" />Op types zoals een class kan
 je overrides implementeren. Deze overschrijven standaard gedrag met een
 eigen implementatie. In onderstaand voorbeeld van de
-`MyAwesomeType`-class, is een override op de `ToString()` methode.  
-Normaal als je `MyAwesomeType.ToString()` zou aanroepen, zou je de
+\`MyAwesomeType\`-class, is een override op de \`ToString()\` methode.  
+Normaal als je \`MyAwesomeType.ToString()\` zou aanroepen, zou je de
 namespace en de naam van de class terug krijgen. Da’s niet handig.
 Daarom hebben we een override toegevoegd om nuttige informatie terug te
 geven.
@@ -1048,7 +1040,7 @@ bestand:
 
 <img src=".\/media/image44.png"
 style="width:7.55208in;height:0.93125in" />Of we kunnen gebruik maken
-van de `ToString` implementatie die wij hebben ‘overridden’.
+van de \`ToString\` implementatie die wij hebben ‘overridden’.
 
 # LINQ
 
@@ -1058,7 +1050,7 @@ een aantal verschillende methodes waarmee je zoek-acties uitvoert om zo
 1 of meer stukken data op te vragen.
 
 Alle collecties kunnen gebruik maken van de LINQ mechanieken. Hiervoor
-dien je wel een extra `using directive` te gebruiken, namelijk
+dien je wel een extra \`using directive\` te gebruiken, namelijk
 “System.Linq”.  
   
 De aard van LINQ methodes zijn iets anders dan de methods die je
@@ -1136,6 +1128,51 @@ Een class kan ook van andere elementen erven door middel van een
 interface of base-class. Erving is een complex onderwerp waar we het een
 andere keer over gaan hebben.
 
+## Constructors
+
+Een Constructor is een eigenaardig wezen, en is afkomstig uit C++. In
+C++, prepareert de Constructor een Complex Type (een Class of Struct) om
+mee gewerkt te kunnen worden, properties worden toegewezen, werkgeheugen
+gereserveerd, fields krijgen een standaard waarden (als dit mogelijk
+is).
+
+Het toevoegen van een constructor is technisch gezien optioneel, maar er
+zitten voordelen aan om deze wel toe te voegen. Je kan dan zelf bepalen
+welke standaard waarden of operaties er moeten worden uitgevoerd terwijl
+een nieuw object word aangemaakt.
+
+Je kan variables maken van complex types. Dit doe je vaak door een
+toewijzing te starten met het ‘new’ keyword en de type. Zie [Variables,
+fields en Properties](#variables-fields-en-properties).
+
+Een Constructor bestaat uit de volgende onderdelen:
+
+**Accessor:** Geeft aan of de constructor *public* of *private* is. Let
+op, als je een *private* gebruikt, dan kan je vaak NIET de Complex Type
+instantiëren.
+
+**Type-name:** Dit is de naam van het Complex Type (de naam die je hebt
+opgegeven tijdens het aanmaken van de Class of Struct).
+
+**Parameters:** Optioneel. Parameters van zowel primaire datatypes als
+Complex types met een bijbehorende naam.
+
+Hieronder nu twee voorbeelden van Constructors.
+
+<img src=".\/media/image50.png" style="width:6.3in;height:2.59097in" />Dit
+is een Constructor zonder parameters, maar we geven nu een standaard
+waarde aan de property ‘UsefulInfo’.
+
+<img src=".\/media/image51.png"
+style="width:7.57153in;height:2.38889in" />Hier zie je een constructor
+met een parameter, namelijk een string ‘text’. Tijdens het uitvoeren van
+de constructor, krijgt de property ‘UsefulInfo’ de waarde van de ‘text’
+parameter.
+
+<img src=".\/media/image52.png" style="width:6.3in;height:2.55972in" />Het
+effect van deze constructors zien we pas als we onze type proberen te
+instantiëren, zoals in het voorbeeld hieronder.
+
 ## Methods
 
 Methods, in de volksmond ook wel bekend als functions, zijn blokken
@@ -1159,16 +1196,16 @@ doet.
 te doen. Parameters schrijf je binnen haken, ‘(’ en ‘)’. Het opgeven van
 parameters is optioneel, maar de haakjes zijn wel verplicht.
 
-<img src=".\/media/image50.png" style="width:5.94218in;height:2.40021in"
+<img src=".\/media/image53.png" style="width:5.94218in;height:2.40021in"
 alt="Afbeelding met tekst, overdekt, schermopname Automatisch gegenereerde beschrijving" />
 
-<img src=".\/media/image51.png" style="width:6.3in;height:2.49236in"
+<img src=".\/media/image54.png" style="width:6.3in;height:2.49236in"
 alt="Afbeelding met tekst Automatisch gegenereerde beschrijving" />
 
 Onderstaand zie je een voorbeeld van een Class en hoe die eruit kan
 zien:
 
-<img src=".\/media/image52.png" style="width:5.7255in;height:6.70892in"
+<img src=".\/media/image55.png" style="width:5.7255in;height:6.70892in"
 alt="Afbeelding met tekst Automatisch gegenereerde beschrijving" />
 
 Bovenstaand is de class \`Student\`. Deze heeft een aantal public
@@ -1178,7 +1215,7 @@ Kijk goed naar de Constructor: \`public Student(string name)\`.
 Dit houd in dat wanneer je een nieuwe Student initialiseert dat je
 altijd een string met de naam van de student moet opgeven.
 
-<img src=".\/media/image53.png"
+<img src=".\/media/image56.png"
 style="width:4.84499in;height:0.80074in" />
 
 # Afsluiting
