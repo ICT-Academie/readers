@@ -920,6 +920,11 @@ Voor de eindopdracht ga je een website maken waarbij je zelf mag bepalen hoe hij
 
 Zorg er dus voor dat het er leuk uitziet!
 
-***Zie de reader Website uploaden Eindopdracht op moodle voor het online zetten van je website.***
+## Upload naar GitHub pages
+Op GitHub kan je gratis een website neerzetten. Daar kan je dus je HTML eindopdracht uploaden. De stappen staan hieronder, maar je kan ook naar GitHub Pages ([https://pages.github.com/](https://pages.github.com/)) voor meer uitleg.
 
-De website kan daarna worden nagekeken op de computer van de docent.
+1. Maak een account aan op [GitHub.com](https://github.com), als je die nog niet hebt.
+2. Maak een nieuwe repository aan met de naam `gebruikersnaam.github.io` (met je werkelijke GitHub gebruikersnaam). Kijk naar de Versie Beheer reader om tips hoe je dit kan doen.
+3. Na het aanmaken van de repository, staan er twee stukken uitleg op die pagina. De tweede heeft drie commands om een GitHub repository te koppelen aan een bestaande folder op je laptop. Die kan je kopiëren en plakken in de terminal. De regels beginnen met `git remote add origin`, `git branch` en `git push`.
+
+De website is vervolgens beschikbaar op de url `https://gebruikersnaam.github.io`, en kan daarna worden nagekeken op de computer van de docent.
